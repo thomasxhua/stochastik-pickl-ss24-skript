@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[utf8]{inputenc}
+\frenchspacing
+
+% ------------------------------------------------------------
+\usepackage{caption}
+\captionsetup{labelformat=empty,labelsep=none}
+\usepackage{scalerel,stackengine,amsmath}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\usepackage{multicol}
+\usepackage{algorithm2e}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{enumitem}
+% ------------------------------------------------------------
+
+% image
+\newcommand{\incl}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\inclc}[2]{\begin{center}\includegraphics[width=#1\textwidth]{#2}\end{center}}
+% description
+\newcommand{\thetitle}{}
+\newcommand{\thecontents}{}
+\newcommand{\thedate}{}
+\newcommand{\theauthor}{}
+\newcommand{\thedescription}{
+	\section*{\thetitle}
+	\begin{tabular}{ll}%
+	Inhalt:&\thecontents\\%
+	Datum:&\thedate\\%
+	Author:&\theauthor\\%
+	\end{tabular}%
+}
+% -- math mode stuff
+\newcommand{\meq}[1]{\begin{equation*}\begin{aligned}#1\end{aligned}\end{equation*}}
+% \newcommand{\NN}{\mathbb{N}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\subt}[1]{\normalfont{(#1)}}
+\newcommand{\ifcases}[2]{\begin{equation*}#1\begin{cases}#2\end{cases}\end{equation*}}
+\newcommand{\ring}[1]{(#1,+,\cdot)}
+\newcommand{\estimates}{\mathrel{\hat{=}}}
+\newcommand{\OO}{\mathcal{O}}
+\newcommand{\LRA}{\Leftrightarrow}
+\newcommand{\LA}{\Leftarrow}
+\newcommand{\RA}{\Rightarrow}
+\newcommand{\textabove}[2]{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny #1}}}{#2}}}
+\newcommand{\myqed}[1]{\hfill$\Box${\footnotesize#1}}
+\newcommand{\neo}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\SsS}{\mathcal{S}}
+\newcommand{\correct}{\hfill\checkmark}
+\newcommand{\ubr}[2]{\underbrace{#1}_{\mathclap{\text{#2}}}}
+\newcommand{\obr}[2]{\overbrace{#1}^{\mathclap{\text{#2}}}}
+\renewcommand{\star}{^*}
+\newcommand{\blank}{\ttt{\textvisiblespace}}
+\newcommand\equalhat{\mathrel{\stackon[1.5pt]{=}{\stretchto{%
+    \scalerel*[\widthof{=}]{\wedge}{\rule{1ex}{3ex}}}{0.5ex}}}}
+\newcommand{\correspondsto}{\equalhat}
+\newcommand{\weg}{(weggelassen)}
+\newcommand{\chf}{\mathds{1}}
+	% -- enumerations
+\newcommand{\abc}[1]{\begin{enumerate}[label=\alph*.]#1\end{enumerate}}
+\newcommand{\num}[1]{\begin{enumerate}[label=\arabic*.]#1\end{enumerate}}
+\newcommand{\bul}[1]{\begin{itemize}#1\end{itemize}}
+% -- text mode stuff
+% \newcommand{\note}[1]{(\textit{#1})}
+\newcommand{\ttt}{\texttt}
+\newcommand{\tbf}{\textbf}
+\newcommand{\tit}{\textit}
+\newcommand{\trt}{\textit}
+\newcommand{\tsc}{\textsc}
+\newcommand{\tul}{\underline}
+\newcommand{\tsub}[1]{\tre{\large#1}}
+% -- text input stuff
+\newcommand{\ditto}{''}
+% <warning_emoji>
+\newcommand*{\TakeFourierOrnament}[1]{{%
+\fontencoding{U}\fontfamily{futs}\selectfont\char#1}}
+\newcommand*{\warning}{\TakeFourierOrnament{66}}
+\newcommand{\warn}{{\Large\warning}\ \ }
+% </warning_emoji>
+% logic stuff
+\newcommand{\tttrue}{\ttt{true}}
+\newcommand{\fffalse}{\ttt{false}}
+% algorithm stuff:
+\newcommand{\wwhile}{\textbf{while}}
+\newcommand{\ffor}{\textbf{for}}
+\newcommand{\ggoto}{\textbf{goto}}
+\newcommand{\ddo}{\textbf{do}}
+\newcommand{\iif}{\textbf{if}}
+\newcommand{\tthen}{\textbf{then}}
+\newcommand{\eelse}{\textbf{else}}
+\newcommand{\eend}{\textbf{end}}
+\newcommand{\hhalt}{\textbf{halt}}
+\newcommand{\aand}{\textbf{and}}
+\newcommand{\oor}{\textbf{or}}
+\newcommand{\ffunction}{\textbf{function}}
+\newcommand{\rreturn}{\textbf{return}}
+\newcommand{\cccc}{\hphantom{cccc}}
+\newcommand{\ccc}{\hphantom{ccc}}
+\newcommand{\cc}{\hphantom{cc}}
+\renewcommand{\;}{;\\}
+\newcommand{\cmt}[1]{\ttt{#1}}
+\newcommand{\lims}{\limsup_{n\to\infty}}
+\newcommand{\limi}{\liminf_{n\to\infty}}
+\newcommand{\true}{\ttt{true}}
+\newcommand{\false}{\ttt{false}}
