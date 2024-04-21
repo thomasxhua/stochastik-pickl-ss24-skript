@@ -25,11 +25,12 @@
 \newcommand{\thedate}{}
 \newcommand{\theauthor}{}
 \newcommand{\thedescription}{
-	\section*{\thetitle}
+    \noindent{\LARGE\tbf{\thetitle}}
+    \\~\\
 	\begin{tabular}{ll}%
 	Inhalt:&\thecontents\\%
 	Datum:&\thedate\\%
-	Author:&\theauthor\\%
+	Autor:&\theauthor\\%
 	\end{tabular}%
 }
 % -- math mode stuff
@@ -109,3 +110,4 @@
 \newcommand{\limi}{\liminf_{n\to\infty}}
 \newcommand{\true}{\ttt{true}}
 \newcommand{\false}{\ttt{false}}
+

@@ -2,19 +2,29 @@
 
 % <local>
 \usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{titlesec}
+% --------
 \newcommand{\pickl}[1]{\begin{center}\hrulefill\ \texttt{[ \textbf{Pickl #1} ]}\ \hrulefill\end{center}}
 \newcommand{\PP}{\mathbb{P}}
 \newcommand{\Pcal}{\mathcal{P}}
+\renewcommand{\thesection}{\Roman{section}}
+\setcounter{tocdepth}{2}
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
 % </local>
 
-\renewcommand{\thetitle}{Stochastik Skript, Pickl, SS 2024}
+\renewcommand{\thetitle}{Stochastik}
 \renewcommand{\thecontents}{Live-Transkription}
 \renewcommand{\thedate}{SS 2024}
-\renewcommand{\theauthor}{Pickl}
+\renewcommand{\theauthor}{Prof. Dr. Peter Pickl}
 
 \begin{document}
 \thedescription
+\tableofcontents
+\newpage
 
 \input{20240415.tex}
+\input{20240418.tex}
 
 \end{document}
+
