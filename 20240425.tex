@@ -1,0 +1,36 @@
+\pickl{25.04.2024}
+\subsubsection{Defintiion (Borel-$\sigma$-Algebra)}
+Sei $\Omega=\RR$. Die von den offenen Teilmengen von $\RR$ erzeugte $\sigma$-Algebra hei\ss{}t \trt{Borel-$\sigma$-Algebra}. (alternative Definiton sp\"ater)
+\subsection{Das Wahrscheinlichkeitsma\ss{}}
+\subsubsection{Definition (Wahrscheinlichkeitsma\ss{})}
+Sei $\Omega$ eine Menge, $\Acal$ $\sigma$-Algebra. Eine Abbildung $\PP\colon\Acal\to\RR$ hei\ss{}t \trt{Wahrscheinlichkeitsma\ss{}} $:\LRA$
+\abc{
+\item $\PP(\Omega)=1$,
+\item $\PP(A)\geq0,\ \forall A\in\Acal$,
+\item $\PP(\bigcup_{n=1}^\infty A_n)=\sum_{n=1}^\infty\PP(A_n)$, falls $A_n\in\Acal,\ A_n\cap A_m=\emptyset\ \forall n\neq m$.
+}
+\subsubsection{Bemerkung}
+Satz vom Gegenereignis, $\PP(\emptyset)=0$ und $\PP(A\cup B)=\PP(A)+\PP(B)-\PP(A\cap B)$ gilt weiterhin.
+\subsubsection{Definition und Satz (Bedingte Wahrscheinlichkeit)}
+Sei $(\Omega,\Acal,\PP)$ ein Wahrscheinlichkeitsraum, d.h. $\Omega$ Menge, $\Acal$ zugeh\"orige $\sigma$-Algebra, $\PP\colon\AA\to\RR$ Wahrscheinlichkeitsma\ss{}.
+\\~\\
+Sei $A\in\Acal$ mit $\PP(A)\neq0$. Dann ist das auf $A$ \trt{bedingte Wahrscheinlichkeitsma\ss{}} definiert durch
+\meq{\PP_A(B)=\frac{\PP(A\cap B)}{\PP(A)}.}
+\subsubsection{Beweis}
+(dass dies ein Wahrscheinlichkeitsma\ss{} ist):
+\abc{
+\item $\PP_A(\Omega)=\frac{\PP(A\cap\Omega)}{\PP(A)}=\frac{\PP(A)}{\PP(A)}=1.$
+\item Z\"ahler $\geq0$, Nenner $>0$ $\RA$ Behauptung.
+\item 
+\meq{
+    \PP_A(\bigcup_{n=1}^\infty A_n)&=\frac{\PP(A\ \cap\ \bigcup_{n=1}^\infty A_n)}{\PP(A)}\ (A_n\cap A_m=\emptyset,\ n\neq m)\\
+    &=\frac{\PP(\bigcup_{n=1}^\infty\obr{(A_n\cap A)}{paarweise disjunkt})}{\PP(A)}\\
+    &=\frac{\sum_{n=1}^\infty\PP(A_n\cap A)}{\PP(A)}\\
+    &=\sum_{n=1}^\infty\PP_A(A_n).
+}
+}
+\subsubsection{Definition (Unabh\"angigkeit)}
+Zwei Ereignisse $A,B$ hei\ss{}en (stochastisch) \trt{unab\"angig} $:\LRA$
+\meq{\PP(A\cap B)=\PP(A)\cdot\PP(B)}.
+\subsubsection{Bemerkung}
+$A$ unabh\"angig von $B$ $\RA$ $\PP_A(B)=\PP(B)$ (falls $\PP(A)\neq0$).
