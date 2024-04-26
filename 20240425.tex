@@ -34,3 +34,63 @@ Zwei Ereignisse $A,B$ hei\ss{}en (stochastisch) \trt{unab\"angig} $:\LRA$
 \meq{\PP(A\cap B)=\PP(A)\cdot\PP(B)}.
 \subsubsection{Bemerkung}
 $A$ unabh\"angig von $B$ $\RA$ $\PP_A(B)=\PP(B)$ (falls $\PP(A)\neq0$).
+\subsubsection{Beispiel}
+$\Omega=\{1,\ldots,6\}$.
+\abc{
+\item $A=\{3,4,5,6\},\ B=\{2,4,6\}$ sind unabh\"angig.
+\item $\widetilde{A}=\{4,5,6\}$ und $B$ wie oben sind nicht unab\"angig.
+}
+\subsubsection{Definition (Limes von Ereignissen)}
+Seien $(A_n)_{n\in\NN}\subset\Acal$, $(B_n)_{n\in\NN}\subset\Acal$.
+Wir nehmen an:
+\bul{
+\item $A_n\subset A_{n+1},\ \forall n\in\NN$,
+\item $B_n\supset B_{n+1},\ \forall n\in\NN$.
+}
+Dann ist
+\meq{
+    \lim_{n\to\infty}A_n&\ :=\bigcup_{n=1}^\infty A_n,\\
+    \lim_{n\to\infty}B_n&\ :=\bigcap_{n=1}^\infty B_n.
+}
+\subsubsection{Korrolar}
+$\lim_{n\to\infty}A_n$ und $\lim_{n\to\infty}B_n$ sind Ereignisse, falls $A_n$, $B_n$ Ereignisse sind.
+\subsubsection{Beweis}
+Definition der $\sigma$-Algebra, bzw. Satz gleich darunter.
+\subsubsection{Definition ($\limsup$, $\liminf$)}
+Sei $(A_n)_{n\in\NN}\subset\Acal$ Dann ist
+\meq{
+\limsup_{n\to\infty}A_n&\ :=\bigcap_{k=1}^\infty\bigcup_{n=k}^\infty A_n,\\
+\liminf_{n\to\infty}A_n&\ :=\bigcup_{k=1}^\infty\bigcap_{n=k}^\infty A_n.
+}
+\subsubsection{Korollar}
+Auch $\limsup$ und $\liminf$ sind Ereignisse (falls $A_n\in\Acal\ \forall n\in\NN$).
+\subsubsection{Satz ($\sigma$-Stetigkeit des Wahrscheinlichkeitsma\ss{}es)}
+Sei $(A_n)_{n\in\NN},(B_n)_{n\in\NN}\subset\Acal$ eine abfallende bzw. ansteigende Folge von Ereignissen ($A_n\subset A_{n+1},\ B_n\supset B_{n+1},\ \forall n$). Dann ist
+\abc{
+\item $\lim_{n\to\infty}\PP(A_n)=\PP(\lim_{n\to\infty}A_n)$,
+\item $\lim_{n\to\infty}\PP(B_n)=\PP(\lim_{n\to\infty}B_n)$.
+}
+\subsubsection{Beweis}
+Definiere $C_1:=A_1$. $C_2:=A_1\setminus A_1$, \ldots, $C_n=A_n\setminus A_{n-1}$. Es gilt:
+\abc{
+\item $\lim_{n\to\infty}A_n=\bigcup_{n=1}^\infty A_n=\bigcup_{n=1}^\infty C_n$.
+\item $C_n\cap C_m=\emptyset,\ \forall n\neq m$,
+\item $A_n=\bigcup_{k=1}^{n}C_k$.
+}
+\abc{
+\item
+\meq{
+    \RA\PP(\lim_{\mathclap{n\to\infty}}A_n)&\ \textabove{a)}{=}\PP(\bigcup_{n=1}^\infty C_n)
+    \\&\ \textabove{\tbf{K}c)}{=}\sum_{n=1}^\infty\PP(C_n)
+    \\&\ =\lim_{n\to\infty}\sigma_{k=1}^{n}\PP(C_k)
+    \\&\ \textabove{\tbf{K}c)}{=}\lim_{n\to\infty}\PP(\bigcup_{k=1}^nC_k)
+    \\&\ \textabove{c)}{=}\PP(A_n).
+}
+\myqed{}
+\item
+\meq{
+    \PP(\lim_{\mathclap{n\to\infty}}B_n)&\ =1-\PP(\lim_{\mathclap{n\to\infty}}B_n^C)
+    \\&\ \textabove{Fall a)}{=}\ 1-\lim_{n\to\infty}\PP(B_n^C)
+    \\&\ =\lim_{n\to\infty}\PP(B_n).
+}
+}
