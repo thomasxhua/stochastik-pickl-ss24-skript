@@ -1,26 +1,26 @@
 \pickl{15.04.2024}
-\trt{In der Stochastik get es um die Modellierung von Experimenten, deren Ausgang vom Zufall abh\"angt.}
+\trt{In der Stochastik geht es um die Modellierung von Experimenten, deren Ausgang vom Zufall abh\"angt.}
 \section{Endliche Wahrscheinlichkeitsr\"aume}
 \subsection{Ergebnismenge, Ereignismenge}
 \subsubsection{Definition (Ergebnismenge)}
 Die Menge $\Omega$, welche die m\"oglichen Ausg\"ange eines Zufallexperiementes beschreibt, dennen wir \trt{Grundmenge} oder \trt{Ergebnismenge}.
 \subsubsection{Definition (Ereignismenge)}
-Die Potenzmenge $\Pcal(\Omega)$, d.h. die Menge aller Teilmengen $\Omega$, nennen wir \trt{Ereignismenge}.
+Die Potenzmenge $\mathcal{P}(\Omega)$, d.h. die Menge aller Teilmengen $\Omega$, nennen wir \trt{Ereignismenge}.
 \subsubsection{Beispiel}
 \num{
 \item Wir werfen einen W\"urfel.
 \bul{
 \item $\Omega=\{1,2,\ldots,6\}$,
-\item $\Pcal(\Omega)=\{\emptyset,\Omega,\{1\},\ldots,\{1,1\},\ldots\}$,
+\item $\mathcal{P}(\Omega)=\{\emptyset,\Omega,\{1\},\ldots,\{1,1\},\ldots\}$,
 }
-\item Gl\"ucksrad: $\Omega=[0,2\pi[$ beschreibt die m\"oglichen Winkel eines Gl\"uckradspiels. $\Pcal(\Omega)$ ist klar (keine geeignete Ereignismenge, siehe Kapitel 2).
+\item Gl\"ucksrad: $\Omega=[0,2\pi[$ beschreibt die m\"oglichen Winkel eines Gl\"uckradspiels. $\mathcal{P}(\Omega)$ ist klar (keine geeignete Ereignismenge, siehe Kapitel 2).
 }
 \subsection{Das Wahrscheinlichkeitsma\ss{}}
 Das Wahrscheinlichkeitsma\ss{} wird auf der Ereignismenge definiert. Grund: F\"ur \"uberabz\"ahlbare Mengen (Gl\"ucksrad z.B.) haben einzelne Ausg\"ange h\"aufig Wahrscheinlichkeit $0$, obwohl global gesehen existiert ein sinnvolles Wahrscheinlichkeitsma\ss{} (siehe Kapitel 2).
 \\~\\
 Die Wahrscheinlichkeit quantifiziert die Plausibilit\"at der entsprechenden Ereignisse. Sie gibt die relative H\"aufigkeit an, wie oft ein bestimmtes Ereignis nach sehr h\"aufigen Wiederholen unter identischen Umst\"anden eintritt.
 \subsubsection{Definition (Wahrscheinlichkeitsma\ss{})}
-Eine Abbildung $\PP\colon\Pcal(\Omega)\to\RR$ nennt man \trt{Wahrscheinlichkeitsma\ss{}} $:\LRA$
+Eine Abbildung $\PP\colon\mathcal{P}(\Omega)\to\RR$ nennt man \trt{Wahrscheinlichkeitsma\ss{}} $:\LRA$
 \abc{
 \item[\tbf{K}a)] $\PP(A)\geq0,\ \forall A\subset\Omega$,
 \item[\tbf{K}b)]  $\PP(\Omega)=1$,
@@ -29,7 +29,7 @@ Eine Abbildung $\PP\colon\Pcal(\Omega)\to\RR$ nennt man \trt{Wahrscheinlichkeits
 \subsubsection{Bemerkung}
 Die Axiome a)-c) nennt man \trt{Axiome von Kolmogorov} (werden in 2 ebenfalls leicht angepasst).
 \subsubsection{Satz}
-F\"ur jedes Wahrscheinlichkeitsma\ss{} $\PP\colon\Pcal(\Omega)\to\RR$ f\"ur beliebiges $\Omega$ gelten:
+F\"ur jedes Wahrscheinlichkeitsma\ss{} $\PP\colon\mathcal{P}(\Omega)\to\RR$ f\"ur beliebiges $\Omega$ gelten:
 \abc{
 \item $\PP(A^C)=1-\PP(A),\ \forall A\subset\Omega$.
 \item $\PP(A)\leq1$.
@@ -43,5 +43,5 @@ F\"ur jedes Wahrscheinlichkeitsma\ss{} $\PP\colon\Pcal(\Omega)\to\RR$ f\"ur beli
 Betrachte $\PP(A)$ f\"ur $A=\{w_1,w_2,\ldots,w_k\}\subset\Omega$. Durch mehrmaliges Anwenden von \tbf{K}c) erh\"alt man
 \meq{\PP(A)=\sum_{i=1}^{k}\PP(\{w_k\}).}
 \subsubsection{Definition (Wahrscheinlichkeitsraum)}
-Das Paar $(\Omega,\PP)$ nennt man auch \trt{Wahrscheinlichkeitsraum} (auch $(\Omega,\Pcal(\Omega),\PP)$).
+Das Paar $(\Omega,\PP)$ nennt man auch \trt{Wahrscheinlichkeitsraum} (auch $(\Omega,\mathcal{P}(\Omega),\PP)$).
 

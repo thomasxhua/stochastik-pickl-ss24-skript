@@ -29,46 +29,46 @@ aber falls der Inhalt $\PP(R)>0$, folgt, dass das Intervall $]-2\pi,4\pi[$ unend
 \subsection{Ereignisraum}
 Wir schr\"anken den Definitionsbereich von $\PP$ ein, um solch problematische Mengen zu umgehen. 
 \subsubsection{$\sigma$-Algebra}
-Sei $\Omega$ eine Menge. Eine $\sigma$-Algebra bzgl. $\Omega$ ist eine Teilmenge von $\PP(\Omega)$ mit:
+Sei $\Omega$ eine Menge. Eine $\sigma$-Algebra bzgl. $\Omega$ ist eine Teilmenge von $\mathcal{P}(\Omega)$ mit:
 \abc{
-\item $\Omega\in\Acal$,
-\item $A\in\Acal\RA A^C\in\Acal$,
-\item Sei $(A_n)_{n\in\NN}\subset\Acal\RA\bigcup_{n=1}^\infty A_n\in\Acal$.
+\item $\Omega\in\mathcal{A}$,
+\item $A\in\mathcal{A}\RA A^C\in\mathcal{A}$,
+\item Sei $(A_n)_{n\in\NN}\subset\mathcal{A}\RA\bigcup_{n=1}^\infty A_n\in\mathcal{A}$.
 }
 \subsubsection{Beispiele}
 \abc{
-\item $\PP(\Omega)$, sowie $\{\emptyset,\Omega\}$ ist jeweils $\sigma$-Algebra.
+\item $\mathcal{P}(\Omega)$, sowie $\{\emptyset,\Omega\}$ ist jeweils $\sigma$-Algebra.
 \item
     \bul{
     \item $\Omega=\{1,2,3,4\}$.
-    \item $\Acal=\{\emptyset,\Omega,\{1,2\},\{3\},\{4\},\{3,4\},\{1,2,4\},\{1,2,3\}\}$.
+    \item $\mathcal{A}=\{\emptyset,\Omega,\{1,2\},\{3\},\{4\},\{3,4\},\{1,2,4\},\{1,2,3\}\}$.
     }
 }
 \subsubsection{Satz}
-Sei $\Acal$ eine $\sigma$-Algebra bzgl. $\Omega$. Dann gilt:
+Sei $\mathcal{A}$ eine $\sigma$-Algebra bzgl. $\Omega$. Dann gilt:
 \abc{
-\item $\emptyset\in\Acal$,
-\item abz\"ahlbare Schritte von Ereignissen sind in $\Acal$,
-\item $A,B\in\Acal\RA A\setminus B\in\Acal$.
+\item $\emptyset\in\mathcal{A}$,
+\item abz\"ahlbare Schritte von Ereignissen sind in $\mathcal{A}$,
+\item $A,B\in\mathcal{A}\RA A\setminus B\in\mathcal{A}$.
 }
 \subsubsection{Beweis}
 \abc{
-\item $\emptyset=\Omega^C\in\Acal$,
-\item $\bigcap_{n=1}^\infty A_n=\left[\bigcup_{n=1}^\infty A^C_n\right]^C\in\Acal$,
+\item $\emptyset=\Omega^C\in\mathcal{A}$,
+\item $\bigcap_{n=1}^\infty A_n=\left[\bigcup_{n=1}^\infty A^C_n\right]^C\in\mathcal{A}$,
 \item $A\setminus B=A\cap B^C$.
 }
 \subsubsection{Satz}
 Sei $\Omega$ eine Menge. Der Schnitt beliebiger $\sigma$-Algebren ergibt wieder eine $\sigma$-Algebra.
 \subsubsection{Beweis}
-Seien $\Acal_i$ f\"ur $i\in\Ical$ $\sigma$-Algebren (bzgl. $\Omega$). Z.z. $\Acal:=\bigcap_{i\in\Ical}\Acal_i$ ist $\sigma$-Algebra.
+Seien $\mathcal{A}_i$ f\"ur $i\in\mathcal{I}$ $\sigma$-Algebren (bzgl. $\Omega$). Z.z. $\mathcal{A}:=\bigcap_{i\in\mathcal{I}}\mathcal{A}_i$ ist $\sigma$-Algebra.
 \abc{
-\item $\Omega\in\Acal_i,\ \forall i\in\Ical\RA\Omega\in\Acal.$
-\item Sei $E\in\Acal\RA E\in\Acal_i,\ \forall i\in\Ical\RA E^C\in\Acal_i,\ \forall i\in\Ical$.
-\item Seien $(E_n)_{n\in\NN}\subset\Acal$ ($E_n\in\Acal\ \forall n\in\NN$):
+\item $\Omega\in\mathcal{A}_i,\ \forall i\in\mathcal{I}\RA\Omega\in\mathcal{A}.$
+\item Sei $E\in\mathcal{A}\RA E\in\mathcal{A}_i,\ \forall i\in\mathcal{I}\RA E^C\in\mathcal{A}_i,\ \forall i\in\mathcal{I}$.
+\item Seien $(E_n)_{n\in\NN}\subset\mathcal{A}$ ($E_n\in\mathcal{A}\ \forall n\in\NN$):
 \meq{
-    \RA\ &E_n\in A_i,\ \forall n\in\NN, \forall i\in\Ical\\
-    \RA\ &\bigcup_{n=1}^\infty E_n\in\Acal_i,\ \forall i\in\Ical\ \text{(da $\Acal_i$ $\sigma$-Algebra)}\\
-    \RA\ &\bigcup_{n=1}^\infty E_n\in\Acal.
+    \RA\ &E_n\in A_i,\ \forall n\in\NN, \forall i\in\mathcal{I}\\
+    \RA\ &\bigcup_{n=1}^\infty E_n\in\mathcal{A}_i,\ \forall i\in\mathcal{I}\ \text{(da $\mathcal{A}_i$ $\sigma$-Algebra)}\\
+    \RA\ &\bigcup_{n=1}^\infty E_n\in\mathcal{A}.
 }
 }
 \subsubsection{Bemerkung}
@@ -76,28 +76,28 @@ Vereinigungen von $\sigma$-Algebren ergeben \trt{nicht} notwendigerweise eine $\
 \subsubsection{Beispiel}
 $\Omega=\{1,2,3\}$.
 \bul{
-\item $\Acal_1=\{\Omega,\emptyset,\{1,2\},\{3\}\}$,
-\item $\Acal_2=\{\Omega,\emptyset,\{1,3\},\{2\}\}$,
-\item $\Acal_1\cup\Acal_2=\{\Omega,\emptyset,\{1,2\},\{1,3\},\{2\},\{3\}\}\not\ni\{2\}\cup\{3\}.$
+\item $\mathcal{A}_1=\{\Omega,\emptyset,\{1,2\},\{3\}\}$,
+\item $\mathcal{A}_2=\{\Omega,\emptyset,\{1,3\},\{2\}\}$,
+\item $\mathcal{A}_1\cup\mathcal{A}_2=\{\Omega,\emptyset,\{1,2\},\{1,3\},\{2\},\{3\}\}\not\ni\{2\}\cup\{3\}.$
 }
 \subsubsection{Definition (Erzeugte $\sigma$-Algebra)}
-Sei $\Omega$ eine Menge, $\Ecal\subset\Pcal(\Omega)$. Die $\sigma$-Algebra $\sigma(\Ecal)$ definiert durch
-\meq{\sigma(\Ecal):=\bigcap_{\mathclap{\Acal\text{ ist $\sigma$-Alg},\ \Ecal\subset\Acal}}\Acal}
-nennen wir die \trt{von $\Ecal$ erzeugte $\sigma$-Algebra}.
+Sei $\Omega$ eine Menge, $\mathcal{E}\subset\mathcal{P}(\Omega)$. Die $\sigma$-Algebra $\sigma(\mathcal{E})$ definiert durch
+\meq{\sigma(\mathcal{E}):=\bigcap_{\mathclap{\mathcal{A}\text{ ist $\sigma$-Alg},\ \mathcal{E}\subset\mathcal{A}}}\mathcal{A}}
+nennen wir die \trt{von $\mathcal{E}$ erzeugte $\sigma$-Algebra}.
 \subsubsection{Bemerkung}
-$\sigma(\Ecal)$ ist f\"ur nichtleere $\Omega$ immer wohldefiniert und wegen Satz $\sigma$-Algebra.
+$\sigma(\mathcal{E})$ ist f\"ur nichtleere $\Omega$ immer wohldefiniert und wegen Satz $\sigma$-Algebra.
 \subsubsection{Korollar}
-$\sigma(\Ecal)$ ist die kleinste $\sigma$-Algebra, die $\Ecal$ enth\"alt, d.h.
+$\sigma(\mathcal{E})$ ist die kleinste $\sigma$-Algebra, die $\mathcal{E}$ enth\"alt, d.h.
 \abc{
-\item $\Ecal\in\sigma(\Ecal)$,
-\item $\forall\widetilde{\Acal}$ $\sigma$-Algebra it $\Ecal\subset\widetilde{\Acal}$, gilt $\sigma(\Ecal)\subset\widetilde{\Acal}$.
+\item $\mathcal{E}\in\sigma(\mathcal{E})$,
+\item $\forall\widetilde{\mathcal{A}}$ $\sigma$-Algebra it $\mathcal{E}\subset\widetilde{\mathcal{A}}$, gilt $\sigma(\mathcal{E})\subset\widetilde{\mathcal{A}}$.
 }
 \subsubsection{Beweis}
 \abc{
-\item $\Ecal$ ist in allen $\sigma$-Algebren enthalten, \"uber die der Schnitt gebildet wird.
-\item $\widetilde{\Acal}$ ist ein Kandidat f\"ur $\Acal$ in der Definition. Es wird also auch \"uber $\widetilde{\Acal}$ der Schnitt gebildet $\RA\widetilde{A}\supset\sigma(\Ecal)$.
+\item $\mathcal{E}$ ist in allen $\sigma$-Algebren enthalten, \"uber die der Schnitt gebildet wird.
+\item $\widetilde{\mathcal{A}}$ ist ein Kandidat f\"ur $\mathcal{A}$ in der Definition. Es wird also auch \"uber $\widetilde{\mathcal{A}}$ der Schnitt gebildet $\RA\widetilde{A}\supset\sigma(\mathcal{E})$.
 }
 \subsubsection{Beispiel}
-$\Omega=\{1,2,3\},\Ecal=\{\{1,2\}\}$. $\Pcal(\Omega)$ ist $\sigma$-Algebra, enth\"alt $\Ecal$ $\Acal_1$ vom Beispiel oben ebenso. Weitere Kandidaten:
+$\Omega=\{1,2,3\},\mathcal{E}=\{\{1,2\}\}$. $\mathcal{P}(\Omega)$ ist $\sigma$-Algebra, enth\"alt $\mathcal{E}$ $\mathcal{A}_1$ vom Beispiel oben ebenso. Weitere Kandidaten:
 \meq{\mathcal{B}=\{\Omega,\emptyset,\{1,2\},\{3\},\{1\},\{2\},\ldots\}.}
 

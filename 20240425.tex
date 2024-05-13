@@ -3,18 +3,18 @@
 Sei $\Omega=\RR$. Die von den offenen Teilmengen von $\RR$ erzeugte $\sigma$-Algebra hei\ss{}t \trt{Borel-$\sigma$-Algebra}. (alternative Definiton sp\"ater)
 \subsection{Das Wahrscheinlichkeitsma\ss{}}
 \subsubsection{Definition (Wahrscheinlichkeitsma\ss{})}
-Sei $\Omega$ eine Menge, $\Acal$ $\sigma$-Algebra. Eine Abbildung $\PP\colon\Acal\to\RR$ hei\ss{}t \trt{Wahrscheinlichkeitsma\ss{}} $:\LRA$
+Sei $\Omega$ eine Menge, $\mathcal{A}$ $\sigma$-Algebra. Eine Abbildung $\PP\colon\mathcal{A}\to\RR$ hei\ss{}t \trt{Wahrscheinlichkeitsma\ss{}} $:\LRA$
 \abc{
 \item $\PP(\Omega)=1$,
-\item $\PP(A)\geq0,\ \forall A\in\Acal$,
-\item $\PP(\bigcup_{n=1}^\infty A_n)=\sum_{n=1}^\infty\PP(A_n)$, falls $A_n\in\Acal,\ A_n\cap A_m=\emptyset\ \forall n\neq m$.
+\item $\PP(A)\geq0,\ \forall A\in\mathcal{A}$,
+\item $\PP(\bigcup_{n=1}^\infty A_n)=\sum_{n=1}^\infty\PP(A_n)$, falls $A_n\in\mathcal{A},\ A_n\cap A_m=\emptyset\ \forall n\neq m$.
 }
 \subsubsection{Bemerkung}
 Satz vom Gegenereignis, $\PP(\emptyset)=0$ und $\PP(A\cup B)=\PP(A)+\PP(B)-\PP(A\cap B)$ gilt weiterhin.
 \subsubsection{Definition und Satz (Bedingte Wahrscheinlichkeit)}
-Sei $(\Omega,\Acal,\PP)$ ein Wahrscheinlichkeitsraum, d.h. $\Omega$ Menge, $\Acal$ zugeh\"orige $\sigma$-Algebra, $\PP\colon\AA\to\RR$ Wahrscheinlichkeitsma\ss{}.
+Sei $(\Omega,\mathcal{A},\PP)$ ein Wahrscheinlichkeitsraum, d.h. $\Omega$ Menge, $\mathcal{A}$ zugeh\"orige $\sigma$-Algebra, $\PP\colon\AA\to\RR$ Wahrscheinlichkeitsma\ss{}.
 \\~\\
-Sei $A\in\Acal$ mit $\PP(A)\neq0$. Dann ist das auf $A$ \trt{bedingte Wahrscheinlichkeitsma\ss{}} definiert durch
+Sei $A\in\mathcal{A}$ mit $\PP(A)\neq0$. Dann ist das auf $A$ \trt{bedingte Wahrscheinlichkeitsma\ss{}} definiert durch
 \meq{\PP_A(B)=\frac{\PP(A\cap B)}{\PP(A)}.}
 \subsubsection{Beweis}
 (dass dies ein Wahrscheinlichkeitsma\ss{} ist):
@@ -41,7 +41,7 @@ $\Omega=\{1,\ldots,6\}$.
 \item $\widetilde{A}=\{4,5,6\}$ und $B$ wie oben sind nicht unab\"angig.
 }
 \subsubsection{Definition (Limes von Ereignissen)}
-Seien $(A_n)_{n\in\NN}\subset\Acal$, $(B_n)_{n\in\NN}\subset\Acal$.
+Seien $(A_n)_{n\in\NN}\subset\mathcal{A}$, $(B_n)_{n\in\NN}\subset\mathcal{A}$.
 Wir nehmen an:
 \bul{
 \item $A_n\subset A_{n+1},\ \forall n\in\NN$,
@@ -57,15 +57,15 @@ $\lim_{n\to\infty}A_n$ und $\lim_{n\to\infty}B_n$ sind Ereignisse, falls $A_n$, 
 \subsubsection{Beweis}
 Definition der $\sigma$-Algebra, bzw. Satz gleich darunter.
 \subsubsection{Definition ($\limsup$, $\liminf$)}
-Sei $(A_n)_{n\in\NN}\subset\Acal$ Dann ist
+Sei $(A_n)_{n\in\NN}\subset\mathcal{A}$ Dann ist
 \meq{
 \limsup_{n\to\infty}A_n&\ :=\bigcap_{k=1}^\infty\bigcup_{n=k}^\infty A_n,\\
 \liminf_{n\to\infty}A_n&\ :=\bigcup_{k=1}^\infty\bigcap_{n=k}^\infty A_n.
 }
 \subsubsection{Korollar}
-Auch $\limsup$ und $\liminf$ sind Ereignisse (falls $A_n\in\Acal\ \forall n\in\NN$).
+Auch $\limsup$ und $\liminf$ sind Ereignisse (falls $A_n\in\mathcal{A}\ \forall n\in\NN$).
 \subsubsection{Satz ($\sigma$-Stetigkeit des Wahrscheinlichkeitsma\ss{}es)}
-Sei $(A_n)_{n\in\NN},(B_n)_{n\in\NN}\subset\Acal$ eine abfallende bzw. ansteigende Folge von Ereignissen ($A_n\subset A_{n+1},\ B_n\supset B_{n+1},\ \forall n$). Dann ist
+Sei $(A_n)_{n\in\NN},(B_n)_{n\in\NN}\subset\mathcal{A}$ eine abfallende bzw. ansteigende Folge von Ereignissen ($A_n\subset A_{n+1},\ B_n\supset B_{n+1},\ \forall n$). Dann ist
 \abc{
 \item $\lim_{n\to\infty}\PP(A_n)=\PP(\lim_{n\to\infty}A_n)$,
 \item $\lim_{n\to\infty}\PP(B_n)=\PP(\lim_{n\to\infty}B_n)$.
