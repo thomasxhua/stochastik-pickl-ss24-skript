@@ -1,1 +1,60 @@
 \pickl{06.05.2024}
+Sei nun $\mathcal{A}_B:=\{A\in\delta(\mathcal{E})\colon A\cap B\in\delta(\mathcal{E})\}$ f\"ur $B\in\delta(\mathcal{E})$.
+\num{
+\item $\mathcal{E}\subset\mathcal{A}_B$ wegen des vorigen Schrittes.
+\item
+\abc{
+\item $\Omega\in\mathcal{A}_B$, da $\Omega\cap B=B\in\delta(\mathcal{E})$.
+\item Sei $A\in\mathcal{A}_B$, d.h. $A\cap B\in\delta(\mathcal{E})$ $\RA\ubr{B\setminus(A\cap B)}{$B\cap A^C\in\delta(\mathcal{E})$}\in\delta(\mathcal{E})$.
+}
+\item Sei $(A_n)_{n\in\NN}\subset\mathcal{A}_B$ paarweise disjunkt.
+\meq{
+\left(\dot{\bigcup}_{n\in\NN}A_n\right)\cap B=\dot{\bigcup}_{n\in\NN}\ubr{(A_n\cap B)}{$\ni\delta(\mathcal{E})$ n.V.}\in\delta(\mathcal{E})\\
+\textabove{P.d.g.M.}{\RA}\mathcal{A}_B\supset\delta(\varepsilon)\ \text{(au\ss{}erdem $\mathcal{A}_B\subset\delta(\mathcal{E})$), d.h. $\mathcal{A}_B=\delta(\mathcal{E})$.}
+}
+$\RA\forall A,B\in\delta(\mathcal{E})$ gilt $A\cap B\in\delta(\mathcal{E})$.
+}
+\subsubsection{Korollar}
+Sei $\mathcal{E}\subset\mathcal{P}(\Omega)$ schnittstabil $\RA\delta(\mathcal{E})=\delta(\mathcal{E})$.
+\subsubsection{Beweis}
+\bul{
+\item ``$\subset$'': $\delta(\mathcal{E})$ enth\"alt $\mathcal{E}$ und ist ein Dynkin-System $\textabove{P.d.g.M.}{\RA}\delta(\mathcal{E})\subset\delta(\mathcal{E})$.
+\item ``$\supset$'': $\delta(\mathcal{E})$ enth\"alt $\mathcal{E}$. $\delta(\mathcal{E})$ ist eine $\sigma$-Algebra aufgrund der letzten beiden S\"atze $\textabove{P.d.g.M.}{\RA}\sigma(\mathcal{E})\subset\delta(\mathcal{E})$.
+}
+\subsubsection{Satz (Eindeutigkeitssatz)}
+Sei $\mathcal{E}\subset\mathcal{P}(\Omega)$ schinttstabil. Dann ist $\PP\colon\sigma(\mathcal{E})\to\RR$ eindeutig durch $\PP$ eingeschr\"ankt auf $\mathcal{E}$ definiert (falls existent).
+\subsubsection{Beweis}
+Seien $\PP,\QQ\colon\sigma(\mathcal{E}\to\RR$ Wahrscheinlichkeitsma\ss{}e mit $\PP(A)=\QQ(A)$, $\forall A\in\mathcal{E}$. $\{A\in\sigma(\mathcal{E})\colon\PP(A)=\QQ(A)\}=\mathcal{A}$ enth\"alt $\mathcal{E}$ und ist ein Dynkin-System $\RA\mathcal{A}\supset\delta(\mathcal{E})=\sigma(\mathcal{E})$.
+\subsubsection{Beispiel}
+\abc{
+\item Durch $\PP(]a,b[)=\frac{b-a}{2\pi}$ wird f\"ur unser Gl\"ucksradspiel das Wahrscheinlichkeitsma\ss{} auf der entsprechenden Borel-$\sigma$-Algebra eindeutig.
+\item Sei $f\colon\RR\to\RR_0^+$ integrierbar mit
+\[\int_{-\infty}^{\infty}f(t)dt=1.\]
+Dann ist durch $\PP(]-\infty,a])=\int_{-\infty}^{a}f(t)dt$ das Wahrscheinlichkeitsma\ss{} eindeutig.
+}
+\subsubsection{Bemerkung}
+F\"ur die obigen Beispiele kann die Existenz eines Wahrscheinlichkeitsma\ss{}es mit den genannten Eigenschaften gezeigt werden. (siehe Ma\ss{}theorie)
+\newpage
+\section{Zufallsvariable}
+Es liegt nahe, die Menge $\Omega$ nach z.B. $\RR$ abzubilden, um die Ausg\"ange des Experimentes zu quantifizieren.
+\subsubsection{Definition (Zufallsvariable im Diskreten)}
+Eine Abbildung $X\colon\Omega\to\vartheta$ (falls $|\Omega|<\infty$, $(\Omega,\PP)$ Wahrscheinlichkeitsraum) nennt man \trt{Zufallsvariable}.
+\subsubsection{Beispiel}
+\abc{
+\item W\"urfel $\Omega=\{\dot{1},\dot{2},\ldots,\dot{6}\},\ \vartheta=\{1,2,\ldots,6\}$. $X$ bildet auf die Augenzahl ab.
+\item Gl\"ucksspiel: Man gewinnt $3\text{\EURtm}$ falls Augenzahl durch $3$ teilbar, ansonsten verliert man $1\text{\EURtm}$:
+\[y\colon\Omega\to\{-1,3\}.\]
+}
+\subsubsection{Bemerkung}
+Es ist f\"ur jede Zufallsvariable in nat\"urlicher Weise ein Wahrscheinlichkeitsma\ss{} auf $\vartheta$ definiert:
+\[\QQ(A)=\PP(X^{-1}(A)).\]
+\subsubsection{Definition (Zufallsvariable)}
+Sei $(\Omega,\mathcal{A},\PP)$ ein Wahrscheinlichkeitsraum, $(\vartheta,\mathcal{B})$ ein sogennanter Ma\ss{}raum, d.h. $\mathcal{B}$ ist $\sigma$-Algebra bzgl. $\vartheta$. Dann nennt man jede Abbildung $X\colon\Omega\to\vartheta$ mit der Eigenschaft
+\[(*)\ X^{-1}(B)\in\mathcal{A},\ \forall B\in\mathcal{B}\]
+eine \trt{Zufallsvariable}.
+\subsubsection{Bemerkung}
+Die Eigenschaft $(*)$ der Abbildung $X$ nennt man \trt{$\mathcal{A}$-$\mathcal{B}$ messbar}.
+\subsubsection{Satz}
+Sei $(\Omega,\mathcal{A},\PP)$ Wahrscheinlichkeitsraum, $\vartheta$ eine Menge mit $\sigma$-Algebra $\mathcal{B}$. Dann ist auf $B$ durch
+\[\QQ(A)=\PP(X^{-1}(\mathcal{A}))\]
+ein Wahrscheinclihkeitsma\ss{} definiert. D.h. falls $X\colon\Omega\to\vartheta$ $\mathcal{A}$-$\mathcal{B}$-messbar $\RA(\vartheta,\mathcal{B},\PP\cdot X^{-1})$ ist Wahrscheinlichkeitsraum.
