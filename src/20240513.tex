@@ -1,0 +1,78 @@
+\pickl{13.05.2024}
+\subsubsection{Satz}
+$X$ Zufallsvariable $\RA\QQ:=\PP\cdot X^{-1}$ ist Wahrscheinlichkeitsma\ss{}.
+\subsubsection{Erinnerung}
+$X^{-1}:=\{\omega\in\Omega\colon X(\omega)\in A\},\ X\colon\Omega\to\vartheta$.
+\subsubsection{Proposition}
+Sei $X\colon\Omega\to\vartheta$ eine Abbildung. $A,B\subset\vartheta$. Dann gilt:
+\abc{
+\item $X^{-1}(\vartheta)=\Omega$,
+\item $X^{-1}(A^C)=[X^{-1}(A)]^C$,
+\item $X^{-1}(A)\cup X^{-1}(B)=X^{-1}(A\cup B)$,
+\item $X^{-1}(A)\cap X^{-1}(B)=X^{-1}(A\cap B)$,
+\item $X^{-1}(A)\cap X^{-1}(B)=\emptyset$, falls $A\cap B=\emptyset$.
+}
+\subsubsection{Beweis}
+\abc{
+\item $\forall\omega\in\Omega$ gilt $X(\omega)\in\vartheta$.
+\item $\omega\in X^{-1}(A^C)\LRA X(\omega)\in A^C\LRA X(\omega)\notin A\LRA\omega\notin X^{-1}(A)\LRA w\in[X^{-1}(A)]^C$.
+\item $\omega\in X^{-1}(A)\cup X^{-1}(B)\LRA\omega\in X^{-1}(A)$ oder $\omega\in X^{-1}(B)\LRA X(\omega)\in A$ oder $X(\omega)\in B\LRA \omega\in X^{-1}(A\cup B)$. Geht ebenso f\"ur beliebige, insbesondere abz\"ahlbare Vereinigungen.
+\item folgt aus mehrfachem Anwenden von b), und c).
+\item folgt aus d), da $X^{-1}(\emptyset)=\emptyset$.
+}
+\subsubsection{Beweis des Satzes}
+\abc{
+\item $\QQ(\vartheta):=\PP(X^{-1}=\PP(\Omega)=1$.
+\item Positivit\"at folgt aus b) f\"ur $\PP$.
+\item $\QQ(\bigcup_{j=1}^\infty A_j)$ f\"ur $A_j$ paarweise disjunkt.
+\[=\PP(X^{-1}(\bigcup_{j=1}^\infty A_j))=\PP(\bigcup_{j=1}^\infty\ubr{X^{-1}(A_j)}{paarweise disjunkt e)})=\sum_{j=1}^\infty\PP(X^{-1}(A_j))=\sum_{j=1}^\infty\QQ(A_j).\]
+}
+\subsubsection{Satz}
+Sei $X\colon\Omega\to\vartheta$ messbar ($\mathcal{A}\to\mathcal{B}$), dann sind folgenden Mengen $\sigma$-Algebren:
+\abc{
+\item $X^{-1}(\mathcal{B}):=\{X^{-1}(B)\colon B\in\mathcal{B}\}$,
+\item $X_*(\mathcal{A}):=\{B\in\mathcal{B}\colon\exists A\in\mathcal{A}\colon X^{-1}(B)=A\}.$
+}
+a) bzgl. $\Omega$, b) bzgl. $\vartheta$.
+\subsubsection{Beweis}
+\abc{
+\item
+\abc{
+\item $\Omega\in X^{-1}(B)$, da $\Omega=X^{-1}(\vartheta)$.
+\item Sei $A\in X^{-1}(B)\RA\exists B$ mit $X^{-1}(B)=A\RA X^{-1}(B^C)=A^C\in X^{-1}(\mathcal{B})$.
+\item Seien $(A_n)_{n\in\NN}\subset X^{-1}(\mathcal{B})$
+\meq{
+&\ \RA\forall n\in\NN\ \exists B_n\in\mathcal{B}\ \text{mit}\ A_n=X^{-1}(B_n)\\
+&\ \RA\bigcup_{n\in\NN}B_n\in B\ \text{und}\ X^{-1}(\bigcup_{n\in\NN}B_n)=\bigcup_{n\in\NN}X^{-1}(B_n)\\
+&\ \RA\bigcup_{n\in\NN}A_n=\bigcup_{n\in\NN}X^{-1}(B_n)=X^{-1}(\ubr{\bigcup_{n\in\NN}B_n}{$\in\mathcal{B}$})\\
+&\ \RA\bigcup_{n\in\NN}A_n\in X^{-1}(\mathcal{B}).
+}
+}
+\item \"ahnlich.
+}
+\subsubsection{Bemerkung}
+Die Messbarkeit ging in den Beweis gar nicht ein. F\"ur jede Abbildung $X\colon\Omega\to\vartheta$ gilt, dass f\"ur eine $\sigma$-Algebra $\mathcal{B}$ bzgl. $X^{-1}(\mathcal{B}$ eine $\sigma$-Algebra bzgl. $\Omega$ ist.
+\subsubsection{Korollar}
+Sei $X\colon\Omega\to\vartheta$ eine Abbildung, $\mathcal{B}$ eine von $\mathcal{E}$ erzeugte $\sigma$-Algebra bzgl. $\vartheta$. Dann ist $X$ $\mathcal{A}$-$\mathcal{B}$-messbar bereits., wenn $X^{-1}(E)\in\mathcal{A}$, $\forall E\in\mathcal{E}$ $(*)$.
+\subsubsection{Beweis}
+Wir betrachten $X_*(\mathcal{A})$. Falls $(*)$ gilt, ist $\mathcal{E}\subset X_*(\mathcal{A})$. $X_*(\mathcal{A})$ ist $\sigma$-Algebra $\RA B\subset X_*(\mathcal{A})\RA X$ ist $\mathcal{A}$-$\mathcal{B}$-messbar.
+\subsubsection{Beispiel}
+Jede stetige Funktion $f\colon\RR\to\RR$ ist $B_\RR$-$B_\RR$-messbar. Grund: Da $f$ stetig, sind die Urbilder offener Mengen offen. Die offenen Mengen sind ein m\"oglicher Erzeuger von $B_\RR$, nach Korollar muss man nur diese untersuchen.
+\subsubsection{Satz}
+Seien $\Omega,\vartheta,\Lambda$ Mengen, $\mathcal{A},\mathcal{B},\mathcal{C}$ $\sigma$-Algebren bzgl. $\Omega,\vartheta,\Lambda$. Sei $X\colon\Omega\to\vartheta$ $mathcal{A}$-$\mathcal{B}$-messbar, $Y\colon\vartheta\to\Lambda$ $\mathcal{B}$-$\mathcal{C}$ messbar. Dann ist $Z:=Y\cdot X\colon\Omega\to\Lambda$ $\mathcal{A}$-$\mathcal{C}$-messbar.
+\subsubsection{Beweis}
+Z.z.: $Z^{-1}(A)\in\mathcal{A}\ \forall A\in\mathcal{C}$.
+\[Z^{-1}(A)=\ubr{X^{-1}(\obr{Y^{-1}(A)}{$\in\mathcal{B}$, da $Y$ messbar})}{$\in\mathcal{A}$}.\]
+\subsubsection{Satz}
+Seien $X,Y\colon\Omega\to\RR$ $\mathcal{A}$-$\mathcal{B}_\RR$ messbar. Dann ist $X+Y$ ebenfalls $\mathcal{A}$-$\mathcal{B}_\RR$ messbar.
+\subsubsection{Beweis}
+Wegen des Korollars gilt es zu zeigen:
+\[(X+Y)^{-1}(]-\infty,a[)\in\mathcal{A},\ \forall a\in\RR.\]
+Betrachte dazu:
+\[\ubr{\bigcup_{b\in\QQ}\ubr{X^{-1}(\obr{]-\infty,b[}{$\in\mathcal{B}_\RR$})}{$\in\mathcal{A}$}\ \cap\ \ubr{Y^{-1}(\obr{]-\infty,a-b[}{$\in\mathcal{B}_\RR$})}{$\in\mathcal{A}$}}{$\in\mathcal{A}$}.\]
+Wir zeigen nun, dass
+\[(X+Y)^{-1}(]-\infty,a[)=\bigcup_{b\in\QQ}X^{-1}(]-\infty,b[)\ \cap\ Y^{-1}(]-\infty,a-b).\]
+\bul{
+\item ``$\subset$'': Sei $\omega\in(X+Y)^{-1}(]-\infty,a[)\LRA(X+Y)(\omega)<a$. Sei $b\in\QQ$ mit $b\in]X(\omega),X(\omega)+\mathcal{\varepsilon}{2}[$. $\RA X(\omega)<b$ und $Y(\omega)+b<X(\omega)+Y(\omega)+\frac{\varepsilon}{2}<a\RA Y(\omega)<a-b$.
+\item ``$\supset$'': Sei $\omega\in\ldots\RA\exists b$, sodass $X(\omega)<b$ und $Y(\omega)<a-b\RA(X+Y)(\omega)<a$.
+}
