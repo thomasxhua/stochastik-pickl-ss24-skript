@@ -1,0 +1,84 @@
+\pickl{03.06.2024}
+\subsubsection{Definition (Normalverteilung)}
+Eine Zuffalsgr\"o\ss{}e $X$ mit der Wahrscheinlichkeitsdichte
+\[\rho(x):=Ce^{-\frac{(x-\mu)^2}{2\sigma^{2}}},\]
+f\"ur die Parameter $\mu\in\RR$, $\sigma\in\RR_0^+$ und $C$, sodass $\int_{-\infty}^{\infty}\rho(x)\,dx=1$ nennt man \trt{normalverteilt}.
+\\~\\
+Erinnerung: $\PP(X\in[a,b])=\int_a^b\rho(x)\,dx$.
+\subsubsection{Bestimmung von $C$}
+\meq{
+    &\int_{-\infty}^{\infty}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\,dx
+    =\int_{-\infty}^{\infty}e^{-\frac{x^2}{2\sigma^2}}\,dx
+    \\\textabove{$y=\frac{x}{\sigma}$}{=}\ &\sigma\int_{-\infty}{\infty}e^{-\frac{y^2}{2}}\,dy
+    \\\textabove{$(*)$}{=}\ &\sigma\cdot\sqrt{2\pi}
+}
+$(*)$:
+\meq{
+    &\left(\int_{-\infty}{\infty}e^{-\frac{y^2}{2}}\,dy\right)^2=\int\int e^{-\frac{y^2}{2}}\,dy\ e^{-\frac{z^2}{2}}\,dz
+    \\=\ &\int\int e^{-\frac{y^2+z^2}{2}}\,dydz
+    \\\textabove{Polarkoord.}{=}\ &\int_{0}^{\infty}2r\pi\cdot e^{-\frac{r^2}{2}}\,dr
+    \\=\ &2\pi[\ \ubr{-e^{-\frac{r^2}{2}}}{$\prime=re^{\frac{r^2}{2}}$}\ ]_0^\infty
+    \\=\ &2\pi(0-(-1))=2\pi\cdot1
+}
+\section{Invarianzen}
+\subsection{Erwartungswert}
+Wir denken an ein Gl\"uckspiel mit Geldeinsatz, welches wir h\"aufig und unbh\"angig wiederholen. Welchen Gewinn/Verlust erwarten wir im Mittel zu erreichen?
+\subsubsection{Definition (Erwartungswert diskret)}
+Sei $X\colon\Omega\to\RR$ eine Zufallsgr\"o\ss{}e. $|X(\Omega)|$ sei endlich. Dann ist
+\[\mathbb{E}(x):=\sum_{a\in X(\Omega)}a\cdot\PP(X=a)\]
+der \trt{Erwartungswert} von $X$.
+\subsubsection{Bemerkung}
+Die Definition kann auf abz\"ahlbare Mengen direkt erweitert werden. Hier kann es passieren, dass $\mathbb{E}$ nicht existiert. Beipsiel:
+\[\PP(X=a)=\frac{C}{a^2},\ a\in\NN.\]
+F\"ur das Beispiel w\"are $\mathbb{E}(X)=+\infty$, f\"ur andere Beispiele schl\"agt auch diese ``uneigentliche'' Definition fehl.
+\subsubsection{Satz}
+Falls $\Omega$ endlich ist, gilt:
+\[\mathbb{E}(x)=\sum_{\omega\in\Omega}X(\omega)\cdot\PP(\{\omega\}).\]
+\subsubsection{Beispiel}
+Man wirft einen W\"urfel
+\[X(1)=-1,\ X(2)=-1,\ X(3)=-1,\ X(4)=-1,\ X(5)=0,\ X(6)=3.\]
+Also ist
+\[\mathbb{E}(x)=-1\cdot\frac{1}{6}+\ldots3\cdot\frac{1}{6}=(-1)\cdot(\frac{4}{6})+0\cdot\frac{1}{6}+3\cdot\frac{1}{6}\]
+\subsubsection{Beweis}
+Distributivgesetz:
+\[\mathbb{E}=-\int_{-\infty}^{0}V_X(a)\,da+\int_0^\infty1-V_X(a)\,da.\]
+\subsubsection{Bemerkung}
+Letztere Formel l\"asst uns den Begriff Erwartungswert verallgemeiner. Sowohl der positive als auch der negative Teil existieren immer (zumindest uneigentlich). Einziges m\"ogliches Problem: ``$+\infty\ +\ -\infty$''.
+\\~\\
+Eine andere M\"oglichkeit besteht mithilfe des Lebesgue-Integrals:
+\[\mathbb{E}(x)=\int_{-\infty}^{\infty}x\,d\widetilde{\PP}.\]
+Man integriert bzgl. des Ma\ss{}es $\widetilde{\PP}=\PP\cdot X^{-1}$.
+\subsubsection{Satz}
+F\"ur stetig verteilte Zufallsvariablen $X$, d.h. solch, die eine Dichte besitzen, ist
+\[\mathbb{E}(X)=\int x\rho(x)\,dx.\]
+\subsubsection{Beweis}
+Lassen wir weg.
+\subsubsection{Satz}
+Der Erwartungswert ist lienar, d.h. gegeben $X,Y\colon\Omega\to\RR$ Zufallsvariablen, $a\in\RR$:
+\[\mathbb{E}(aX+Y)=a\mathbb{E}(X)+\mathbb{E}(Y),\]
+falls $\mathbb{E}(X)$ und $\mathbb{E}(Y)$ existieren.
+\subsubsection{Beweis}
+\abc{
+\item diskret:
+\meq{
+\mathbb{E}(X+aY)&=\sum_{\mathclap{z\in(X+aY)(\Omega)}}z\PP(X+aY=z)\\
+\text{(falls $|\Omega|<\infty$)}\ &=\sum_{\omega\in\Omega}(X+aY)(\omega)\cdot\PP(\{\omega\})\\
+&=\sum_{\omega\in\Omega}(X(\omega)+aY(\omega))(\omega)\cdot\PP(\{\omega\})\\
+&=\mathbb{E}(X)+a\mathbb{E}(Y)
+}
+\item Im stetigen Fall kann man $\rho$ als Treppenstufenfunktion approximieren und die Linearit\"at folgt mit a).
+}
+\subsubsection{Bemerkung}
+Die Formel $\mathbb{E}(X\cdot Y)=\mathbb{E}(X)\cdot\mathbb{E}(Y)$ gilt im Allgemeinen \tul{nicht}. Beispiel: $X=1$, falls $\omega=$ Zahl, $X=0$ sonst, $Y=X$.
+\subsubsection{Definition (fast sicher)}
+Ein Ereignis $A$ hei\ss{}t ``\trt{fast sicher}'', falls $\PP(A)=1$.
+\subsubsection{Satz}
+\abc{
+\item Falls $X=Y$ fast sicher, so ist $\mathbb{E}(X)=\mathbb{E}(Y)$.
+\item Sei $X\equiv\mu\in\RR$, so ist $\mathbb{E}(X)=\mu$.
+}
+\subsubsection{Beweis}
+\abc{
+\item $\mathbb{E}(X-Y)$ ist fast sicher $=0\RA\mathbb{E}(X-Y)=0$,
+\item klar.
+}
