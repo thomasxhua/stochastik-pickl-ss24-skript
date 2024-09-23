@@ -1,0 +1,105 @@
+\pickl{27.05.2024}
+\subsubsection{Beweis}
+\abc{
+\item $\lim_{a\to\infty}V_X(a)=\lim_{a\to\infty}\mathbb{P}(X\leq a)$. Betrachte Folge $a_n=n$.
+\[
+\lim_{n\to\infty}\{X\leq a_n\}=\{X\in\mathbb{R}\}.
+\]
+$\lim_{n\to\infty}\mathbb{P}(X\leq a_n)=\mathbb{P}(\lim_{n\to\infty}X\leq a_n)=1$. Dies reicht aus wegen b). Der zweite Teil geht analog. Betrachte $\{X\leq a_n\}$ f\"ur $a_n=-n$.
+\[
+\lim_{n\to\infty}\mathbb{P}(X\leq a_n)=\mathbb{P}(\lim_{n\to\infty}X\leq a_n)=\mathbb{P}(\emptyset)=0.
+\]
+\item Sei $a\leq b$.
+\meq{
+V_X(b)&=\mathbb{P}(X\leq b)=\mathbb{P}(X\leq a\cap X\in\ ]a,b])\\
+&=\ubr{\mathbb{P}(X\leq a)}{$V_X(a)$}+\ubr{\mathbb{P}(X\in\ ]a,b])}{$\geq0$}
+}
+$\RA V_X(b)\geq V_X(a)$.
+\item Sei $(h_n)_{n\in\mathbb{N}}$ eine positive Nullfolge. (Rechtsseitig stetig: F\"ur alle solchen $(h_n)_{n\to\mathbb{N}}$ gilt: $\lim_{n\to\infty}V_X(a+h_n)=V_X(a)$.) Sei zun\"achst $h_n$ monoton fallend.
+\meq{
+\lim_{n\to\infty}V_X(a+h_n)&=\lim_{n\to\infty}\mathbb{P}(X\leq a+h_n)\ubr{=}{monoton fallend}\mathbb{P}(\lim_{n\to\infty}X\leq a+h_n)\\
+&=\mathbb{P}(\bigcap_{n\to\mathbb{N}}X\leq a+h_n)=\mathbb{P}(X\leq a).
+}
+F\"ur allgemeines $h_n$ betrachte $a_n:=\sup_{k\geq n}h_k$, die $a_n$ sind fallend und $a_n\geq h_n\ \forall n\in\mathbb{N}$.
+\meq{
+\lim_{n\to\infty}V_X(a+a_n)&=V_X\\
+V_X(a+a_n)\geq V_X(a+h_n)&\geq V_X(a),\ \text{wegen Monotonie von $V$.}
+}
+\item Sei $n\in\mathbb{N}$. Frage: Wie viele Sprungstellen hat $V_X$ mit H\"ohe $geq\frac{1}{n}$? Wegen a), Antwort: h\"ochstens $n$.
+\\~\\
+Die Menge aller Sprungstellen ist:
+\[
+\bigcup_{n\to\mathbb{N}}\{x\in\mathbb{R}\colon\text{Sprungh\"ohe ist}\geq\frac{1}{n}\}.
+\]
+Diese ist als abz\"ahlbare Vereinigung abz\"ahlbarer Mengen abz\"ahlbar.
+}
+\subsubsection{Beispiel}
+Wir werfen zun\"achst eine M\"unze, danach werfen wir einen Pfeil auf eine Dartscheibe:
+\[
+\Omega=\{K,Z\}\times\{\omega\in B_0(1)\}.
+\]
+Sei $X$ Zufallsvariable definiert durch
+\[
+X((a,\omega)):=
+\begin{cases}
+\frac{1}{2}&\text{falls }a=K,\\
+|\omega|&\text{falls }a=Z.
+\end{cases}
+\]
+$b<\frac{1}{2}$:
+\[
+V_X(b)=\mathbb{P}(X\leq b)=\mathbb{P}(a=Z\text{ und }|\omega|\leq b)=\frac{1}{2}\cdot b^2.
+\]
+$b=\frac{1}{2}$:
+\meq{
+V_X(\frac{1}{2})&=\mathbb{P}(a=K\text{ oder }(a=Z\text{ und }|\omega|\leq\frac{1}{2}))\\
+&=\frac{1}{2}+\frac{1}{2}\frac{1}{4}=\frac{5}{8}.
+}
+$b>\frac{1}{2}$:
+\[
+V_X(b)=\mathbb{P}(a=K\text{ oder }(a=Z\text{ und }|\omega|\leq b))=\frac{1}{2}+\frac{1}{2}\cdot b^2.
+\]
+\subsection{Besondere Verteilungen}
+\subsubsection{Binomialverteilung}
+$n$-facher M\"unzwurf (Unabh\"angigkeit vorausgesetzt). Man untersucht die H\"aufigkeit von ``Kopf'' (bzw. Zahl).
+\[
+\mathbb{P}(k-\text{mal Kopf})=\neo{n\\k}p^kq^{n-k}
+\]
+mit $p=$Wahrscheinlichkeit f\"ur ``Kopf'' bei einem Wurf, $q=1-p$.
+\subsubsection{Definition (binomialverteilt)}
+Sei $X$ eine Zufallsgr\"o\ss{}e $\Omega\to\{0,1,\ldots,n\}$. $X$ hei\ss{}t \trt{binomialverteilt}, falls
+\[
+\mathbb{P}(X=k)=\neo{n\\k}p^k(1-p)^{n-k}
+\]
+mit Parameter $p$. $\mathbb{P}$ erf\"ullt die Axiome von Kolmogoroff (siehe Satz):
+\abc{
+\item Elementarwahrscheinlichkeit nicht negativ:
+\[
+\sum_{k=0}^n\mathbb{P}(X=k)\textabove{?}{=}1=(p+q)^n=\sum_{k=0}^np^kq^{n-k}\neo{n\\k}.
+\]
+}
+\subsubsection{Poisson-Verteilung}
+Wir betrachten obigen Fall f\"ur sehr kleines $p$, jedoch $n$ so gro\ss{}, dass wir ``Treffer'' erwarten k\"onnen. Wir setzen $p\cdot n=\lambda$ und betrachten sehr kleine $p$ bzw. gro\ss{}e $n$.
+\\~\\
+Wir nutzen folgende Formel:
+\meq{
+(1-\frac{\lambda}{n})^n&\textabove{?}{\approx} e^{-\lambda},\ \text{f\"ur }n\gg1\\
+\LRA n\cdot\log(1-\frac{\lambda}{n})&\textabove{?}{\approx}-\lambda\\
+}
+Lineare Approximation: $f(x+\varepsilon)\approx f(x)+f^\prime(x)\cdot\varepsilon$,
+\[
+\RA n\cdot1\cdot\frac{-\lambda}{n}=-\lambda.
+\]
+\meq{
+\mathbb{P}(k\text{ Treffer})&=\neo{n\\k}\cdot\left(\frac{\lambda}{n}\right)^k\cdot\left(1-\frac{\lambda}{n}\right)^{n-k}\\
+&\approx\frac{\cancel{n!}}{k!\cancel{(n-k)!}}\cdot\frac{\lambda^k}{\cancel{n^k}}\left(1-\frac{\lambda}{n}\right)^n\\
+&\approx\frac{\lambda^2}{k!}e^{-\lambda}.
+}
+\subsubsection{Definition (Poisson-verteilt)}
+Falls
+\[\mathbb{P}(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},\]
+nennt man $X$ Poisson-verteilt. Sie gibt Bernoulli-Situationen, d.h. unabh\"angige $0$-$1$-Fragen, wie oben, f\"ur sehr unwahrscheinliche Ereignisse bei hoher ``Strichprobe'' wieder. Da
+\[
+\sum_{k=0}^\infty\frac{\lambda^k}{k!}e^{-\lambda}=e^{-\lambda}\sum_{k=0}^\infty\frac{\lambda^k}{k!}=e^{-\lambda}a^{\lambda}=1,
+\]
+wird so in der Tat ein Wahrscheinlichkeitsma\ss{} definiert.
