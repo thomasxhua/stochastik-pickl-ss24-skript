@@ -1,0 +1,69 @@
+\abc{
+\item Binomialverteilung: Parameter: $p,n$:
+\[
+\mathbb{P}(X=k)=\neo{n\\k}p^kq^{n-k}(q=1-p).
+\]
+\begin{align*}
+\mathbb{E}(X)&=\sum_{k=0}^n k\neo{n\\k}p^kq^{n-k}=\sum_{k=0}^n\frac{n!}{k!(n-k)!}p^kq^{n-k}\\
+&=\sum_{k=1}^{n}n\cdot\ubr{\frac{\cdot(n-1)!}{(k-1)!(n-k)!}}{$\sum\neo{n-1\\k-1}p^{k-1}q^{n-1}=1$}p\cdot\ubr{p^{k-1}q^{n-k}}{$\leftarrow$}\\
+&=n\cdot p.
+\end{align*}
+\pickl{13.06.2024}
+\[
+\Var X=\mathbb{E}(X^2)-\mathbb{E}(X)^2
+\]
+Betrachte zuerst
+\begin{align*}
+\mathbb{E}(X\cdot(X-1))&=\sum_{k=0}^nk(k-1)\begin{pmatrix}n\\k\end{pmatrix}p^kq^{n-k}\\
+&=\sum_{k=2}^n\frac{k\cdot (k-1)\cdot n!}{k!(n-k)!}p^kq^{n-k}\\
+&=p^2\cdot\sum_{k=2}^n\frac{n!}{(k-2)!(n-k)!}p^{k-2}q^{n-k}\\
+&=p^2\cdot n(n-1)\cdot\sum_{k=2}^n\frac{(n-2)!}{(k-2)!(n-k)!}p^{k-2}q^{n-k}\\
+\end{align*}
+Sei $\tilde{k}=k-2$, $\tilde{n}=n-2$.
+\begin{align*}
+&=p^2\cdot n(n-1)\cdot\obr{\sum_{\tilde{k}=0}^{\tilde{n}}\frac{(\tilde{n})!}{(\tilde{k})!(\tilde{n}-\tilde{k})!}p^{\tilde{k}}q^{\tilde{n}-\tilde{k}}}{$=1$}\\
+\Rightarrow\mathbb{E}(X(X-1))&=p^2n(n-1).
+\end{align*}
+\begin{align*}
+\Var X&=\mathbb{E}(X^2)-\mathbb{E}(X)^2\\
+&=\mathbb{E}(X(X-1))+\mathbb{E}(X)-\mathbb{E}(X)^2\\
+&=p^2n(n-1)+np-n^2p^2\\
+&=p^2n^2-p^2n+np-n^2p^2\\
+&=pn(1-p)\\
+&=n\cdot pq.
+\end{align*}
+\item Normalverteilung: $\varrho(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$.
+\begin{align*}
+\mathbb{E}(X)
+&=\int_{-\infty}^{\infty}\frac{1}{\sigma\sqrt{2\pi}}xe^{-\frac{(x-\mu)^2}{2\sigma^2}}dx\\
+&=\int_{-\infty}^{\infty}\frac{1}{\sigma\sqrt{2\pi}}(x-\mu)e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx
++\int_{-\infty}^{\infty}\frac{1}{\sigma\sqrt{2\pi}}\mu e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx\\
+&=\ubr{\left[\frac{1}{\sigma\sqrt{2\pi}}\sigma^2e^{-\frac{(x-\mu)^2}{2\sigma^2}}\right]_{-\infty}^\infty}{$=0$}
++\mu\cdot\obr{1}{Normiertheit von $\varrho$}.
+\end{align*}
+\begin{align*}
+\Var X&=\mathbb{E}((X-\mu)^2)=\int(x-\mu)^2\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx\\
+&\textabove{$x-\mu=y$}{=}\ \ \int y^2\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{y^2}{2\sigma^2}}dy\\
+&=\int \ubr{e^{-\frac{y^2}{2\sigma^2}}\left(\frac{-y}{\sigma^2}\right)}{Stammfunktion $e^{-\frac{y^2}{2\sigma^2}}$}\cdot(-y)\sigma^2\frac{1}{\sigma\sqrt{2\pi}}dy\\
+\end{align*}
+Erinnerung partielle Integration: $\int_a^bfgdx=-\int_a^bFg'dx+[Fg]_a^b$
+\begin{align*}
+&=-\int e^{-\frac{y^2}{2\sigma^2}}(-\sigma^2\frac{1}{\sigma\sqrt{2\pi}})dy
++\ubr{\left[e^{-\frac{y^2}{2\sigma^2}}(-y)\sigma\frac{1}{\sigma\sqrt{2\pi}}\right]_{-\infty}^\infty}{$=0$}\\
+&=\sigma^2\ubr{\int\frac{1}{\sqrt{2\pi}}e^{-\frac{y^2}{2\sigma^2}}dy}{$=1$}\\
+&=\sigma^2.
+\end{align*}
+}
+\subsection{Korrelationen}
+\subsubsection{Definition (Korrelation)}
+Zwei Zufallsvariablen $X,Y$ hei\ss{}en \trt{unkorreliert} $:\LRA$
+\[
+\Var(X+Y)=\Var X+\Var Y.
+\]
+\subsubsection{Bemerkung}
+\begin{align*}
+V(X+Y)&=\Var X+\Var Y\\
+\LRA\mathbb{E}((X+Y)^2)-\mathbb{E}(X+Y)^2&=\mathbb{E}(X^2)-\mathbb{E}(X)^2+\mathbb{E}(Y^2)-\mathbb{E}(Y)^2\\
+\LRA\mathbb{E}(X^2)+2\mathbb{E}(XY)+\mathbb{E}(Y^2)-\mathbb{E}(X)^2-2\mathbb{E}(X)\mathbb{E}(Y)-\mathbb{E}^2&=\mathbb{E}(X^2)-\mathbb{E}(X)^2+\mathbb{E}(Y^2)-\mathbb{E}(Y)^2\\
+\LRA\mathbb{E}(XY)&=\mathbb{E}(X)\mathbb{E}(Y)=0.
+\end{align*}

@@ -58,21 +58,4 @@ die \trt{Standardabweichung} von $X$.
 \subsubsection{Bemerkung}
 $\sigma$ misst das ``Risiko'' in den selben Einheiten wie $X$ und $\mu$.
 \subsubsection{Beispiele}
-\abc{
-\item Binomialverteilung: Parameter: $p,n$:
-\[
-\mathbb{P}(X=k)=\neo{n\\k}p^kq^{n-k}(q=1-p).
-\]
-\meq{
-\mathbb{E}(X)&=\sum_{k=0}^n k\neo{n\\k}p^kq^{n-k}=\sum_{k=0}^n\frac{n!}{k!(n-k)!}p^kq^{n-k}\\
-&=\sum_{k=1}^{n}n\cdot\ubr{\frac{\cdot(n-1)!}{(k-1)!(n-k)!}}{$\sum\neo{n-1\\k-1}p^{k-1}q^{n-1}=1$}p\cdot\ubr{p^{k-1}q^{n-k}}{$\leftarrow$}\\
-&=n\cdot p.
-}
-$\Omega=\{0,\ldots,n\}$.
-\meq{
-\Var X&=\sum_{k=0}^n(k-\mu)^2\neo{n\\k}p^kq^{n-k}\\
-\Var X&=\mathbb{E}(\ubr{(X-\mu)^2}{$y$})=\sum_{\omega}y(\omega)\ubr{\mathbb{P}(\{\omega\})}{}\\
-&=
-}
-}
-
+% Rest in 20240613.tex

@@ -5,16 +5,16 @@ Die durch Zufallsvariablen bestimmten Ereignisse schreibt man oft in kurzer Form
 \item $X\leq 5$ beschreibt $\{\omega\in\Omega\colon X(\omega)\leq5\}$.
 \item $X\in B$ f\"ur $B\in\mathcal{B}$, $\{\omega\in\Omega\colon X(\omega)\in B\}$.
 \item $X\leq Y\cdot2+7$, $\{\omega\in\Omega\colon X(\omega)\in2Y(\omega)+7\}$.
-\item $\PP(X\leq5)=\PP(\{\omega\ldots\})$.
+\item $\mathbb{P}(X\leq5)=\mathbb{P}(\{\omega\ldots\})$.
 }
 \subsection{Unabh\"angigkeit}
 \subsubsection{Definition (Unabh\"angigkeit von Zufallsgr\"o\ss{}en)}
 Zwei reelle Zufallsvariablen $X,Y$ hei\ss{}en \trt{unabh\"angig} $:\LRA$
-\[\forall B_1,B_2\in\mathcal{B}_\RR\colon X\in B_1\ \text{ist unabh\"angig von}\ Y\in B_2.\]
+\[\forall B_1,B_2\in\mathcal{B}_\mathbb{R}\colon X\in B_1\ \text{ist unabh\"angig von}\ Y\in B_2.\]
 \subsubsection{Bemerkung}
-Es reicht, wenn $B_1,B_2\in\mathcal{E}$ f\"ur einen Erzeuger $\mathcal{E}$ von $\mathcal{B}_\RR$ unabh\"angige Ereignisse $X\in B_1$ und $Y\in B_2$ ergeben.
+Es reicht, wenn $B_1,B_2\in\mathcal{E}$ f\"ur einen Erzeuger $\mathcal{E}$ von $\mathcal{B}_\mathbb{R}$ unabh\"angige Ereignisse $X\in B_1$ und $Y\in B_2$ ergeben.
 \subsubsection{Beispiel}
-Seien $X,Y\colon\Omega\to\{0,1\}$ $\mathcal{A}$-$\mathcal{B}_\RR$-messbar.
+Seien $X,Y\colon\Omega\to\{0,1\}$ $\mathcal{A}$-$\mathcal{B}_\mathbb{R}$-messbar.
 \begin{center}
 \begin{tabular}{c|c|c|c}
 $x/y$&$0$&$1$&~\\
@@ -31,34 +31,34 @@ $A$ undba\"angig von $B\RA A$ unabh\"angig von $B^C$.
 Sei $(A_i)_{i\in\mathcal{I}}$ Ereignisse.
 \abc{
 \item Die $(A_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{paarweise unabh\"angig} $:\LRA A_j$ unabh\"angig von $A_k$, $\forall j\neq k\in\mathcal{I}$,
-\item die $(A_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{unabh\"angig} $:\LRA\forall\mathcal{J}\subset\mathcal{I}$ ist $\PP(\bigcap_{j\in\mathcal{J}}A_j)=\prod_{j\in\mathcal{J}}\PP(A_j)$ ($J$ ist abz\"ahlbar).
+\item die $(A_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{unabh\"angig} $:\LRA\forall\mathcal{J}\subset\mathcal{I}$ ist $\mathbb{P}(\bigcap_{j\in\mathcal{J}}A_j)=\prod_{j\in\mathcal{J}}\mathbb{P}(A_j)$ ($J$ ist abz\"ahlbar).
 }
 \subsubsection{Definition (paarweise Unabh\"angigkeit von Zufallsvariablen)}
 Seien $(X_i)_{i\in\mathcal{I}}$ Zufallsvariablen.
 \abc{
 \item Die $(X_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{paarweise unabh\"angig} $:\LRA X_j,X_k$ unabh\"angig $\forall j\neq k\in\mathcal{I}$,
-\item die $(X_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{unabh\"angig} $:\LRA\forall\mathcal{J}\subset\mathcal{I}$ abz\"ahlbar und $\forall(B_j)_{j\in\mathcal{J}}\subset\mathcal{B}_\RR$ gilt $\PP(\bigcap_{j\in\mathcal{J}}X_j\in B_j)=\prod_{i\in\mathcal{J}}\PP(X_j\in B_j)$.
+\item die $(X_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{unabh\"angig} $:\LRA\forall\mathcal{J}\subset\mathcal{I}$ abz\"ahlbar und $\forall(B_j)_{j\in\mathcal{J}}\subset\mathcal{B}_\mathbb{R}$ gilt $\mathbb{P}(\bigcap_{j\in\mathcal{J}}X_j\in B_j)=\prod_{i\in\mathcal{J}}\mathbb{P}(X_j\in B_j)$.
 }
 \subsubsection{Bemerkung}
 Bei den Anwendungen werden wir meist Situationen betrachten, bei denen a priori klar ist, dass die Zufallsvariablen unabh\"angig sind (\trt{kausale Unabh\"angigkeit}).
 \subsubsection{Beispiel}
 Seien $X,Y\colon\Omega\to\{0,1\}$ unabh\"angige Zufallsvariablen. Sei
 \[Z:=\begin{cases}Z(\omega)=1&\text{falls}\ X(\omega)+Y(\omega)\ \text{ungerade},\\Z(\omega)=0&\text{sonst.}\end{cases}\]
-Annahme: $\PP(X=1)=\frac{1}{2},\ \PP(Y=1)=\frac{1}{2}$.\\
+Annahme: $\mathbb{P}(X=1)=\frac{1}{2},\ \mathbb{P}(Y=1)=\frac{1}{2}$.\\
 \bul{
-\item $\PP(Z=1)=\frac{1}{2}$,
-\item $\PP(X=1\ \text{und}\ Z=1)=\PP(X=1\ \text{und}\ Y=0)=\frac{1}{4}$.
+\item $\mathbb{P}(Z=1)=\frac{1}{2}$,
+\item $\mathbb{P}(X=1\ \text{und}\ Z=1)=\mathbb{P}(X=1\ \text{und}\ Y=0)=\frac{1}{4}$.
 }
 Nach obiger Vierfeldertafel reicht dies f\"ur die Unabh\"angigkeit von $X$ und $Z$. Die Unabh\"angigkeit von $Y$ und $Z$ ist analog. F\"ur Unabh\"angigkeit m\"usste (u.a.) gelten
-\[0=\PP(X=1\ \text{und}\ Y=1\ \text{und}\ Z=1)\textabove{?}{=}\PP(X=1)\cdot\PP(Y=1)\cdot\PP(Z=1)=\frac{1}{8}\ \lightning.\]
+\[0=\mathbb{P}(X=1\ \text{und}\ Y=1\ \text{und}\ Z=1)\textabove{?}{=}\mathbb{P}(X=1)\cdot\mathbb{P}(Y=1)\cdot\mathbb{P}(Z=1)=\frac{1}{8}\ \lightning.\]
 \subsection{Verteilungsfunktion}
 Wir betrachten beliebige reelle Zufallsvariablen, d.h.
-\[(\Omega,\mathcal{A},\PP)\to(\RR,\mathcal{B}_\RR,\QQ=\PP\cdot X^{-1}).\]
-Wegen des Eindeutigkeitssatzes ist dieses $\QQ$ durch $\PP(X\leq a)\ \forall a\in\RR$ eindeutig! Letzteres ist eine Funktion in der Variable $a$. Diese nennt man \trt{Verteilungsfunktion}.
+\[(\Omega,\mathcal{A},\mathbb{P})\to(\mathbb{R},\mathcal{B}_\mathbb{R},\mathbb{Q}=\mathbb{P}\cdot X^{-1}).\]
+Wegen des Eindeutigkeitssatzes ist dieses $\mathbb{Q}$ durch $\mathbb{P}(X\leq a)\ \forall a\in\mathbb{R}$ eindeutig! Letzteres ist eine Funktion in der Variable $a$. Diese nennt man \trt{Verteilungsfunktion}.
 \subsubsection{Definition (Verteilungsfunktion)}
-$X\colon\Omega\to\RR$ Zufallsvariablen.
-\[V_X\colon\RR\to[0,1]\]
-gegeben durch $V_X(a)=\PP(X\leq a)$ nennt man die zu $X$ geh\"orige \trt{Verteilungsfunktion}.
+$X\colon\Omega\to\mathbb{R}$ Zufallsvariablen.
+\[V_X\colon\mathbb{R}\to[0,1]\]
+gegeben durch $V_X(a)=\mathbb{P}(X\leq a)$ nennt man die zu $X$ geh\"orige \trt{Verteilungsfunktion}.
 \subsubsection{Satz}
 Jede Verteilungsfunktion $V_X$ hat folgende Eigenschaften.
 \abc{
@@ -68,4 +68,20 @@ Jede Verteilungsfunktion $V_X$ hat folgende Eigenschaften.
 \item $V_X$ hat h\"ochstens abz\"ahlbar viele Sprungstellen.
 }
 \subsubsection{Beispiel}
-\weg
+\abc{
+\item $X$ ist Augenzahl eines fairen W\"urfels.
+\item $\mathbb{P}\circ X^{-1}$ habe die Dichte
+\[
+\rho(x)=
+\begin{cases}
+    1&\text{falls }x\in\ [-\frac{1}{2},\frac{1}{2}],\\
+    0&\text{sonst.}
+\end{cases}
+\]
+}
+\subsubsection{Definition (Wahrscheinlichkeitsdichte)}
+Sei $X$ Zufallsvariable, $B\in\mathcal{B}$. Dann nennt man $\rho\colon\mathbb{R}\to\mathbb{R}$ mit
+\[
+    \mathbb{P}(X\in B)=\int_{B}\rho(x)dx
+\]
+eine \trt{Wahrscheinlichkeitsdichte} von $X$.

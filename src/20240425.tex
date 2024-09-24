@@ -1,39 +1,43 @@
 \pickl{25.04.2024}
-\subsubsection{Defintiion (Borel-$\sigma$-Algebra)}
-Sei $\Omega=\RR$. Die von den offenen Teilmengen von $\RR$ erzeugte $\sigma$-Algebra hei\ss{}t \trt{Borel-$\sigma$-Algebra}. (alternative Definiton sp\"ater)
+\subsubsection{Defintion (Borel-$\sigma$-Algebra)}
+Sei $\Omega=\mathbb{R}$. Die von den offenen Teilmengen von $\mathbb{R}$ erzeugte $\sigma$-Algebra hei\ss{}t \trt{Borel-$\sigma$-Algebra}. (alternative Definiton sp\"ater)
 \subsection{Wahrscheinlichkeitsma\ss{}}
 \subsubsection{Definition (Wahrscheinlichkeitsma\ss{})}
-Sei $\Omega$ eine Menge, $\mathcal{A}$ $\sigma$-Algebra. Eine Abbildung $\PP\colon\mathcal{A}\to\RR$ hei\ss{}t \trt{Wahrscheinlichkeitsma\ss{}} $:\LRA$
+Sei $\Omega$ eine Menge, $\mathcal{A}$ $\sigma$-Algebra. Eine Abbildung $\mathbb{P}\colon\mathcal{A}\to\mathbb{R}$ hei\ss{}t \trt{Wahrscheinlichkeitsma\ss{}} $:\LRA$
 \abc{
-\item $\PP(\Omega)=1$,
-\item $\PP(A)\geq0,\ \forall A\in\mathcal{A}$,
-\item $\PP(\bigcup_{n=1}^\infty A_n)=\sum_{n=1}^\infty\PP(A_n)$, falls $A_n\in\mathcal{A},\ A_n\cap A_m=\emptyset\ \forall n\neq m$.
+\item $\mathbb{P}(\Omega)=1$,
+\item $\mathbb{P}(A)\geq0,\ \forall A\in\mathcal{A}$,
+\item $\mathbb{P}(\bigcup_{n=1}^\infty A_n)=\sum_{n=1}^\infty\mathbb{P}(A_n)$, falls $A_n\in\mathcal{A},\ A_n\cap A_m=\emptyset\ \forall n\neq m$.
 }
 \subsubsection{Bemerkung}
-Satz vom Gegenereignis, $\PP(\emptyset)=0$ und $\PP(A\cup B)=\PP(A)+\PP(B)-\PP(A\cap B)$ gilt weiterhin.
+Satz vom Gegenereignis, $\mathbb{P}(\emptyset)=0$ und $\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)$ gilt weiterhin.
 \subsubsection{Definition und Satz (Bedingte Wahrscheinlichkeit)}
-Sei $(\Omega,\mathcal{A},\PP)$ ein Wahrscheinlichkeitsraum, d.h. $\Omega$ Menge, $\mathcal{A}$ zugeh\"orige $\sigma$-Algebra, $\PP\colon\AA\to\RR$ Wahrscheinlichkeitsma\ss{}.
+Sei $(\Omega,\mathcal{A},\mathbb{P})$ ein Wahrscheinlichkeitsraum, d.h. $\Omega$ Menge, $\mathcal{A}$ zugeh\"orige $\sigma$-Algebra, $\mathbb{P}\colon\AA\to\mathbb{R}$ Wahrscheinlichkeitsma\ss{}.
 \\~\\
-Sei $A\in\mathcal{A}$ mit $\PP(A)\neq0$. Dann ist das auf $A$ \trt{bedingte Wahrscheinlichkeitsma\ss{}} definiert durch
-\meq{\PP_A(B)=\frac{\PP(A\cap B)}{\PP(A)}.}
+Sei $A\in\mathcal{A}$ mit $\mathbb{P}(A)\neq0$. Dann ist das auf $A$ \trt{bedingte Wahrscheinlichkeitsma\ss{}} definiert durch
+\[
+\mathbb{P}_A(B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(A)}.
+\]
 \subsubsection{Beweis}
 (dass dies ein Wahrscheinlichkeitsma\ss{} ist):
 \abc{
-\item $\PP_A(\Omega)=\frac{\PP(A\cap\Omega)}{\PP(A)}=\frac{\PP(A)}{\PP(A)}=1.$
+\item $\mathbb{P}_A(\Omega)=\frac{\mathbb{P}(A\cap\Omega)}{\mathbb{P}(A)}=\frac{\mathbb{P}(A)}{\mathbb{P}(A)}=1.$
 \item Z\"ahler $\geq0$, Nenner $>0$ $\RA$ Behauptung.
 \item 
-\meq{
-    \PP_A(\bigcup_{n=1}^\infty A_n)&=\frac{\PP(A\ \cap\ \bigcup_{n=1}^\infty A_n)}{\PP(A)}\ (A_n\cap A_m=\emptyset,\ n\neq m)\\
-    &=\frac{\PP(\bigcup_{n=1}^\infty\obr{(A_n\cap A)}{paarweise disjunkt})}{\PP(A)}\\
-    &=\frac{\sum_{n=1}^\infty\PP(A_n\cap A)}{\PP(A)}\\
-    &=\sum_{n=1}^\infty\PP_A(A_n).
-}
+\begin{align*}
+    \mathbb{P}_A(\bigcup_{n=1}^\infty A_n)&=\frac{\mathbb{P}(A\ \cap\ \bigcup_{n=1}^\infty A_n)}{\mathbb{P}(A)}\ (A_n\cap A_m=\emptyset,\ n\neq m)\\
+    &=\frac{\mathbb{P}(\bigcup_{n=1}^\infty\obr{(A_n\cap A)}{paarweise disjunkt})}{\mathbb{P}(A)}\\
+    &=\frac{\sum_{n=1}^\infty\mathbb{P}(A_n\cap A)}{\mathbb{P}(A)}\\
+    &=\sum_{n=1}^\infty\mathbb{P}_A(A_n).
+\end{align*}
 }
 \subsubsection{Definition (Unabh\"angigkeit)}
 Zwei Ereignisse $A,B$ hei\ss{}en (stochastisch) \trt{unab\"angig} $:\LRA$
-\meq{\PP(A\cap B)=\PP(A)\cdot\PP(B)}.
+\[
+\mathbb{P}(A\cap B)=\mathbb{P}(A)\cdot\mathbb{P}(B).
+\]
 \subsubsection{Bemerkung}
-$A$ unabh\"angig von $B$ $\RA$ $\PP_A(B)=\PP(B)$ (falls $\PP(A)\neq0$).
+$A$ unabh\"angig von $B$ $\RA$ $\mathbb{P}_A(B)=\mathbb{P}(B)$ (falls $\mathbb{P}(A)\neq0$).
 \subsubsection{Beispiel}
 $\Omega=\{1,\ldots,6\}$.
 \abc{
@@ -41,34 +45,34 @@ $\Omega=\{1,\ldots,6\}$.
 \item $\widetilde{A}=\{4,5,6\}$ und $B$ wie oben sind nicht unab\"angig.
 }
 \subsubsection{Definition (Limes von Ereignissen)}
-Seien $(A_n)_{n\in\NN}\subset\mathcal{A}$, $(B_n)_{n\in\NN}\subset\mathcal{A}$.
+Seien $(A_n)_{n\in\mathbb{N}}\subset\mathcal{A}$, $(B_n)_{n\in\mathbb{N}}\subset\mathcal{A}$.
 Wir nehmen an:
 \bul{
-\item $A_n\subset A_{n+1},\ \forall n\in\NN$,
-\item $B_n\supset B_{n+1},\ \forall n\in\NN$.
+\item $A_n\subset A_{n+1},\ \forall n\in\mathbb{N}$,
+\item $B_n\supset B_{n+1},\ \forall n\in\mathbb{N}$.
 }
 Dann ist
-\meq{
+\begin{align*}
     \lim_{n\to\infty}A_n&\ :=\bigcup_{n=1}^\infty A_n,\\
     \lim_{n\to\infty}B_n&\ :=\bigcap_{n=1}^\infty B_n.
-}
+\end{align*}
 \subsubsection{Korrolar}
 $\lim_{n\to\infty}A_n$ und $\lim_{n\to\infty}B_n$ sind Ereignisse, falls $A_n$, $B_n$ Ereignisse sind.
 \subsubsection{Beweis}
 Definition der $\sigma$-Algebra, bzw. Satz gleich darunter.
 \subsubsection{Definition ($\limsup$, $\liminf$)}
-Sei $(A_n)_{n\in\NN}\subset\mathcal{A}$ Dann ist
-\meq{
+Sei $(A_n)_{n\in\mathbb{N}}\subset\mathcal{A}$ Dann ist
+\begin{align*}
 \limsup_{n\to\infty}A_n&\ :=\bigcap_{k=1}^\infty\bigcup_{n=k}^\infty A_n,\\
 \liminf_{n\to\infty}A_n&\ :=\bigcup_{k=1}^\infty\bigcap_{n=k}^\infty A_n.
-}
+\end{align*}
 \subsubsection{Korollar}
-Auch $\limsup$ und $\liminf$ sind Ereignisse (falls $A_n\in\mathcal{A}\ \forall n\in\NN$).
+Auch $\limsup$ und $\liminf$ sind Ereignisse (falls $A_n\in\mathcal{A}\ \forall n\in\mathbb{N}$).
 \subsubsection{Satz ($\sigma$-Stetigkeit des Wahrscheinlichkeitsma\ss{}es)}
-Sei $(A_n)_{n\in\NN},(B_n)_{n\in\NN}\subset\mathcal{A}$ eine abfallende bzw. ansteigende Folge von Ereignissen ($A_n\subset A_{n+1},\ B_n\supset B_{n+1},\ \forall n$). Dann ist
+Sei $(A_n)_{n\in\mathbb{N}},(B_n)_{n\in\mathbb{N}}\subset\mathcal{A}$ eine abfallende bzw. ansteigende Folge von Ereignissen ($A_n\subset A_{n+1},\ B_n\supset B_{n+1},\ \forall n$). Dann ist
 \abc{
-\item $\lim_{n\to\infty}\PP(A_n)=\PP(\lim_{n\to\infty}A_n)$,
-\item $\lim_{n\to\infty}\PP(B_n)=\PP(\lim_{n\to\infty}B_n)$.
+\item $\lim_{n\to\infty}\mathbb{P}(A_n)=\mathbb{P}(\lim_{n\to\infty}A_n)$,
+\item $\lim_{n\to\infty}\mathbb{P}(B_n)=\mathbb{P}(\lim_{n\to\infty}B_n)$.
 }
 \subsubsection{Beweis}
 Definiere $C_1:=A_1$. $C_2:=A_1\setminus A_1$, \ldots, $C_n=A_n\setminus A_{n-1}$. Es gilt:
@@ -79,18 +83,18 @@ Definiere $C_1:=A_1$. $C_2:=A_1\setminus A_1$, \ldots, $C_n=A_n\setminus A_{n-1}
 }
 \abc{
 \item
-\meq{
-    \RA\PP(\lim_{\mathclap{n\to\infty}}A_n)&\ \textabove{a)}{=}\PP(\bigcup_{n=1}^\infty C_n)
-    \\&\ \textabove{\tbf{K}c)}{=}\sum_{n=1}^\infty\PP(C_n)
-    \\&\ =\lim_{n\to\infty}\sigma_{k=1}^{n}\PP(C_k)
-    \\&\ \textabove{\tbf{K}c)}{=}\lim_{n\to\infty}\PP(\bigcup_{k=1}^nC_k)
-    \\&\ \textabove{c)}{=}\PP(A_n).
-}
+\begin{align*}
+    \RA\mathbb{P}(\lim_{\mathclap{n\to\infty}}A_n)&\ \textabove{a)}{=}\mathbb{P}(\bigcup_{n=1}^\infty C_n)
+    \\&\ \textabove{\tbf{K}c)}{=}\sum_{n=1}^\infty\mathbb{P}(C_n)
+    \\&\ =\lim_{n\to\infty}\sigma_{k=1}^{n}\mathbb{P}(C_k)
+    \\&\ \textabove{\tbf{K}c)}{=}\lim_{n\to\infty}\mathbb{P}(\bigcup_{k=1}^nC_k)
+    \\&\ \textabove{c)}{=}\mathbb{P}(A_n).
+\end{align*}
 \myqed{}
 \item
-\meq{
-    \PP(\lim_{\mathclap{n\to\infty}}B_n)&\ =1-\PP(\lim_{\mathclap{n\to\infty}}B_n^C)
-    \\&\ \textabove{Fall a)}{=}\ 1-\lim_{n\to\infty}\PP(B_n^C)
-    \\&\ =\lim_{n\to\infty}\PP(B_n).
-}
+\begin{align*}
+    \mathbb{P}(\lim_{\mathclap{n\to\infty}}B_n)&\ =1-\mathbb{P}(\lim_{\mathclap{n\to\infty}}B_n^C)
+    \\&\ \textabove{Fall a)}{=}\ 1-\lim_{n\to\infty}\mathbb{P}(B_n^C)
+    \\&\ =\lim_{n\to\infty}\mathbb{P}(B_n).
+\end{align*}
 }

@@ -10,21 +10,21 @@ $\lim_{n\to\infty}\mathbb{P}(X\leq a_n)=\mathbb{P}(\lim_{n\to\infty}X\leq a_n)=1
 \lim_{n\to\infty}\mathbb{P}(X\leq a_n)=\mathbb{P}(\lim_{n\to\infty}X\leq a_n)=\mathbb{P}(\emptyset)=0.
 \]
 \item Sei $a\leq b$.
-\meq{
+\begin{align*}
 V_X(b)&=\mathbb{P}(X\leq b)=\mathbb{P}(X\leq a\cap X\in\ ]a,b])\\
 &=\ubr{\mathbb{P}(X\leq a)}{$V_X(a)$}+\ubr{\mathbb{P}(X\in\ ]a,b])}{$\geq0$}
-}
+\end{align*}
 $\RA V_X(b)\geq V_X(a)$.
 \item Sei $(h_n)_{n\in\mathbb{N}}$ eine positive Nullfolge. (Rechtsseitig stetig: F\"ur alle solchen $(h_n)_{n\to\mathbb{N}}$ gilt: $\lim_{n\to\infty}V_X(a+h_n)=V_X(a)$.) Sei zun\"achst $h_n$ monoton fallend.
-\meq{
+\begin{align*}
 \lim_{n\to\infty}V_X(a+h_n)&=\lim_{n\to\infty}\mathbb{P}(X\leq a+h_n)\ubr{=}{monoton fallend}\mathbb{P}(\lim_{n\to\infty}X\leq a+h_n)\\
 &=\mathbb{P}(\bigcap_{n\to\mathbb{N}}X\leq a+h_n)=\mathbb{P}(X\leq a).
-}
+\end{align*}
 F\"ur allgemeines $h_n$ betrachte $a_n:=\sup_{k\geq n}h_k$, die $a_n$ sind fallend und $a_n\geq h_n\ \forall n\in\mathbb{N}$.
-\meq{
+\begin{align*}
 \lim_{n\to\infty}V_X(a+a_n)&=V_X\\
 V_X(a+a_n)\geq V_X(a+h_n)&\geq V_X(a),\ \text{wegen Monotonie von $V$.}
-}
+\end{align*}
 \item Sei $n\in\mathbb{N}$. Frage: Wie viele Sprungstellen hat $V_X$ mit H\"ohe $geq\frac{1}{n}$? Wegen a), Antwort: h\"ochstens $n$.
 \\~\\
 Die Menge aller Sprungstellen ist:
@@ -51,10 +51,10 @@ $b<\frac{1}{2}$:
 V_X(b)=\mathbb{P}(X\leq b)=\mathbb{P}(a=Z\text{ und }|\omega|\leq b)=\frac{1}{2}\cdot b^2.
 \]
 $b=\frac{1}{2}$:
-\meq{
+\begin{align*}
 V_X(\frac{1}{2})&=\mathbb{P}(a=K\text{ oder }(a=Z\text{ und }|\omega|\leq\frac{1}{2}))\\
 &=\frac{1}{2}+\frac{1}{2}\frac{1}{4}=\frac{5}{8}.
-}
+\end{align*}
 $b>\frac{1}{2}$:
 \[
 V_X(b)=\mathbb{P}(a=K\text{ oder }(a=Z\text{ und }|\omega|\leq b))=\frac{1}{2}+\frac{1}{2}\cdot b^2.
@@ -63,7 +63,7 @@ V_X(b)=\mathbb{P}(a=K\text{ oder }(a=Z\text{ und }|\omega|\leq b))=\frac{1}{2}+\
 \subsubsection{Binomialverteilung}
 $n$-facher M\"unzwurf (Unabh\"angigkeit vorausgesetzt). Man untersucht die H\"aufigkeit von ``Kopf'' (bzw. Zahl).
 \[
-\mathbb{P}(k-\text{mal Kopf})=\neo{n\\k}p^kq^{n-k}
+\mathbb{P}(k\text{-mal Kopf})=\neo{n\\k}p^kq^{n-k}
 \]
 mit $p=$Wahrscheinlichkeit f\"ur ``Kopf'' bei einem Wurf, $q=1-p$.
 \subsubsection{Definition (binomialverteilt)}
@@ -82,19 +82,19 @@ mit Parameter $p$. $\mathbb{P}$ erf\"ullt die Axiome von Kolmogoroff (siehe Satz
 Wir betrachten obigen Fall f\"ur sehr kleines $p$, jedoch $n$ so gro\ss{}, dass wir ``Treffer'' erwarten k\"onnen. Wir setzen $p\cdot n=\lambda$ und betrachten sehr kleine $p$ bzw. gro\ss{}e $n$.
 \\~\\
 Wir nutzen folgende Formel:
-\meq{
+\begin{align*}
 (1-\frac{\lambda}{n})^n&\textabove{?}{\approx} e^{-\lambda},\ \text{f\"ur }n\gg1\\
 \LRA n\cdot\log(1-\frac{\lambda}{n})&\textabove{?}{\approx}-\lambda\\
-}
+\end{align*}
 Lineare Approximation: $f(x+\varepsilon)\approx f(x)+f^\prime(x)\cdot\varepsilon$,
 \[
 \RA n\cdot1\cdot\frac{-\lambda}{n}=-\lambda.
 \]
-\meq{
+\begin{align*}
 \mathbb{P}(k\text{ Treffer})&=\neo{n\\k}\cdot\left(\frac{\lambda}{n}\right)^k\cdot\left(1-\frac{\lambda}{n}\right)^{n-k}\\
 &\approx\frac{\cancel{n!}}{k!\cancel{(n-k)!}}\cdot\frac{\lambda^k}{\cancel{n^k}}\left(1-\frac{\lambda}{n}\right)^n\\
 &\approx\frac{\lambda^2}{k!}e^{-\lambda}.
-}
+\end{align*}
 \subsubsection{Definition (Poisson-verteilt)}
 Falls
 \[\mathbb{P}(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},\]

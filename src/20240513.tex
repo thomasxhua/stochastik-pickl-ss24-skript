@@ -1,6 +1,6 @@
 \pickl{13.05.2024}
 \subsubsection{Satz}
-$X$ Zufallsvariable $\RA\QQ:=\PP\cdot X^{-1}$ ist Wahrscheinlichkeitsma\ss{}.
+$X$ Zufallsvariable $\RA\mathbb{Q}:=\mathbb{P}\cdot X^{-1}$ ist Wahrscheinlichkeitsma\ss{}.
 \subsubsection{Erinnerung}
 $X^{-1}:=\{\omega\in\Omega\colon X(\omega)\in A\},\ X\colon\Omega\to\vartheta$.
 \subsubsection{Proposition}
@@ -22,10 +22,10 @@ Sei $X\colon\Omega\to\vartheta$ eine Abbildung. $A,B\subset\vartheta$. Dann gilt
 }
 \subsubsection{Beweis des Satzes}
 \abc{
-\item $\QQ(\vartheta):=\PP(X^{-1}=\PP(\Omega)=1$.
-\item Positivit\"at folgt aus b) f\"ur $\PP$.
-\item $\QQ(\bigcup_{j=1}^\infty A_j)$ f\"ur $A_j$ paarweise disjunkt.
-\[=\PP(X^{-1}(\bigcup_{j=1}^\infty A_j))=\PP(\bigcup_{j=1}^\infty\ubr{X^{-1}(A_j)}{paarweise disjunkt e)})=\sum_{j=1}^\infty\PP(X^{-1}(A_j))=\sum_{j=1}^\infty\QQ(A_j).\]
+\item $\mathbb{Q}(\vartheta):=\mathbb{P}(X^{-1}=\mathbb{P}(\Omega)=1$.
+\item Positivit\"at folgt aus b) f\"ur $\mathbb{P}$.
+\item $\mathbb{Q}(\bigcup_{j=1}^\infty A_j)$ f\"ur $A_j$ paarweise disjunkt.
+\[=\mathbb{P}(X^{-1}(\bigcup_{j=1}^\infty A_j))=\mathbb{P}(\bigcup_{j=1}^\infty\ubr{X^{-1}(A_j)}{paarweise disjunkt e)})=\sum_{j=1}^\infty\mathbb{P}(X^{-1}(A_j))=\sum_{j=1}^\infty\mathbb{Q}(A_j).\]
 }
 \subsubsection{Satz}
 Sei $X\colon\Omega\to\vartheta$ messbar ($\mathcal{A}\to\mathcal{B}$), dann sind folgenden Mengen $\sigma$-Algebren:
@@ -40,13 +40,13 @@ a) bzgl. $\Omega$, b) bzgl. $\vartheta$.
 \abc{
 \item $\Omega\in X^{-1}(B)$, da $\Omega=X^{-1}(\vartheta)$.
 \item Sei $A\in X^{-1}(B)\RA\exists B$ mit $X^{-1}(B)=A\RA X^{-1}(B^C)=A^C\in X^{-1}(\mathcal{B})$.
-\item Seien $(A_n)_{n\in\NN}\subset X^{-1}(\mathcal{B})$
-\meq{
-&\ \RA\forall n\in\NN\ \exists B_n\in\mathcal{B}\ \text{mit}\ A_n=X^{-1}(B_n)\\
-&\ \RA\bigcup_{n\in\NN}B_n\in B\ \text{und}\ X^{-1}(\bigcup_{n\in\NN}B_n)=\bigcup_{n\in\NN}X^{-1}(B_n)\\
-&\ \RA\bigcup_{n\in\NN}A_n=\bigcup_{n\in\NN}X^{-1}(B_n)=X^{-1}(\ubr{\bigcup_{n\in\NN}B_n}{$\in\mathcal{B}$})\\
-&\ \RA\bigcup_{n\in\NN}A_n\in X^{-1}(\mathcal{B}).
-}
+\item Seien $(A_n)_{n\in\mathbb{N}}\subset X^{-1}(\mathcal{B})$
+\begin{align*}
+&\ \RA\forall n\in\mathbb{N}\ \exists B_n\in\mathcal{B}\ \text{mit}\ A_n=X^{-1}(B_n)\\
+&\ \RA\bigcup_{n\in\mathbb{N}}B_n\in B\ \text{und}\ X^{-1}(\bigcup_{n\in\mathbb{N}}B_n)=\bigcup_{n\in\mathbb{N}}X^{-1}(B_n)\\
+&\ \RA\bigcup_{n\in\mathbb{N}}A_n=\bigcup_{n\in\mathbb{N}}X^{-1}(B_n)=X^{-1}(\ubr{\bigcup_{n\in\mathbb{N}}B_n}{$\in\mathcal{B}$})\\
+&\ \RA\bigcup_{n\in\mathbb{N}}A_n\in X^{-1}(\mathcal{B}).
+\end{align*}
 }
 \item \"ahnlich.
 }
@@ -57,22 +57,22 @@ Sei $X\colon\Omega\to\vartheta$ eine Abbildung, $\mathcal{B}$ eine von $\mathcal
 \subsubsection{Beweis}
 Wir betrachten $X_*(\mathcal{A})$. Falls $(*)$ gilt, ist $\mathcal{E}\subset X_*(\mathcal{A})$. $X_*(\mathcal{A})$ ist $\sigma$-Algebra $\RA B\subset X_*(\mathcal{A})\RA X$ ist $\mathcal{A}$-$\mathcal{B}$-messbar.
 \subsubsection{Beispiel}
-Jede stetige Funktion $f\colon\RR\to\RR$ ist $B_\RR$-$B_\RR$-messbar. Grund: Da $f$ stetig, sind die Urbilder offener Mengen offen. Die offenen Mengen sind ein m\"oglicher Erzeuger von $B_\RR$, nach Korollar muss man nur diese untersuchen.
+Jede stetige Funktion $f\colon\mathbb{R}\to\mathbb{R}$ ist $B_\mathbb{R}$-$B_\mathbb{R}$-messbar. Grund: Da $f$ stetig, sind die Urbilder offener Mengen offen. Die offenen Mengen sind ein m\"oglicher Erzeuger von $B_\mathbb{R}$, nach Korollar muss man nur diese untersuchen.
 \subsubsection{Satz}
 Seien $\Omega,\vartheta,\Lambda$ Mengen, $\mathcal{A},\mathcal{B},\mathcal{C}$ $\sigma$-Algebren bzgl. $\Omega,\vartheta,\Lambda$. Sei $X\colon\Omega\to\vartheta$ $mathcal{A}$-$\mathcal{B}$-messbar, $Y\colon\vartheta\to\Lambda$ $\mathcal{B}$-$\mathcal{C}$ messbar. Dann ist $Z:=Y\cdot X\colon\Omega\to\Lambda$ $\mathcal{A}$-$\mathcal{C}$-messbar.
 \subsubsection{Beweis}
 Z.z.: $Z^{-1}(A)\in\mathcal{A}\ \forall A\in\mathcal{C}$.
 \[Z^{-1}(A)=\ubr{X^{-1}(\obr{Y^{-1}(A)}{$\in\mathcal{B}$, da $Y$ messbar})}{$\in\mathcal{A}$}.\]
 \subsubsection{Satz}
-Seien $X,Y\colon\Omega\to\RR$ $\mathcal{A}$-$\mathcal{B}_\RR$ messbar. Dann ist $X+Y$ ebenfalls $\mathcal{A}$-$\mathcal{B}_\RR$ messbar.
+Seien $X,Y\colon\Omega\to\mathbb{R}$ $\mathcal{A}$-$\mathcal{B}_\mathbb{R}$ messbar. Dann ist $X+Y$ ebenfalls $\mathcal{A}$-$\mathcal{B}_\mathbb{R}$ messbar.
 \subsubsection{Beweis}
 Wegen des Korollars gilt es zu zeigen:
-\[(X+Y)^{-1}(]-\infty,a[)\in\mathcal{A},\ \forall a\in\RR.\]
+\[(X+Y)^{-1}(]-\infty,a[)\in\mathcal{A},\ \forall a\in\mathbb{R}.\]
 Betrachte dazu:
-\[\ubr{\bigcup_{b\in\QQ}\ubr{X^{-1}(\obr{]-\infty,b[}{$\in\mathcal{B}_\RR$})}{$\in\mathcal{A}$}\ \cap\ \ubr{Y^{-1}(\obr{]-\infty,a-b[}{$\in\mathcal{B}_\RR$})}{$\in\mathcal{A}$}}{$\in\mathcal{A}$}.\]
+\[\ubr{\bigcup_{b\in\mathbb{Q}}\ubr{X^{-1}(\obr{]-\infty,b[}{$\in\mathcal{B}_\mathbb{R}$})}{$\in\mathcal{A}$}\ \cap\ \ubr{Y^{-1}(\obr{]-\infty,a-b[}{$\in\mathcal{B}_\mathbb{R}$})}{$\in\mathcal{A}$}}{$\in\mathcal{A}$}.\]
 Wir zeigen nun, dass
-\[(X+Y)^{-1}(]-\infty,a[)=\bigcup_{b\in\QQ}X^{-1}(]-\infty,b[)\ \cap\ Y^{-1}(]-\infty,a-b).\]
+\[(X+Y)^{-1}(]-\infty,a[)=\bigcup_{b\in\mathbb{Q}}X^{-1}(]-\infty,b[)\ \cap\ Y^{-1}(]-\infty,a-b).\]
 \bul{
-\item ``$\subset$'': Sei $\omega\in(X+Y)^{-1}(]-\infty,a[)\LRA(X+Y)(\omega)<a$. Sei $b\in\QQ$ mit $b\in]X(\omega),X(\omega)+\mathcal{\varepsilon}{2}[$. $\RA X(\omega)<b$ und $Y(\omega)+b<X(\omega)+Y(\omega)+\frac{\varepsilon}{2}<a\RA Y(\omega)<a-b$.
+\item ``$\subset$'': Sei $\omega\in(X+Y)^{-1}(]-\infty,a[)\LRA(X+Y)(\omega)<a$. Sei $b\in\mathbb{Q}$ mit $b\in]X(\omega),X(\omega)+\mathcal{\varepsilon}{2}[$. $\RA X(\omega)<b$ und $Y(\omega)+b<X(\omega)+Y(\omega)+\frac{\varepsilon}{2}<a\RA Y(\omega)<a-b$.
 \item ``$\supset$'': Sei $\omega\in\ldots\RA\exists b$, sodass $X(\omega)<b$ und $Y(\omega)<a-b\RA(X+Y)(\omega)<a$.
 }

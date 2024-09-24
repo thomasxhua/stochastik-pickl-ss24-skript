@@ -20,28 +20,30 @@ Das Wahrscheinlichkeitsma\ss{} wird auf der Ereignismenge definiert. Grund: F\"u
 \\~\\
 Die Wahrscheinlichkeit quantifiziert die Plausibilit\"at der entsprechenden Ereignisse. Sie gibt die relative H\"aufigkeit an, wie oft ein bestimmtes Ereignis nach sehr h\"aufigen Wiederholen unter identischen Umst\"anden eintritt.
 \subsubsection{Definition (Wahrscheinlichkeitsma\ss{})}
-Eine Abbildung $\PP\colon\mathcal{P}(\Omega)\to\RR$ nennt man \trt{Wahrscheinlichkeitsma\ss{}} $:\LRA$
+Eine Abbildung $\mathbb{P}\colon\mathcal{P}(\Omega)\to\mathbb{R}$ nennt man \trt{Wahrscheinlichkeitsma\ss{}} $:\LRA$
 \abc{
-\item[\tbf{K}a)] $\PP(A)\geq0,\ \forall A\subset\Omega$,
-\item[\tbf{K}b)]  $\PP(\Omega)=1$,
-\item[\tbf{K}c)]  $\PP(A\cup B)=\PP(A)+\PP(B),\ \forall A,B\subset\Omega,\ A\cap B=\emptyset$.
+\item[\tbf{K}a)] $\mathbb{P}(A)\geq0,\ \forall A\subset\Omega$,
+\item[\tbf{K}b)]  $\mathbb{P}(\Omega)=1$,
+\item[\tbf{K}c)]  $\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B),\ \forall A,B\subset\Omega,\ A\cap B=\emptyset$.
 }
 \subsubsection{Bemerkung}
 Die Axiome a)-c) nennt man \trt{Axiome von Kolmogorov} (werden in 2 ebenfalls leicht angepasst).
 \subsubsection{Satz}
-F\"ur jedes Wahrscheinlichkeitsma\ss{} $\PP\colon\mathcal{P}(\Omega)\to\RR$ f\"ur beliebiges $\Omega$ gelten:
+F\"ur jedes Wahrscheinlichkeitsma\ss{} $\mathbb{P}\colon\mathcal{P}(\Omega)\to\mathbb{R}$ f\"ur beliebiges $\Omega$ gelten:
 \abc{
-\item $\PP(A^C)=1-\PP(A),\ \forall A\subset\Omega$.
-\item $\PP(A)\leq1$.
-\item $\PP(A\cup B)=\PP(A)+\PP(B)-\PP(A\cap B)$.
+\item $\mathbb{P}(A^C)=1-\mathbb{P}(A),\ \forall A\subset\Omega$.
+\item $\mathbb{P}(A)\leq1$.
+\item $\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)$.
 }
 \subsubsection{Beweis}
 \weg
 \subsubsection{Bemerkung}
 \"Uber die Wahrscheinlichkeiten der Elementarereignisse (d.h. der einelementigen Ereignisse), wird das Wahrscheinlichkeitsma\ss{} eindeutig festgelegt.
 \\~\\
-Betrachte $\PP(A)$ f\"ur $A=\{w_1,w_2,\ldots,w_k\}\subset\Omega$. Durch mehrmaliges Anwenden von \tbf{K}c) erh\"alt man
-\meq{\PP(A)=\sum_{i=1}^{k}\PP(\{w_k\}).}
+Betrachte $\mathbb{P}(A)$ f\"ur $A=\{w_1,w_2,\ldots,w_k\}\subset\Omega$. Durch mehrmaliges Anwenden von \tbf{K}c) erh\"alt man
+\[
+\mathbb{P}(A)=\sum_{i=1}^{k}\mathbb{P}(\{w_k\}).
+\]
 \subsubsection{Definition (Wahrscheinlichkeitsraum)}
-Das Paar $(\Omega,\PP)$ nennt man auch \trt{Wahrscheinlichkeitsraum} (auch $(\Omega,\mathcal{P}(\Omega),\PP)$).
+Das Paar $(\Omega,\mathbb{P})$ nennt man auch \trt{Wahrscheinlichkeitsraum} (auch $(\Omega,\mathcal{P}(\Omega),\mathbb{P})$).
 
