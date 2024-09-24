@@ -54,8 +54,8 @@ Erinnerung partielle Integration: $\int_a^bfgdx=-\int_a^bFg'dx+[Fg]_a^b$
 &=\sigma^2.
 \end{align*}
 }
-\subsection{Korrelationen}
-\subsubsection{Definition (Korrelation)}
+\subsection{Korrelation}
+\subsubsection{Definition (Unkorreliertheit)}
 Zwei Zufallsvariablen $X,Y$ hei\ss{}en \trt{unkorreliert} $:\LRA$
 \[
 \Var(X+Y)=\Var X+\Var Y.
@@ -67,3 +67,49 @@ V(X+Y)&=\Var X+\Var Y\\
 \LRA\mathbb{E}(X^2)+2\mathbb{E}(XY)+\mathbb{E}(Y^2)-\mathbb{E}(X)^2-2\mathbb{E}(X)\mathbb{E}(Y)-\mathbb{E}^2&=\mathbb{E}(X^2)-\mathbb{E}(X)^2+\mathbb{E}(Y^2)-\mathbb{E}(Y)^2\\
 \LRA\mathbb{E}(XY)&=\mathbb{E}(X)\mathbb{E}(Y)=0.
 \end{align*}
+Dies ist eine alternative Definition der Unkorreliertheit.
+\subsubsection{Satz}
+$X,Y$ unabh\"angig $\RA$ $X,Y$ unkorreliert.
+\subsubsection{Beweis}
+\bul{
+\item Diskreter Fall ($\Omega$ endlich):
+\begin{align*}
+\mathbb{E}(XY)&=\sum_{\omega\in\Omega}X(\omega)Y(\omega)\mathbb{P}(\{\omega\})\\
+&=\sum_{x,y}\sum_{\omega\text{ mit }X(\omega)=x,Y(\omega)=y}xy\mathbb{P}(\{\omega\})\\
+&=\sum_{x,y}xy\cdot\mathbb{P}(X=x\text{ und }Y=y)\\
+&\textabove{Unabh.}{=}\sum_{xy}xy\cdot\mathbb{P}(X=x)\mathbb{P}(Y=y)\\
+&=\sum_{x}\mathbb{P}(X=x)\cdot\sum_{y}\mathbb{P}(Y=y)\\
+&=\mathbb{E}(X)\cdot\mathbb{E}(Y).
+\end{align*}
+}
+\subsubsection{Definition (Kovarianz)}
+F\"ur zwei Zufallsvariablen $X,Y$ nennt man den Ausdruck
+\[
+\Cov(X,Y):=\mathbb{E}(XY)-\mathbb{E}(X)\mathbb{E}(Y)
+\]
+die \trt{Kovarianz} von $X,Y$.
+\subsubsection{Bemerkung}
+$\Cov(X,X)=\Var X$.
+\subsubsection{Satz}
+\abc{
+\item $\Cov(aX+Y,Z)=a\Cov(X,Z)+\Cov(Y,Z)$.
+\item $\Cov(X,Y)=\mathbb{E}([X-\mathbb{E}(X)][Y-\mathbb{E}(Y)])$.
+}
+\subsubsection{Beweis}
+\abc{
+\item
+\begin{align*}
+\Cov(aX+Y,Z)&=\mathbb{E}((aX+Y)Z)-\mathbb{E}(aX+Y)\mathbb{E}(Z)\\
+&=\mathbb{E}(aXZ+YZ)-[a\mathbb{E}(X)+\mathbb{E}(Y)]\mathbb{E}(Z)\\
+&=a\mathbb{E}(XZ)+\mathbb{E}(YZ)-a\mathbb{E}(X)\mathbb{E}(Z)-\mathbb{E}(Y)\mathbb{E}(Z)\\
+&=a\Cov(X,Z)+\Cov(Y,Z).
+\end{align*}
+\item
+\begin{align*}
+\mathbb{E}([X-\mathbb{E}(X)][Y-\mathbb{E}(Y)])&=\mathbb{E}(XY-X\mathbb{E}(Y)-\mathbb{E}(X)Y+\mathbb{E}(X)\mathbb{E}(Y))\\
+&=\mathbb{E}(XY)=\mathbb{E}\mathbb{E}(Y)-\mathbb{E}(X)\mathbb{E}(Y)+\mathbb{E}(X)\mathbb{E}(Y)\\
+&=\Cov(X,Y).
+\end{align*}
+}
+\subsubsection{Bemerkung}
+Zur Quantifizierung von Korrelation ist die Kovarianz nur bedingt geeignet. Sie ergibt einen absoluten Wert ohne Vergleichsreferenz. Falls man eine Zufallsgr\"o\ss{}e z.B. verdoppelt, verdoppelt sich der Wert.
