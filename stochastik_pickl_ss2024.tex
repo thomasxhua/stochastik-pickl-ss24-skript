@@ -8,7 +8,10 @@
 \usepackage{pdfpages}
 \usepackage{forloop}
 \usepackage{cancel}
+\usepackage[backend=biber]{biblatex}
 % --------
+\addbibresource{resources.bib}
+\defbibheading{bibliography}[\refname]{\section*{Literaturverzeichnis}}
 \newcommand{\pickl}[1]{\begin{center}\hrulefill\ \texttt{[ \textbf{#1} ]}\ \hrulefill\end{center}}
 \renewcommand{\thesection}{\Roman{section}}
 \setcounter{tocdepth}{2}
@@ -40,6 +43,9 @@ Dies ist eine Live-Transkription der Vorlesung Stochastik, gehalten von \tbf{Pro
 \input{src/20240606.tex}
 \input{src/20240610.tex}
 \input{src/20240613.tex}
+
+\newpage
+\printbibliography
 
 \end{document}
 

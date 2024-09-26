@@ -98,8 +98,11 @@ Lineare Approximation: $f(x+\varepsilon)\approx f(x)+f^\prime(x)\cdot\varepsilon
 \subsubsection{Definition (Poisson-verteilt)}
 Falls
 \[\mathbb{P}(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},\]
-nennt man $X$ Poisson-verteilt. Sie gibt Bernoulli-Situationen, d.h. unabh\"angige $0$-$1$-Fragen, wie oben, f\"ur sehr unwahrscheinliche Ereignisse bei hoher ``Strichprobe'' wieder. Da
+nennt man $X$ \trt{Poisson-verteilt}. Sie gibt Bernoulli-Situationen, d.h. unabh\"angige $0$-$1$-Fragen, wie oben, f\"ur sehr unwahrscheinliche Ereignisse bei hoher ``Strichprobe'' wieder. Da
 \[
 \sum_{k=0}^\infty\frac{\lambda^k}{k!}e^{-\lambda}=e^{-\lambda}\sum_{k=0}^\infty\frac{\lambda^k}{k!}=e^{-\lambda}a^{\lambda}=1,
 \]
 wird so in der Tat ein Wahrscheinlichkeitsma\ss{} definiert.
+\subsubsection{Bemerkung}
+Namensgebend ist das franz\"osische Wort \trt{poisson} (dt. Fisch). Die Verteilung wurde w\"ahrend der Untersuchung des gro\ss{}en Fischsterbens im Jahr 1873 in Irkutsks, Sibirien, entdeckt \cite{Pickl15}. Hierbei wurde der Parameter $\lambda$ als \trt{la grange} (dt. die Scheune) bezeichnet, da er den Erwartungswert und die Varianz beschreibt und somit die Verteilung charakterisiert. Der Parameter $k$ wurde \trt{la place} (dt. die Stelle) genannt, da er die Anzahl der Ereignisse beschreibt.
+
