@@ -1,4 +1,4 @@
-\pickl{17.06.2024}
+ pickl{17.06.2024}
 \subsubsection{Definition (Korrelationskoeffizient)}
 F\"ur zwei Zufallsvariablen $X,Y$ nentnt man
 \[
@@ -31,6 +31,39 @@ $\Rightarrow 1\pm\langle x,y\rangle ab\geq0\Rightarrow\pm\langle X,Y\rangle\geq\
 a^2x^2-2ab\langle x,y\rangle=\frac{\varepsilon^2}{4\langle x,x\rangle}-\frac{2\varepsilon^2}{2\langle x,x\rangle}\leq0\ \lightning.
 \]
 \item 3. Fall: $\langle x,x\rangle=\langle y,y\rangle=0$. Betrachte $0\geq\langle x\pm y,x\pm y\rangle=\langle x,x\rangle+\langle y,y\rangle\pm2\langle x,y\rangle\Rightarrow\langle x,y\rangle=0$.
+\end{itemize}
 \subsubsection{Beweis (des Satzes)}
 F\"ur den Vektorraum der beschr\"ankten Zufallsvariablen nehmen wir die Ungleichung von Cauchy-Schwarz her $\Rightarrow$ Behauptung.
-\end{itemize}
+\subsubsection{Bemerkung}
+Falls $\Var X,\Var Y<\infty$, so ist auch $|\Cov(X,Y)|<\infty$. Dies l\"asst sich mithilfe eines Widersprucharugments zeigen (grob): WA $|\Cov(X,Y)|=\infty\Rightarrow$ durch Abschneiden von $X,Y$:
+\[
+\widetilde{X}(\omega)=\begin{cases}
+X(\omega)&\text{falls }X(\omega)\leq C,\\
+C&\text{sonst,}
+\end{cases}
+\]
+$\widetilde{Y}(\omega)$ analog. Man findet f\"ur jedes noch so gro\ss{}e $M\in\mathbb{R}$ ein $C\in\mathbb{R}$, sodass $|\Cov(\widetilde{X},\widetilde{Y})|\geq M$, aber $|\Cov(\widetilde{X},\widetilde{Y})|\leq\sqrt{\Var\widetilde{X}}\sqrt{\Var\widetilde{Y}}\leq\sqrt{\Var X}\sqrt{\Var Y}$. W\"ahle $M>\sqrt{\Var X\Var Y}\Rightarrow\lightning$.
+\subsubsection{Satz}
+Sei $\Var X\neq 0$, dann ist
+\[
+\kappa(X,aX+b)=\ubr{\Vz}{Vorzeichen}(a)\in\{\pm 1\}.
+\]
+(Es reicht, $Y=aX+b$ fast sicher, damit $|\kappa(X,Y)=1|$.)
+\subsubsection{Beweis}
+\begin{align*}
+\kappa(X,aX+b)&=\frac{\Cov(X,aX+b)}{\sqrt{\Var(X)\Var(aX+b)}}\\
+&=\frac{a\Cov(X,X)+\Cov(X,b)}{\sqrt{\Var X\cdot a^2\Var X}}\\
+&=\frac{a\Var X+0}{|a|\Var X}=\frac{a}{|a|}.
+\end{align*}
+($|\Cov(X,b)\ubr{\leq}{C.S.}\sqrt{\Var X\ubr{\Var b}{$=0$}}\Rightarrow\Cov(X,b)=0$.)
+\subsubsection{Satz}
+Falls $|\kappa(X,Y)|=1\Rightarrow Y=aX+b$ fast sicher mit $a,b\in\mathbb{R}$. Es gilt: $a>0\Leftrightarrow\kappa(X,Y)>0$.
+\subsubsection{Beispiel}
+\[
+\Cov(X,Y)=\Cov(X,Y-aX+aX),
+\]
+w\"ahle $a$, sodass $\obr{Y-aX}{$Z$}$ unkorreliert zu $X$. Da $\Cov(X,Y-aX)=\Cov(X,Y)-a\obr{\Var X}{$\neq0$}$, ist dies immer m\"oglich!
+\[
+\kappa(X,Y)=\frac{\Cov(X,Z)+\Cov(X,aX)}{\sqrt{\Var X}\sqrt{\Var Z+aX}}=\frac{a\cdot\Var X}{\sqrt{\Var X(\Var Z+a^2\Var X)}}.
+\]
+Der gr\"o\ss{}tm\"ogliche Wert wird f\"ur $\Var Z=0$ erreicht, dieses ist genau $1\Rightarrow\Var Z=0$. $Z:=Y-aX\Rightarrow Y=aX+\ubr{Z}{fast sicher konstant}$.
