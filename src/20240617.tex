@@ -1,0 +1,36 @@
+\pickl{17.06.2024}
+\subsubsection{Definition (Korrelationskoeffizient)}
+F\"ur zwei Zufallsvariablen $X,Y$ nentnt man
+\[
+\kappa(X,Y):=\frac{\Cov(X,Y)}{\sqrt{\Var X\cdot\Var Y}}
+\]
+den \trt{Korrelationskoeffizienten}.
+\subsubsection{Bemerkung}
+$|\kappa(X,Y)|=|\kappa(aX,bY)|,\ \forall a,b\in\mathbb{R}$. Vorzeichenwechsel, genau dann wenn $a$ oder $b$ (exklusiv) negativ.
+\subsubsection{Satz}
+$|\kappa(X,Y)|\leq1$.
+\subsubsection{Beweis (Cauchy-Schwarz)}
+Wir benutzen Cauchy-Schwarz:
+\[
+|\langle X,Y\rangle|\leq\sqrt{\langle X,X\rangle\langle Y,Y\rangle}.
+\]
+Wir beweisen, dass diese f\"ur alle positiv semi-definiten, symmetrischen Bilinearformen gilt. Denn die Kovarianz ist eine solche.
+\begin{itemize}
+\item 1. Fall: $\langle x\neq0$ und $\langle y,y\rangle\neq0$. Betrachte $\langle ax\pm by,ax\pm by\rangle$ mit $a,b$ so, dass $\langle ax,ax\rangle=\langle by,by\rangle=1$.
+\begin{align*}
+\langle ax+by,ax+by\rangle&=a^2\langle x,x\rangle + b^2\langle y,y\rangle\pm 2ab\langle x,y\rangle\\
+&=2(1\pm\langle x,y\rangle ab)
+\end{align*}
+$\Rightarrow 1\pm\langle x,y\rangle ab\geq0\Rightarrow\pm\langle X,Y\rangle\geq\frac{-1}{ab}\Rightarrow\pm\langle x,y\rangle\leq\frac{1}{ab}$. Da $\langle ax,ax\rangle=1\Rightarrow a^2=\frac{1}{\langle x,x\rangle}\Rightarrow\frac{1}{a}=\sqrt{\langle x,x\rangle},\ \frac{1}{b}=\sqrt{\langle x,x\rangle}\Rightarrow\pm\langle x,y\rangle\leq\sqrt{\langle x,x\rangle\langle y,y\rangle}$.
+\item $\langle x,x\rangle\neq0,\ \langle y,y\rangle=0$.
+\begin{align*}
+\langle ax\pm by,ax\pm by\rangle=a^2x^2\pm 2ab\langle x,y\rangle+b^2\langle y,y\rangle
+\end{align*}
+($b,a$ ist hier ganz allgemein gew\"ahlt), $\Rightarrow a^2x^2\pm2ab\langle x,y\rangle\leq0$. Z.z. $\langle x,y\rangle=0$. WA: $\langle x,y\rangle=\varepsilon>0$. W\"ahle $b=1$ und $a$ hinreichend klein, sowie das negative Vorzeichen $\Rightarrow\lightning$, z.B. $a=\frac{\varepsilon}{\langle x,x\rangle2}$.
+\[
+a^2x^2-2ab\langle x,y\rangle=\frac{\varepsilon^2}{4\langle x,x\rangle}-\frac{2\varepsilon^2}{2\langle x,x\rangle}\leq0\ \lightning.
+\]
+\item 3. Fall: $\langle x,x\rangle=\langle y,y\rangle=0$. Betrachte $0\geq\langle x\pm y,x\pm y\rangle=\langle x,x\rangle+\langle y,y\rangle\pm2\langle x,y\rangle\Rightarrow\langle x,y\rangle=0$.
+\subsubsection{Beweis (des Satzes)}
+F\"ur den Vektorraum der beschr\"ankten Zufallsvariablen nehmen wir die Ungleichung von Cauchy-Schwarz her $\Rightarrow$ Behauptung.
+\end{itemize}
