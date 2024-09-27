@@ -1,0 +1,59 @@
+\pickl{24.06.2024}
+\subsubsection{Bemerkung}
+\abc{
+\item Das obige Gesetz liefert, dass unter den genannten Bedingungen gilt:
+\[
+\forall a>0\text{ ist }\lim_{n\to\infty}\mathbb{P}(|\overline{X}_n-\mu|<a)=1.
+\]
+\item Falls $X_j\to\{0,1\}$, ist $\overline{X}_n$ die relative H\"aufigkeit von ``$X=1$'' und $\mu$ die Wahrscheinlichkeit f\"ur $X_j=1$. Das Gesetz sagt etwas dar\"uber aus, wie sich relative H\"aufigkeit und Wahrscheinlichkeit ann\"ahern.
+}
+Wir werden sp\"ater zeigen, dass unter geeigneten Bedingungen $\mathbb{P}(\lim_{n\to\infty}X_n=\mu)=1$ gilt (starkes Gesetz der gro\ss{}en Zahlen).
+\subsection{Einschub: Konvergenzbegriffe}
+\subsubsection{Definition (Stochastische Konvergenz)}
+Sei $X$ eine Zufallsvariable, $(X_n)_{n\in\mathbb{N}}$ eine Folge von Zufallsvariablen. Man sagt $X_n$ \trt{konvergiert stochastisch} gegen $X$
+\[
+:\Leftrightarrow\forall a>0\text{ ist }\lim_{n\to\infty}\mathbb{P}(|X_n-X|<a)=1.
+\]
+\subsubsection{Bemerkung}
+Die Aussage des schwachen Gesetzes (Bemerkung) ist also $\overline{X}_n\xrightarrow{\substack{\text{stoch.}\\n\to\infty}}\mu$.
+\subsubsection{Definition (Fast sichere Konvergenz)}
+Man sagt $X_n$ \trt{konvergiert fast sicher} gegen $X$
+\[
+:\Leftrightarrow\mathbb{P}(\{\lim_{n\to\infty}X_n(\omega)=X(\omega)\})=\ 1(\Leftrightarrow\lim_{n\to\infty}X_n=X).
+\]
+\subsubsection{Definition (Konvergenz in Verteilung)}
+Man sagt $X_n$ \trt{konvergiert} gegen $X$ \trt{in Verteilung}, falls
+\[
+\lim_{n\to\infty}V_{X_n}(t)=V_X(t),
+\]
+$\forall t$, wo $V_X$ stetig ist.
+\subsubsection{Ausblick}
+\[
+\xrightarrow{\substack{\text{f.s.}\\n\to\infty}}
+\ \Rightarrow\ 
+\xrightarrow{\substack{\text{stoch.}\\n\to\infty}}
+\ \Rightarrow\ 
+\xrightarrow{\substack{\text{i.V.}\\n\to\infty}},
+\]
+die Gegenrichtungen gelten nicht.
+\subsubsection{Satz}
+Die stochastische Konvergenz impliziert nicht die fast sichere Konvergenz.
+\subsubsection{Beweis}
+Gegenbeispiel. $X_n\to\{0,1\}$ von einem Gl\"ucksrad.
+\bul{
+\item $X_1(\omega)=\begin{cases}1&\text{falls }\omega\in[0,1]\\0&\text{sonst,}\end{cases}$
+\item $X_2(\omega)=\begin{cases}1&\text{falls }\omega\in[1,1+\frac{1}{2}]\\0&\text{sonst,}\end{cases}$
+\item \ldots
+\item $X_j(\omega)=\begin{cases}1&\text{falls }\omega\in[\sum_{i=1}^{j-1}\frac{1}{i},\sum_{i=0}^{j}\frac{1}{j}]\\0&\text{sonst,}\end{cases}$
+}
+Es gilt $X_n\xrightarrow{\substack{\text{f.s.}\\n\to\infty}}0$. $\forall a>0,\ \mathbb{P}(|X_n-0|<a)\geq\mathbb{P}(X_n=0)=\frac{2\pi-\frac{1}{n}}{2\pi}\to_{n\to\infty}1\Rightarrow\lim_{n\to\infty}\mathbb{P}(|X_n-0|<a)=1,\ \forall a>0$. Es gilt stochastischce Konvergenz.
+\\~\\
+F\"ur die fast sichere Konvergenz untersuchen wir $\{\omega\in\Omega\colon\lim_{n\to\infty}X_n(\omega)=0\}$. Da $\lim_{n\to\infty}\sum_{j=1}^n\frac{1}{j}=\infty$ gilt $\forall\omega\in\omega$ $X_k(\omega)=1$ f\"ur unendliche viele $k\in\mathbb{N}$, ebenso ist $X_k(\omega)=0$ f\"ur $\infty$-viele $k\in\mathbb{N}$ $\Rightarrow\lim_{n\to\infty}X_n(\omega)$ existiert nicht $\Rightarrow\mathbb{P}(\lim_{n\to\infty}X_n(\omega)=X)=0,\ \forall X$ Zufallsvariablen.
+\subsubsection{Satz}
+Konvergenz in Verteilung impliziert nicht die stochastische Konvergenz.
+\subsubsection{Beweis}
+$X=1$ mit Whk. $\frac{1}{2}$, $X=-1$ mit Whk. $\frac{1}{2}$. $X_n=-X\ \forall n\in\mathbb{N}$. $|X_n-X|=2\ \forall\omega\in\Omega$. $\mathbb{P}(|X_n-X|<1)=0\Rightarrow$ stoch. Konvergenz gilt nicht. Es ist $V_X=V_{-X}$. $\lim_{n\to\infty}(X_{X_n}(t)=V_X(t)\ \forall t\in\mathbb{R}(\setminus\{\pm1\})$.
+\subsubsection{Satz}
+Stochastische konvergenz impliziert Konvergenz in Verteilung.
+\subsubsection{Beweis}
+Sei $X_n\xrightarrow{\substack{\text{stoch.}\\n\to\infty}}X$. Betrachte $V_X(t)-V_{X_n}(t)$ f\"ur $t$, sodass $V_X$ stetig an der Stelle $t$. Z.z. $V_X(t)-V_{X_n}(t)<2\delta,\ \forall\delta>0$. Wegen der Stetigkeit gibt es ein $\varepsilon>0$, sodass $V_X(t+\varepsilon)-V_X(t)<\delta\Rightarrow V_X(t+\varepsilon)-V_X(t)=V_X(t+\varepsilon)-V_X(t)+V_X(t)=V_{X_n}(t)$. Wir betrachten $-V_X(t+\varepsilon)+V_{X_n}(t)=-\mathbb{P}(X\leq t+\varepsilon)+\mathbb{P}(X_n\leq t)\leq\mathbb{P}(X_n\leq t\text{ und }x>t+\varepsilon)\leq\mathbb{P}(|X-X_n|>\varepsilon)$. Wegen stochastischer Konvergenz existiert ein $n\in\mathbb{N}$, sodass $\mathbb{P}(|X_n-X|>\varepsilon)<\delta$. $\Rightarrow V_X(t)-V_{X_n}(t)\geq-\delta-\delta$.
