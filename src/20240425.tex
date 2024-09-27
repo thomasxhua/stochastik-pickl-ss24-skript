@@ -3,7 +3,7 @@
 Sei $\Omega=\mathbb{R}$. Die von den offenen Teilmengen von $\mathbb{R}$ erzeugte $\sigma$-Algebra hei\ss{}t \trt{Borel-$\sigma$-Algebra}. (alternative Definiton sp\"ater)
 \subsection{Wahrscheinlichkeitsma\ss{}}
 \subsubsection{Definition (Wahrscheinlichkeitsma\ss{})}
-Sei $\Omega$ eine Menge, $\mathcal{A}$ $\sigma$-Algebra. Eine Abbildung $\mathbb{P}\colon\mathcal{A}\to\mathbb{R}$ hei\ss{}t \trt{Wahrscheinlichkeitsma\ss{}} $:\LRA$
+Sei $\Omega$ eine Menge, $\mathcal{A}$ $\sigma$-Algebra. Eine Abbildung $\mathbb{P}\colon\mathcal{A}\to\mathbb{R}$ hei\ss{}t \trt{Wahrscheinlichkeitsma\ss{}} $:\Leftrightarrow$
 \abc{
 \item $\mathbb{P}(\Omega)=1$,
 \item $\mathbb{P}(A)\geq0,\ \forall A\in\mathcal{A}$,
@@ -22,7 +22,7 @@ Sei $A\in\mathcal{A}$ mit $\mathbb{P}(A)\neq0$. Dann ist das auf $A$ \trt{beding
 (dass dies ein Wahrscheinlichkeitsma\ss{} ist):
 \abc{
 \item $\mathbb{P}_A(\Omega)=\frac{\mathbb{P}(A\cap\Omega)}{\mathbb{P}(A)}=\frac{\mathbb{P}(A)}{\mathbb{P}(A)}=1.$
-\item Z\"ahler $\geq0$, Nenner $>0$ $\RA$ Behauptung.
+\item Z\"ahler $\geq0$, Nenner $>0$ $\Rightarrow$ Behauptung.
 \item 
 \begin{align*}
     \mathbb{P}_A(\bigcup_{n=1}^\infty A_n)&=\frac{\mathbb{P}(A\ \cap\ \bigcup_{n=1}^\infty A_n)}{\mathbb{P}(A)}\ (A_n\cap A_m=\emptyset,\ n\neq m)\\
@@ -32,12 +32,12 @@ Sei $A\in\mathcal{A}$ mit $\mathbb{P}(A)\neq0$. Dann ist das auf $A$ \trt{beding
 \end{align*}
 }
 \subsubsection{Definition (Unabh\"angigkeit)}
-Zwei Ereignisse $A,B$ hei\ss{}en (stochastisch) \trt{unabh\"angig} $:\LRA$
+Zwei Ereignisse $A,B$ hei\ss{}en (stochastisch) \trt{unabh\"angig} $:\Leftrightarrow$
 \[
 \mathbb{P}(A\cap B)=\mathbb{P}(A)\cdot\mathbb{P}(B).
 \]
 \subsubsection{Bemerkung}
-$A$ unabh\"angig von $B$ $\RA$ $\mathbb{P}_A(B)=\mathbb{P}(B)$ (falls $\mathbb{P}(A)\neq0$).
+$A$ unabh\"angig von $B$ $\Rightarrow$ $\mathbb{P}_A(B)=\mathbb{P}(B)$ (falls $\mathbb{P}(A)\neq0$).
 \subsubsection{Beispiel}
 $\Omega=\{1,\ldots,6\}$.
 \abc{
@@ -84,7 +84,7 @@ Definiere $C_1:=A_1$. $C_2:=A_1\setminus A_1$, \ldots, $C_n=A_n\setminus A_{n-1}
 \abc{
 \item
 \begin{align*}
-    \RA\mathbb{P}(\lim_{\mathclap{n\to\infty}}A_n)&\ \textabove{a)}{=}\mathbb{P}(\bigcup_{n=1}^\infty C_n)
+    \Rightarrow\mathbb{P}(\lim_{\mathclap{n\to\infty}}A_n)&\ \textabove{a)}{=}\mathbb{P}(\bigcup_{n=1}^\infty C_n)
     \\&\ \textabove{\tbf{K}c)}{=}\sum_{n=1}^\infty\mathbb{P}(C_n)
     \\&\ =\lim_{n\to\infty}\sigma_{k=1}^{n}\mathbb{P}(C_k)
     \\&\ \textabove{\tbf{K}c)}{=}\lim_{n\to\infty}\mathbb{P}(\bigcup_{k=1}^nC_k)

@@ -1,6 +1,6 @@
 \pickl{13.05.2024}
 \subsubsection{Satz}
-$X$ Zufallsvariable $\RA\mathbb{Q}:=\mathbb{P}\cdot X^{-1}$ ist Wahrscheinlichkeitsma\ss{}.
+$X$ Zufallsvariable $\Rightarrow\mathbb{Q}:=\mathbb{P}\cdot X^{-1}$ ist Wahrscheinlichkeitsma\ss{}.
 \subsubsection{Erinnerung}
 $X^{-1}:=\{\omega\in\Omega\colon X(\omega)\in A\},\ X\colon\Omega\to\vartheta$.
 \subsubsection{Proposition}
@@ -15,8 +15,8 @@ Sei $X\colon\Omega\to\vartheta$ eine Abbildung. $A,B\subset\vartheta$. Dann gilt
 \subsubsection{Beweis}
 \abc{
 \item $\forall\omega\in\Omega$ gilt $X(\omega)\in\vartheta$.
-\item $\omega\in X^{-1}(A^C)\LRA X(\omega)\in A^C\LRA X(\omega)\notin A\LRA\omega\notin X^{-1}(A)\LRA w\in[X^{-1}(A)]^C$.
-\item $\omega\in X^{-1}(A)\cup X^{-1}(B)\LRA\omega\in X^{-1}(A)$ oder $\omega\in X^{-1}(B)\LRA X(\omega)\in A$ oder $X(\omega)\in B\LRA \omega\in X^{-1}(A\cup B)$. Geht ebenso f\"ur beliebige, insbesondere abz\"ahlbare Vereinigungen.
+\item $\omega\in X^{-1}(A^C)\Leftrightarrow X(\omega)\in A^C\Leftrightarrow X(\omega)\notin A\Leftrightarrow\omega\notin X^{-1}(A)\Leftrightarrow w\in[X^{-1}(A)]^C$.
+\item $\omega\in X^{-1}(A)\cup X^{-1}(B)\Leftrightarrow\omega\in X^{-1}(A)$ oder $\omega\in X^{-1}(B)\Leftrightarrow X(\omega)\in A$ oder $X(\omega)\in B\Leftrightarrow \omega\in X^{-1}(A\cup B)$. Geht ebenso f\"ur beliebige, insbesondere abz\"ahlbare Vereinigungen.
 \item folgt aus mehrfachem Anwenden von b), und c).
 \item folgt aus d), da $X^{-1}(\emptyset)=\emptyset$.
 }
@@ -39,13 +39,13 @@ a) bzgl. $\Omega$, b) bzgl. $\vartheta$.
 \item
 \abc{
 \item $\Omega\in X^{-1}(B)$, da $\Omega=X^{-1}(\vartheta)$.
-\item Sei $A\in X^{-1}(B)\RA\exists B$ mit $X^{-1}(B)=A\RA X^{-1}(B^C)=A^C\in X^{-1}(\mathcal{B})$.
+\item Sei $A\in X^{-1}(B)\Rightarrow\exists B$ mit $X^{-1}(B)=A\Rightarrow X^{-1}(B^C)=A^C\in X^{-1}(\mathcal{B})$.
 \item Seien $(A_n)_{n\in\mathbb{N}}\subset X^{-1}(\mathcal{B})$
 \begin{align*}
-&\ \RA\forall n\in\mathbb{N}\ \exists B_n\in\mathcal{B}\ \text{mit}\ A_n=X^{-1}(B_n)\\
-&\ \RA\bigcup_{n\in\mathbb{N}}B_n\in B\ \text{und}\ X^{-1}(\bigcup_{n\in\mathbb{N}}B_n)=\bigcup_{n\in\mathbb{N}}X^{-1}(B_n)\\
-&\ \RA\bigcup_{n\in\mathbb{N}}A_n=\bigcup_{n\in\mathbb{N}}X^{-1}(B_n)=X^{-1}(\ubr{\bigcup_{n\in\mathbb{N}}B_n}{$\in\mathcal{B}$})\\
-&\ \RA\bigcup_{n\in\mathbb{N}}A_n\in X^{-1}(\mathcal{B}).
+&\ \Rightarrow\forall n\in\mathbb{N}\ \exists B_n\in\mathcal{B}\ \text{mit}\ A_n=X^{-1}(B_n)\\
+&\ \Rightarrow\bigcup_{n\in\mathbb{N}}B_n\in B\ \text{und}\ X^{-1}(\bigcup_{n\in\mathbb{N}}B_n)=\bigcup_{n\in\mathbb{N}}X^{-1}(B_n)\\
+&\ \Rightarrow\bigcup_{n\in\mathbb{N}}A_n=\bigcup_{n\in\mathbb{N}}X^{-1}(B_n)=X^{-1}(\ubr{\bigcup_{n\in\mathbb{N}}B_n}{$\in\mathcal{B}$})\\
+&\ \Rightarrow\bigcup_{n\in\mathbb{N}}A_n\in X^{-1}(\mathcal{B}).
 \end{align*}
 }
 \item \"ahnlich.
@@ -55,7 +55,7 @@ Die Messbarkeit ging in den Beweis gar nicht ein. F\"ur jede Abbildung $X\colon\
 \subsubsection{Korollar}
 Sei $X\colon\Omega\to\vartheta$ eine Abbildung, $\mathcal{B}$ eine von $\mathcal{E}$ erzeugte $\sigma$-Algebra bzgl. $\vartheta$. Dann ist $X$ $\mathcal{A}$-$\mathcal{B}$-messbar bereits., wenn $X^{-1}(E)\in\mathcal{A}$, $\forall E\in\mathcal{E}$ $(*)$.
 \subsubsection{Beweis}
-Wir betrachten $X_*(\mathcal{A})$. Falls $(*)$ gilt, ist $\mathcal{E}\subset X_*(\mathcal{A})$. $X_*(\mathcal{A})$ ist $\sigma$-Algebra $\RA B\subset X_*(\mathcal{A})\RA X$ ist $\mathcal{A}$-$\mathcal{B}$-messbar.
+Wir betrachten $X_*(\mathcal{A})$. Falls $(*)$ gilt, ist $\mathcal{E}\subset X_*(\mathcal{A})$. $X_*(\mathcal{A})$ ist $\sigma$-Algebra $\Rightarrow B\subset X_*(\mathcal{A})\Rightarrow X$ ist $\mathcal{A}$-$\mathcal{B}$-messbar.
 \subsubsection{Beispiel}
 Jede stetige Funktion $f\colon\mathbb{R}\to\mathbb{R}$ ist $B_\mathbb{R}$-$B_\mathbb{R}$-messbar. Grund: Da $f$ stetig, sind die Urbilder offener Mengen offen. Die offenen Mengen sind ein m\"oglicher Erzeuger von $B_\mathbb{R}$, nach Korollar muss man nur diese untersuchen.
 \subsubsection{Satz}
@@ -73,6 +73,6 @@ Betrachte dazu:
 Wir zeigen nun, dass
 \[(X+Y)^{-1}(]-\infty,a[)=\bigcup_{b\in\mathbb{Q}}X^{-1}(]-\infty,b[)\ \cap\ Y^{-1}(]-\infty,a-b).\]
 \bul{
-\item ``$\subset$'': Sei $\omega\in(X+Y)^{-1}(]-\infty,a[)\LRA(X+Y)(\omega)<a$. Sei $b\in\mathbb{Q}$ mit $b\in]X(\omega),X(\omega)+\mathcal{\varepsilon}{2}[$. $\RA X(\omega)<b$ und $Y(\omega)+b<X(\omega)+Y(\omega)+\frac{\varepsilon}{2}<a\RA Y(\omega)<a-b$.
-\item ``$\supset$'': Sei $\omega\in\ldots\RA\exists b$, sodass $X(\omega)<b$ und $Y(\omega)<a-b\RA(X+Y)(\omega)<a$.
+\item ``$\subset$'': Sei $\omega\in(X+Y)^{-1}(]-\infty,a[)\Leftrightarrow(X+Y)(\omega)<a$. Sei $b\in\mathbb{Q}$ mit $b\in]X(\omega),X(\omega)+\mathcal{\varepsilon}{2}[$. $\Rightarrow X(\omega)<b$ und $Y(\omega)+b<X(\omega)+Y(\omega)+\frac{\varepsilon}{2}<a\Rightarrow Y(\omega)<a-b$.
+\item ``$\supset$'': Sei $\omega\in\ldots\Rightarrow\exists b$, sodass $X(\omega)<b$ und $Y(\omega)<a-b\Rightarrow(X+Y)(\omega)<a$.
 }

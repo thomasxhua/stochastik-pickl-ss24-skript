@@ -6,8 +6,8 @@ $\mathcal{B}^\mathbb{R}$ ist die $\sigma$-Algebra erzeugt aus allen offenen Teil
 Diese Definition l\"asst sich auf Grundmengen verallgemeinern, in denen es ein ``Konzept'' von offenen Teilmengen gibt (topologische R\"aume, z.B. metrische R\"aume). Wir werden alternative Definitionen von $\mathcal{B}$ betrachten.
 \subsubsection{Korollar}
 \abc{
-\item Sei $\mathcal{E}\subset\mathcal{P}(\Omega),$ $\mathcal{A}\subset\mathcal{P}(\Omega)$ $\sigma$-Algebra. $\mathcal{E}\subset\mathcal{A}\RA\sigma(\mathcal{E})\subset\mathcal{A}$.
-\item Seien $\mathcal{E},\mathcal{F}\subset\mathcal{P}(\Omega)$. Falls $\mathcal{E}\subset\sigma(\mathcal{F})$ und $\mathcal{F}\subset\sigma(\mathcal{E})\RA\sigma(\mathcal{E})=\sigma(\mathcal{F})$.
+\item Sei $\mathcal{E}\subset\mathcal{P}(\Omega),$ $\mathcal{A}\subset\mathcal{P}(\Omega)$ $\sigma$-Algebra. $\mathcal{E}\subset\mathcal{A}\Rightarrow\sigma(\mathcal{E})\subset\mathcal{A}$.
+\item Seien $\mathcal{E},\mathcal{F}\subset\mathcal{P}(\Omega)$. Falls $\mathcal{E}\subset\sigma(\mathcal{F})$ und $\mathcal{F}\subset\sigma(\mathcal{E})\Rightarrow\sigma(\mathcal{E})=\sigma(\mathcal{F})$.
 }
 \subsubsection{Beweis}
 \abc{
@@ -15,8 +15,8 @@ Diese Definition l\"asst sich auf Grundmengen verallgemeinern, in denen es ein `
 $\leadsto$ $\mathcal{A}$ ist einer der Kandidaten, \"uber die geschnitten wird.
 \item
 \begin{align*}
-\mathcal{E}\subset\sigma(\mathcal{F})&\ \textabove{a)}{\RA}\sigma(\mathcal{E})\subset\sigma(\mathcal{F}),\\
-\mathcal{F}\subset\sigma(\mathcal{E})&\ \textabove{a)}{\RA}\sigma(\mathcal{F})\subset\sigma(\mathcal{E}).
+\mathcal{E}\subset\sigma(\mathcal{F})&\ \textabove{a)}{\Rightarrow}\sigma(\mathcal{E})\subset\sigma(\mathcal{F}),\\
+\mathcal{F}\subset\sigma(\mathcal{E})&\ \textabove{a)}{\Rightarrow}\sigma(\mathcal{F})\subset\sigma(\mathcal{E}).
 \end{align*}
 }
 \subsubsection{Satz}
@@ -26,12 +26,12 @@ Z.z.: Jede offene Teilmenge $\mathbb{R}$ liegt in der aus den offenen Intervalle
 \\~\\
 Sei $A\subset\mathbb{R}$ offen. F\"ur jedes $q\in\mathbb{Q}\cap A$ sei
 \[r_q=\sup\{\varepsilon\in\mathbb{R}\colon\ ]q-\varepsilon,\ q+\varepsilon[\ \subset A\}.\]
-Das Intervall $]q-r_q,\ q+r_q[$ ist $\subset A$ $(*)$. (WA: $]q-r_q,\ q+r_q[\ \not\subset A$ $\RA$ $\exists x\in\ ]q-r_q,\ q+r_q[$ mit $x\notin A$. W\"ahle $\varepsilon=\frac{r_q+|q-x|}{2}$ $\RA$ $x\in\ ]q-r_q,\ q+r_q[$, aber $\varepsilon<r_q$ $\lightning$.)
+Das Intervall $]q-r_q,\ q+r_q[$ ist $\subset A$ $(*)$. (WA: $]q-r_q,\ q+r_q[\ \not\subset A$ $\Rightarrow$ $\exists x\in\ ]q-r_q,\ q+r_q[$ mit $x\notin A$. W\"ahle $\varepsilon=\frac{r_q+|q-x|}{2}$ $\Rightarrow$ $x\in\ ]q-r_q,\ q+r_q[$, aber $\varepsilon<r_q$ $\lightning$.)
 \\~\\
 Betrachte $B=\bigcup_{q\in\mathbb{Q}\cap A}\ ]q-r_q,\ q+r_q[$. Z.z. $A=B$ (da $B$ abz\"ahlbare Vereinigung offener Intervalle).
 \bul{
 \item $B\subset A$, da all die Teilintervalle $]q-r_q,\ q+r_q[\ \subset A$ $(*)$.
-\item $A\subset B$. Sei $y\in A$. Z.z. $y\in B$. Wegen Offenheit von $A$ $\exists\delta_y$, sodass $]y-\delta_y,\ y+\delta_y[\ \subset A$. W\"ahle $q_y\in\mathbb{Q}\cap\ ]y-\frac{\delta_y}{2},y+\frac{\delta_y}{2}[$. $r_{q_y}\geq\frac{\delta_y}{2}$ $\RA$ $y\in\ ]q_y-r_{q_y},\ q_y+r_{q_y}[$.
+\item $A\subset B$. Sei $y\in A$. Z.z. $y\in B$. Wegen Offenheit von $A$ $\exists\delta_y$, sodass $]y-\delta_y,\ y+\delta_y[\ \subset A$. W\"ahle $q_y\in\mathbb{Q}\cap\ ]y-\frac{\delta_y}{2},y+\frac{\delta_y}{2}[$. $r_{q_y}\geq\frac{\delta_y}{2}$ $\Rightarrow$ $y\in\ ]q_y-r_{q_y},\ q_y+r_{q_y}[$.
 }
 \subsubsection{Satz}
 Die Borel-$\sigma$-Algebra ist genau die $\sigma$-Algebra erzeugt aus den Intervallen $]-\infty,\ a]$ mit $a\in\mathbb{R}$.
@@ -44,8 +44,8 @@ Sei $a<b\in\mathbb{R}\cup\{\pm\infty\}$. Z.z. $]a,b[\ \in\sigma(\mathcal{F})$.
 \bul{
 \item 1. Schritt: ``$a=-\infty$''.
 \[]-\infty,\ b[\ =\ \ubr{\bigcup_{n\in\mathbb{N}}\ubr{\left]-\infty,\ b-\frac{1}{n}\right]}{$\in\mathcal{F}$}}{$\in\sigma(\mathcal{F})$}.\]
-$\forall x\in\ ]-\infty,\ b[$, d.h. $\forall x<b\ \exists n\in\mathbb{N}$, sodass $x<b-\frac{1}{n}\RA x\in\bigcup_{n\in\mathbb{N}}\ \left]-\infty,\ b-\frac{1}{n}\right]$.
-$\RA\ ]-\infty,\ b[\ \subset\ \bigcup_{n\in\mathbb{N}}\left]-\infty,\ b-\frac{1}{n}\right]$. $\forall n\in\mathbb{N}$ ist $\left]-\infty,b-\frac{1}{n}\right]\ \subset\ ]-\infty,b[$ $\RA``\supset''$.
+$\forall x\in\ ]-\infty,\ b[$, d.h. $\forall x<b\ \exists n\in\mathbb{N}$, sodass $x<b-\frac{1}{n}\Rightarrow x\in\bigcup_{n\in\mathbb{N}}\ \left]-\infty,\ b-\frac{1}{n}\right]$.
+$\Rightarrow\ ]-\infty,\ b[\ \subset\ \bigcup_{n\in\mathbb{N}}\left]-\infty,\ b-\frac{1}{n}\right]$. $\forall n\in\mathbb{N}$ ist $\left]-\infty,b-\frac{1}{n}\right]\ \subset\ ]-\infty,b[$ $\Rightarrow``\supset''$.
 \item 2. Schritt:
 \[a\in\mathbb{R}\colon\ ]a,b[\ =\ \ubr{]-\infty,b[}{$\in\sigma(\mathcal{F})$ (1. Schritt)}\ \setminus\ \obr{]-\infty,a]}{$\in\mathcal{F}\subset\sigma(\mathcal{F})$}\]
 nach Satz ist letzteres in $\sigma(\mathcal{F})$.
@@ -60,6 +60,6 @@ Sei $\mathcal{G}=\{]-\infty,a]\colon a\in\mathbb{Q}\}$. Offensichtlich ist $\mat
 \[\mathcal{G}\subset\mathcal{F}\subset\sigma(\mathcal{F}).\]
 Z.z. $\mathcal{F}\subset\sigma(\mathcal{G})$. Sei $]-\infty,a]\ a\in\mathbb{R}$.
 \[]-\infty,a]\ =\ \ubr{\bigcap_{\mathclap{q\in\mathbb{Q},\ q\geq a}}\ ]-\infty,\ q]}{$\in\sigma(\mathcal{G})$}.\]
-$]-\infty,a]\ \subset\ ]-\infty,q]$, $\forall q\geq a$ $\RA$ $]-\infty,a]\subset\bigcup_{q\in\mathbb{Q},\ q\geq a}\ ]-\infty,q]$ ($\RA$ ``$\subset$'').
+$]-\infty,a]\ \subset\ ]-\infty,q]$, $\forall q\geq a$ $\Rightarrow$ $]-\infty,a]\subset\bigcup_{q\in\mathbb{Q},\ q\geq a}\ ]-\infty,q]$ ($\Rightarrow$ ``$\subset$'').
 \\~\\
-``$\supset$'': Dazu ``$\subset$'' f\"ur die Komplete. Sei $x\notin]-\infty,\ a]$ $\RA$ $x>a$. W\"ahle $q\in\ ]a,x[\ \cap\mathbb{Q}\RA x\notin\ ]-\infty,\ q]\ \RA x\notin\bigcup_{q\in\mathbb{Q},\ q\geq a}\ ]-\infty,q]$.
+``$\supset$'': Dazu ``$\subset$'' f\"ur die Komplete. Sei $x\notin]-\infty,\ a]$ $\Rightarrow$ $x>a$. W\"ahle $q\in\ ]a,x[\ \cap\mathbb{Q}\Rightarrow x\notin\ ]-\infty,\ q]\ \Rightarrow x\notin\bigcup_{q\in\mathbb{Q},\ q\geq a}\ ]-\infty,q]$.

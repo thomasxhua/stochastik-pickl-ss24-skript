@@ -5,26 +5,26 @@ Sei nun $\mathcal{A}_B:=\{A\in\delta(\mathcal{E})\colon A\cap B\in\delta(\mathca
 \item
 \abc{
 \item $\Omega\in\mathcal{A}_B$, da $\Omega\cap B=B\in\delta(\mathcal{E})$.
-\item Sei $A\in\mathcal{A}_B$, d.h. $A\cap B\in\delta(\mathcal{E})$ $\RA\ubr{B\setminus(A\cap B)}{$B\cap A^C\in\delta(\mathcal{E})$}\in\delta(\mathcal{E})$.
+\item Sei $A\in\mathcal{A}_B$, d.h. $A\cap B\in\delta(\mathcal{E})$ $\Rightarrow\ubr{B\setminus(A\cap B)}{$B\cap A^C\in\delta(\mathcal{E})$}\in\delta(\mathcal{E})$.
 }
 \item Sei $(A_n)_{n\in\mathbb{N}}\subset\mathcal{A}_B$ paarweise disjunkt.
 \[
 \left(\dot{\bigcup}_{n\in\mathbb{N}}A_n\right)\cap B=\dot{\bigcup}_{n\in\mathbb{N}}\ubr{(A_n\cap B)}{$\ni\delta(\mathcal{E})$ n.V.}\in\delta(\mathcal{E})\\
-\textabove{P.d.g.M.}{\RA}\mathcal{A}_B\supset\delta(\varepsilon)\ \text{(au\ss{}erdem $\mathcal{A}_B\subset\delta(\mathcal{E})$), d.h. $\mathcal{A}_B=\delta(\mathcal{E})$.}
+\textabove{P.d.g.M.}{\Rightarrow}\mathcal{A}_B\supset\delta(\varepsilon)\ \text{(au\ss{}erdem $\mathcal{A}_B\subset\delta(\mathcal{E})$), d.h. $\mathcal{A}_B=\delta(\mathcal{E})$.}
 \]
-$\RA\forall A,B\in\delta(\mathcal{E})$ gilt $A\cap B\in\delta(\mathcal{E})$.
+$\Rightarrow\forall A,B\in\delta(\mathcal{E})$ gilt $A\cap B\in\delta(\mathcal{E})$.
 }
 \subsubsection{Korollar}
-Sei $\mathcal{E}\subset\mathcal{P}(\Omega)$ schnittstabil $\RA\delta(\mathcal{E})=\delta(\mathcal{E})$.
+Sei $\mathcal{E}\subset\mathcal{P}(\Omega)$ schnittstabil $\Rightarrow\delta(\mathcal{E})=\delta(\mathcal{E})$.
 \subsubsection{Beweis}
 \bul{
-\item ``$\subset$'': $\delta(\mathcal{E})$ enth\"alt $\mathcal{E}$ und ist ein Dynkin-System $\textabove{P.d.g.M.}{\RA}\delta(\mathcal{E})\subset\delta(\mathcal{E})$.
-\item ``$\supset$'': $\delta(\mathcal{E})$ enth\"alt $\mathcal{E}$. $\delta(\mathcal{E})$ ist eine $\sigma$-Algebra aufgrund der letzten beiden S\"atze $\textabove{P.d.g.M.}{\RA}\sigma(\mathcal{E})\subset\delta(\mathcal{E})$.
+\item ``$\subset$'': $\delta(\mathcal{E})$ enth\"alt $\mathcal{E}$ und ist ein Dynkin-System $\textabove{P.d.g.M.}{\Rightarrow}\delta(\mathcal{E})\subset\delta(\mathcal{E})$.
+\item ``$\supset$'': $\delta(\mathcal{E})$ enth\"alt $\mathcal{E}$. $\delta(\mathcal{E})$ ist eine $\sigma$-Algebra aufgrund der letzten beiden S\"atze $\textabove{P.d.g.M.}{\Rightarrow}\sigma(\mathcal{E})\subset\delta(\mathcal{E})$.
 }
 \subsubsection{Satz (Eindeutigkeitssatz)}
 Sei $\mathcal{E}\subset\mathcal{P}(\Omega)$ schinttstabil. Dann ist $\mathbb{P}\colon\sigma(\mathcal{E})\to\mathbb{R}$ eindeutig durch $\mathbb{P}$ eingeschr\"ankt auf $\mathcal{E}$ definiert (falls existent).
 \subsubsection{Beweis}
-Seien $\mathbb{P},\mathbb{Q}\colon\sigma(\mathcal{E}\to\mathbb{R}$ Wahrscheinlichkeitsma\ss{}e mit $\mathbb{P}(A)=\mathbb{Q}(A)$, $\forall A\in\mathcal{E}$. $\{A\in\sigma(\mathcal{E})\colon\mathbb{P}(A)=\mathbb{Q}(A)\}=\mathcal{A}$ enth\"alt $\mathcal{E}$ und ist ein Dynkin-System $\RA\mathcal{A}\supset\delta(\mathcal{E})=\sigma(\mathcal{E})$.
+Seien $\mathbb{P},\mathbb{Q}\colon\sigma(\mathcal{E}\to\mathbb{R}$ Wahrscheinlichkeitsma\ss{}e mit $\mathbb{P}(A)=\mathbb{Q}(A)$, $\forall A\in\mathcal{E}$. $\{A\in\sigma(\mathcal{E})\colon\mathbb{P}(A)=\mathbb{Q}(A)\}=\mathcal{A}$ enth\"alt $\mathcal{E}$ und ist ein Dynkin-System $\Rightarrow\mathcal{A}\supset\delta(\mathcal{E})=\sigma(\mathcal{E})$.
 \subsubsection{Beispiel}
 \abc{
 \item Durch $\mathbb{P}(]a,b[)=\frac{b-a}{2\pi}$ wird f\"ur unser Gl\"ucksradspiel das Wahrscheinlichkeitsma\ss{} auf der entsprechenden Borel-$\sigma$-Algebra eindeutig.
@@ -57,4 +57,4 @@ Die Eigenschaft $(*)$ der Abbildung $X$ nennt man \trt{$\mathcal{A}$-$\mathcal{B
 \subsubsection{Satz}
 Sei $(\Omega,\mathcal{A},\mathbb{P})$ Wahrscheinlichkeitsraum, $\vartheta$ eine Menge mit $\sigma$-Algebra $\mathcal{B}$. Dann ist auf $B$ durch
 \[\mathbb{Q}(A)=\mathbb{P}(X^{-1}(\mathcal{A}))\]
-ein Wahrscheinclihkeitsma\ss{} definiert. D.h. falls $X\colon\Omega\to\vartheta$ $\mathcal{A}$-$\mathcal{B}$-messbar $\RA(\vartheta,\mathcal{B},\mathbb{P}\cdot X^{-1})$ ist Wahrscheinlichkeitsraum.
+ein Wahrscheinclihkeitsma\ss{} definiert. D.h. falls $X\colon\Omega\to\vartheta$ $\mathcal{A}$-$\mathcal{B}$-messbar $\Rightarrow(\vartheta,\mathcal{B},\mathbb{P}\cdot X^{-1})$ ist Wahrscheinlichkeitsraum.

@@ -14,7 +14,7 @@ $\lim_{n\to\infty}\mathbb{P}(X\leq a_n)=\mathbb{P}(\lim_{n\to\infty}X\leq a_n)=1
 V_X(b)&=\mathbb{P}(X\leq b)=\mathbb{P}(X\leq a\cap X\in\ ]a,b])\\
 &=\ubr{\mathbb{P}(X\leq a)}{$V_X(a)$}+\ubr{\mathbb{P}(X\in\ ]a,b])}{$\geq0$}
 \end{align*}
-$\RA V_X(b)\geq V_X(a)$.
+$\Rightarrow V_X(b)\geq V_X(a)$.
 \item Sei $(h_n)_{n\in\mathbb{N}}$ eine positive Nullfolge. (Rechtsseitig stetig: F\"ur alle solchen $(h_n)_{n\to\mathbb{N}}$ gilt: $\lim_{n\to\infty}V_X(a+h_n)=V_X(a)$.) Sei zun\"achst $h_n$ monoton fallend.
 \begin{align*}
 \lim_{n\to\infty}V_X(a+h_n)&=\lim_{n\to\infty}\mathbb{P}(X\leq a+h_n)\ubr{=}{monoton fallend}\mathbb{P}(\lim_{n\to\infty}X\leq a+h_n)\\
@@ -84,11 +84,11 @@ Wir betrachten obigen Fall f\"ur sehr kleines $p$, jedoch $n$ so gro\ss{}, dass 
 Wir nutzen folgende Formel:
 \begin{align*}
 (1-\frac{\lambda}{n})^n&\textabove{?}{\approx} e^{-\lambda},\ \text{f\"ur }n\gg1\\
-\LRA n\cdot\log(1-\frac{\lambda}{n})&\textabove{?}{\approx}-\lambda\\
+\Leftrightarrow n\cdot\log(1-\frac{\lambda}{n})&\textabove{?}{\approx}-\lambda\\
 \end{align*}
 Lineare Approximation: $f(x+\varepsilon)\approx f(x)+f^\prime(x)\cdot\varepsilon$,
 \[
-\RA n\cdot1\cdot\frac{-\lambda}{n}=-\lambda.
+\Rightarrow n\cdot1\cdot\frac{-\lambda}{n}=-\lambda.
 \]
 \begin{align*}
 \mathbb{P}(k\text{ Treffer})&=\neo{n\\k}\cdot\left(\frac{\lambda}{n}\right)^k\cdot\left(1-\frac{\lambda}{n}\right)^{n-k}\\

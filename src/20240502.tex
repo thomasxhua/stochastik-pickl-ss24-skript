@@ -8,10 +8,10 @@ Falls eine Eingenschaft f\"ur $\mathcal{E}\subset\mathcal{P}(\Omega)$ gilt und d
 \subsubsection{Beweis}
 Sei $\mathcal{A}$ die Menge, f\"ur die die Eigenschaft gilt. Da $\mathcal{E}\subset\mathcal{A}$, $\mathcal{A}$ ist $\sigma$-Algebra nach Voraussetzung,
 \[\sigma(\mathcal{E})=\bigcup_{\mathclap{\mathcal{B}\ \text{ist $\sigma$-Algebra},\ \mathcal{E}\subset\mathcal{B}}}\mathcal{B}.\]
-$\mathcal{A}$ ist eines der Kandidaten f\"ur $\mathcal{B}$ $\RA$ $\sigma(\mathcal{E})\subset\mathcal{A}$.
+$\mathcal{A}$ ist eines der Kandidaten f\"ur $\mathcal{B}$ $\Rightarrow$ $\sigma(\mathcal{E})\subset\mathcal{A}$.
 \subsubsection{Beweisstrategie f\"ur den Eindeutigkeitssatz}
 Seien $\mathbb{P},\mathbb{Q}\colon\sigma(\mathcal{E})\to\mathbb{R}$ Wahrscheinlichkeitsma\ss{}e. Wir m\"ochten zeigen, dass unter gewissen Bedingungen die Menge $\mathcal{G}$ definiert durch
-\[A\in\mathcal{G}\LRA\mathbb{P}(A)=\mathbb{Q}(A)\]
+\[A\in\mathcal{G}\Leftrightarrow\mathbb{P}(A)=\mathbb{Q}(A)\]
 eine $\sigma$-Algebra ist.
 \\~\\
 Nach dem Prinzip der guten Mengen ist dann
@@ -22,29 +22,29 @@ Wir beweisen dies in zwei Schritten:
 \item Unter gewissen Bedingungen ist jedes Dynkin-System eine $\sigma$-Algebra.
 }
 \subsubsection{Definition (Dynkin-System)}
-Eine Teilmenge $\mathcal{D}$ hei\ss{}t \trt{Dynkin-System} $:\LRA$
+Eine Teilmenge $\mathcal{D}$ hei\ss{}t \trt{Dynkin-System} $:\Leftrightarrow$
 \abc{
 \item $\Omega\in\mathcal{D}$,
-\item $A\in\mathcal{D}\RA A^C\in\mathcal{D}$,
-\item $(A_n)_{n\in\mathbb{N}}\subset\mathcal{D}$, $A_n$ paarweise disjunkt $\RA\bigcup_{n\in\mathbb{N}}A_n\in\mathcal{D}$.
+\item $A\in\mathcal{D}\Rightarrow A^C\in\mathcal{D}$,
+\item $(A_n)_{n\in\mathbb{N}}\subset\mathcal{D}$, $A_n$ paarweise disjunkt $\Rightarrow\bigcup_{n\in\mathbb{N}}A_n\in\mathcal{D}$.
 }
 \subsubsection{Satz}
 Seien $\mathbb{P},\mathbb{Q}$ Wahrscheinlichkeitsma\ss{}e auf $\mathcal{A}$. $\mathcal{G}:=\{A\subset\mathcal{A}\colon\mathbb{P}(A)=\mathbb{Q}(A)\}$ ist ein Dynkin-System.
 \subsubsection{Beweis}
 \abc{
-\item $\mathbb{P}(\Omega)=1=\mathbb{Q}(\Omega)\RA\Omega\in\mathcal{G}$.
-\item Sei $A\in\mathcal{G}$, d.h. $\mathbb{P}(A)=\mathbb{Q}(A)\RA\mathbb{P}(A^C)=1-\mathbb{P}(A)=1-\mathbb{Q}(A)=\mathbb{Q}(A^C)$, d.h. $A^C\in\mathcal{G}$.
+\item $\mathbb{P}(\Omega)=1=\mathbb{Q}(\Omega)\Rightarrow\Omega\in\mathcal{G}$.
+\item Sei $A\in\mathcal{G}$, d.h. $\mathbb{P}(A)=\mathbb{Q}(A)\Rightarrow\mathbb{P}(A^C)=1-\mathbb{P}(A)=1-\mathbb{Q}(A)=\mathbb{Q}(A^C)$, d.h. $A^C\in\mathcal{G}$.
 \item Sei $(A_n)_{n\in\mathbb{N}}\subset\mathcal{G}$ paarweise disjunkt, d.h. $\mathbb{P}(A_n)=\mathbb{Q}(A_n),\ \forall n\in\mathbb{N}$
-\[\RA\mathbb{P}(\bigcup_{n\in\mathbb{N}}A_n)\textabove{\tbf{K}c)}{=}\Sigma_{n\in\mathbb{N}}\mathbb{P}(A_n)\textabove{$\overleftarrow{\text{\tbf{K}c)}}$}{=}\mathbb{Q}(\bigcup_{n\in\mathbb{N}}A_n).\]
+\[\Rightarrow\mathbb{P}(\bigcup_{n\in\mathbb{N}}A_n)\textabove{\tbf{K}c)}{=}\Sigma_{n\in\mathbb{N}}\mathbb{P}(A_n)\textabove{$\overleftarrow{\text{\tbf{K}c)}}$}{=}\mathbb{Q}(\bigcup_{n\in\mathbb{N}}A_n).\]
 }
 \subsubsection{Definition (Schnittstabilit\"at)}
-Eine Menge $\mathcal{E}\subset\mathcal{P}(\Omega)$ hei\ss{}t \trt{schnittstabil} $:\LRA A\cap B\in\mathcal{E},\ \forall A,B\in\mathcal{E}.$
+Eine Menge $\mathcal{E}\subset\mathcal{P}(\Omega)$ hei\ss{}t \trt{schnittstabil} $:\Leftrightarrow A\cap B\in\mathcal{E},\ \forall A,B\in\mathcal{E}.$
 \subsubsection{Satz}
 Jedes schnittstabile Dynkin-System ist eine $\sigma$-Algebra.
 \subsubsection{Beweis}
 Axioma a),b) sind identisch ($\sigma$-Algebra und Dynkin-System). Es bleibt c) zu zeigen. Sei dazu $\mathcal{A}$ ein schnittstabiles Dynkin-System. Sei $(A_n)_{n\in\mathbb{N}}\subset\mathcal{A}$ beliebig. Z.z. $\bigcup_{n\in\mathbb{N}}A_n\subset\mathcal{A}$.
 \\~\\
-Sei $A_1,A_2\in\mathcal{A}\RA A_1\cap A_2\in\mathcal{A}$ (schnittstabil) $\RA(A_1\cap A_2)^C\in\mathcal{A}$. Da $\mathcal{A}$ schnittstabil ist, ist
+Sei $A_1,A_2\in\mathcal{A}\Rightarrow A_1\cap A_2\in\mathcal{A}$ (schnittstabil) $\Rightarrow(A_1\cap A_2)^C\in\mathcal{A}$. Da $\mathcal{A}$ schnittstabil ist, ist
 \[\ubr{(A_1\cap A_2)^C\cap A_1}{$A_1\setminus A_2$}\in\mathcal{A},\ A_1\cup A_2=A_2\cup(A_1\setminus A_2)\in\mathcal{A}\ \text{(disjunkt)}.\]
 \[\bigcup_{n\in\mathbb{N}}A_n=A_1\cup(A_2\setminus A_1)\cup((A_3\setminus A_1)\setminus A_2)\cup\ldots\]
 \myqed{}
@@ -56,10 +56,10 @@ Sei $\mathcal{E}\subset\mathcal{P}(\Omega)$ schnittstabil, $E\in\mathcal{E}$ bel
 Wir zeigen nun, dass $\mathcal{A}_E$ ein Dynkin-System ist.
 \abc{
 \item $\Omega\in\mathcal{A}_E$: $E\cap\Omega=E\in\mathcal{E}\subset\delta(\mathcal{E})$.
-\item Sei $A\in\mathcal{A}_E\RA E\cap A\in\delta(\mathcal{E})$:
+\item Sei $A\in\mathcal{A}_E\Rightarrow E\cap A\in\delta(\mathcal{E})$:
 \[A^C\cap E=(A\cup E^C)^C=((A\cap E)\cup E^C)^C.\]
 \item Sei $(A_n)_{n\in\mathbb{N}}\subset\mathcal{A}_E$ paarweise disjunkt. Z.z. $\bigcup_{n\in\mathbb{N}}A_n\in\mathcal{A}_E$. $\forall n\in\mathbb{N}$ ist $A_n\cap E\in\delta(\mathcal{E})$
 \[E\cap\bigcup_{n\in\mathbb{N}}A_n=\bigcup_{n\in\mathbb{N}}E\cap A_n\ (*).\]
-$E\cap A_n$ sind paarweise disjunkt, da die $A_n$ paarweise disjunkt $\RA(*)\in\delta(\mathcal{E})\RA\bigcup_{n\in\mathbb{N}}A_n\in\mathcal{A}_E$.
+$E\cap A_n$ sind paarweise disjunkt, da die $A_n$ paarweise disjunkt $\Rightarrow(*)\in\delta(\mathcal{E})\Rightarrow\bigcup_{n\in\mathbb{N}}A_n\in\mathcal{A}_E$.
 }
 

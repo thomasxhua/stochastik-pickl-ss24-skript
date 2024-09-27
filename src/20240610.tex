@@ -3,16 +3,16 @@
 \abc{
 \item Falls $X\geq0$ fast sicher, so ist $\mathbb{E}(x)\geq0$.
 \item Falls $X\leq Y$ fast sicher, so ist $\mathbb{E}(x)\leq\mathbb{E}(Y)$.
-\item $\mathbb{E}(|X|)=0\LRA X=0$ fast sicher.
+\item $\mathbb{E}(|X|)=0\Leftrightarrow X=0$ fast sicher.
 \item $\mathbb{E}(|X|)\geq\mathbb{E}(X)$.
 }
 \subsubsection{Beweis}
 \abc{
-\item $\mathbb{P}(X\leq0)=0$, $\mathbb{P}(X\leq a)=0$, $\forall a<0$. Die Verteilungsfunktion ist $0$ $\forall a<0$ $\RA$ der negative Anteil von $\mathbb{E}$ ist $0$ $\RA\mathbb{E}(X)\geq 0$.
-\item $X\leq Y\RA Y-X\geq 0\RA\mathbb{E}(Y-X)\geq0\RA\mathbb{E}(Y)\geq\mathbb{E}(X)$.
+\item $\mathbb{P}(X\leq0)=0$, $\mathbb{P}(X\leq a)=0$, $\forall a<0$. Die Verteilungsfunktion ist $0$ $\forall a<0$ $\Rightarrow$ der negative Anteil von $\mathbb{E}$ ist $0$ $\Rightarrow\mathbb{E}(X)\geq 0$.
+\item $X\leq Y\Rightarrow Y-X\geq 0\Rightarrow\mathbb{E}(Y-X)\geq0\Rightarrow\mathbb{E}(Y)\geq\mathbb{E}(X)$.
 \item
 \bul{
-\item ``$\LA$'': Sei $X=0$ f.s. $\LRA|X|=0$.
+\item ``$\Leftarrow$'': Sei $X=0$ f.s. $\Leftrightarrow|X|=0$.
 \[
 V_X(a)=
 \begin{cases}
@@ -20,8 +20,8 @@ V_X(a)=
 1&\text{f\"ur }a\geq0\\
 \end{cases}
 \]
-$\RA\mathbb{E}(|x|)=0$.
-\item ``$\RA$'': Sei $\mathbb{E}(|X|)=0$. WA: $X=0$ f.s. gilt nicht $\RA$ $\exists\varepsilon>0$ mit $\mathbb{P}(|X|>\varepsilon)>0$. Falls $\mathbb{P}(|X|<\frac{1}{n})=0$, w\"are f\"ur alle $n\in\mathbb{N}$, h\"atten wir $\mathbb{P}(\ubr{\bigcup_{n\in\mathbb{N}}|X|<\frac{1}{n}}{$|X|\neq0$})=0$. $\mathbb{P}(|X|>\varepsilon:=p>0\RA V_{|X|}(\varepsilon)=1-p<1\RA\mathbb{E}(|X|)>0$ $\lightning$.
+$\Rightarrow\mathbb{E}(|x|)=0$.
+\item ``$\Rightarrow$'': Sei $\mathbb{E}(|X|)=0$. WA: $X=0$ f.s. gilt nicht $\Rightarrow$ $\exists\varepsilon>0$ mit $\mathbb{P}(|X|>\varepsilon)>0$. Falls $\mathbb{P}(|X|<\frac{1}{n})=0$, w\"are f\"ur alle $n\in\mathbb{N}$, h\"atten wir $\mathbb{P}(\ubr{\bigcup_{n\in\mathbb{N}}|X|<\frac{1}{n}}{$|X|\neq0$})=0$. $\mathbb{P}(|X|>\varepsilon:=p>0\Rightarrow V_{|X|}(\varepsilon)=1-p<1\Rightarrow\mathbb{E}(|X|)>0$ $\lightning$.
 }
 \item Es gilt $|X(\omega)|\geq X(\omega),\ \forall\omega$, mit b) folgt Behauptung.
 }
@@ -38,7 +38,7 @@ die \trt{Varianz} von $X$.
 \subsubsection{Satz}
 \abc{
 \item $\Var X\geq0$ f\"ur alle Zufallsvariablen $X$.
-\item $\Var X=0\LRA X=\mu$ f.s.
+\item $\Var X=0\Leftrightarrow X=\mu$ f.s.
 \item $\Var(X+a)=\Var X,\ \forall a\in\mathbb{R}$.
 \item $\Var(aX)=a^2\cdot\Var X$.
 \item $\Var X=\mathbb{E}(X^2)-\mathbb{E}(X)^2$.
@@ -46,7 +46,7 @@ die \trt{Varianz} von $X$.
 \subsubsection{Beweis}
 \abc{
 \item Ist eine Folgerung aus a) des letztes Satzes: $(X-\mu)^2\geq 0$.
-\item Ist eine direkte Folgerung asu c) des letzten Satzes, $(X-\mu)^2=0\LRA|X-\mu|=0\RA X-\mu=0$ f.s. $\LRA X=\mu$ f.s.
+\item Ist eine direkte Folgerung asu c) des letzten Satzes, $(X-\mu)^2=0\Leftrightarrow|X-\mu|=0\Rightarrow X-\mu=0$ f.s. $\Leftrightarrow X=\mu$ f.s.
 \item $\Var(X+a)=\mathbb{E}[(X+a-\mathbb{E}(X+a))^2]=\mathbb{E}(X+a-\mathbb{E}(X)-a)^2]=\Var X$.
 \item $\Var(aX)=\mathbb{E}[(aX-\mathbb{E}(aX)^2]=\mathbb{E}[(aX-a\mathbb{E}(x))^2]=\mathbb{E}[a^2(X-\mathbb{E}(X))^2]=a^2\mathbb{E}[(X-\mathbb{E}(X))^2]=a^2\Var X$.
 \item $\Var X=\mathbb{E}[(X-\mu)^2]=\mathbb{E}(X^2-2\mu X+\mu^2)=\mathbb{E}(X^2)-2\mu\ubr{\mathbb{E}(X)}{$\mu$}+\mu^2=\mathbb{E}(X^2)-\mu^2$.

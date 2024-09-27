@@ -6,7 +6,7 @@ WA: Es gibt ein solches $\mathbb{P}$.
 \\~\\
 Wir zerlegen nun $[0,2\pi[$ in \"uberabz\"ahlbar viele abz\"ahlbare Teilmengen:
 \[
-a\sim b:\LRA a-b\in\mathbb{Q}.
+a\sim b:\Leftrightarrow a-b\in\mathbb{Q}.
 \]
 Dies definiert \"Aquivalenzklassen, diese dienen zur Zerlegung von $[0,2\pi[$:
 \bul{
@@ -27,11 +27,11 @@ Es gilt:
 \[
 [0,2\pi[\ \subseteq\ \bigcup_{\mathclap{q\in]-2\pi,2\pi[\cap\mathbb{Q}}}\ R_q\subset\ ]-2\pi,4\pi[.
 \]
-$\RA$ da $\mathbb{P}([0,2\pi[)=1$, gilt, dass
+$\Rightarrow$ da $\mathbb{P}([0,2\pi[)=1$, gilt, dass
 \begin{align*}
     &\mathbb{P}(\bigcup_{\mathclap{q\in]-2\pi,2\pi[\cap\mathbb{Q}}}R_q)\geq1.\\
-    \RA\ &\sum_{\mathclap{j\in]-2\pi,2\pi[}}\mathbb{P}(R)\geq1\\
-    \RA\ &\mathbb{P}(R)\neq0,
+    \Rightarrow\ &\sum_{\mathclap{j\in]-2\pi,2\pi[}}\mathbb{P}(R)\geq1\\
+    \Rightarrow\ &\mathbb{P}(R)\neq0,
 \end{align*}
 aber falls der Inhalt $\mathbb{P}(R)>0$, folgt, dass das Intervall $]-2\pi,4\pi[$ unendlichen Inhalt hat. Dieses \"uberdeckt jedoch $[0,2\pi[$ dreimal. $\lightning$
 \subsection{Ereignisraum}
@@ -40,8 +40,8 @@ Wir schr\"anken den Definitionsbereich von $\mathbb{P}$ ein, um solch problemati
 Sei $\Omega$ eine Menge. Eine $\sigma$-Algebra bzgl. $\Omega$ ist eine Teilmenge von $\mathcal{P}(\Omega)$ mit:
 \abc{
 \item $\Omega\in\mathcal{A}$,
-\item $A\in\mathcal{A}\RA A^C\in\mathcal{A}$,
-\item Sei $(A_n)_{n\in\mathbb{N}}\subset\mathcal{A}\RA\bigcup_{n=1}^\infty A_n\in\mathcal{A}$.
+\item $A\in\mathcal{A}\Rightarrow A^C\in\mathcal{A}$,
+\item Sei $(A_n)_{n\in\mathbb{N}}\subset\mathcal{A}\Rightarrow\bigcup_{n=1}^\infty A_n\in\mathcal{A}$.
 }
 \subsubsection{Beispiele}
 \abc{
@@ -57,7 +57,7 @@ Sei $\mathcal{A}$ eine $\sigma$-Algebra bzgl. $\Omega$. Dann gilt:
 \abc{
 \item $\emptyset\in\mathcal{A}$,
 \item abz\"ahlbare Schritte von Ereignissen sind in $\mathcal{A}$,
-\item $A,B\in\mathcal{A}\RA A\setminus B\in\mathcal{A}$.
+\item $A,B\in\mathcal{A}\Rightarrow A\setminus B\in\mathcal{A}$.
 }
 \subsubsection{Beweis}
 \abc{
@@ -70,13 +70,13 @@ Sei $\Omega$ eine Menge. Der Schnitt beliebiger $\sigma$-Algebren ergibt wieder 
 \subsubsection{Beweis}
 Seien $\mathcal{A}_i$ f\"ur $i\in\mathcal{I}$ $\sigma$-Algebren (bzgl. $\Omega$). Z.z. $\mathcal{A}:=\bigcap_{i\in\mathcal{I}}\mathcal{A}_i$ ist $\sigma$-Algebra.
 \abc{
-\item $\Omega\in\mathcal{A}_i,\ \forall i\in\mathcal{I}\RA\Omega\in\mathcal{A}.$
-\item Sei $E\in\mathcal{A}\RA E\in\mathcal{A}_i,\ \forall i\in\mathcal{I}\RA E^C\in\mathcal{A}_i,\ \forall i\in\mathcal{I}$.
+\item $\Omega\in\mathcal{A}_i,\ \forall i\in\mathcal{I}\Rightarrow\Omega\in\mathcal{A}.$
+\item Sei $E\in\mathcal{A}\Rightarrow E\in\mathcal{A}_i,\ \forall i\in\mathcal{I}\Rightarrow E^C\in\mathcal{A}_i,\ \forall i\in\mathcal{I}$.
 \item Seien $(E_n)_{n\in\mathbb{N}}\subset\mathcal{A}$ ($E_n\in\mathcal{A}\ \forall n\in\mathbb{N}$):
 \begin{align*}
-    \RA\ &E_n\in A_i,\ \forall n\in\mathbb{N}, \forall i\in\mathcal{I}\\
-    \RA\ &\bigcup_{n=1}^\infty E_n\in\mathcal{A}_i,\ \forall i\in\mathcal{I}\ \text{(da $\mathcal{A}_i$ $\sigma$-Algebra)}\\
-    \RA\ &\bigcup_{n=1}^\infty E_n\in\mathcal{A}.
+    \Rightarrow\ &E_n\in A_i,\ \forall n\in\mathbb{N}, \forall i\in\mathcal{I}\\
+    \Rightarrow\ &\bigcup_{n=1}^\infty E_n\in\mathcal{A}_i,\ \forall i\in\mathcal{I}\ \text{(da $\mathcal{A}_i$ $\sigma$-Algebra)}\\
+    \Rightarrow\ &\bigcup_{n=1}^\infty E_n\in\mathcal{A}.
 \end{align*}
 }
 \subsubsection{Bemerkung}
@@ -105,7 +105,7 @@ $\sigma(\mathcal{E})$ ist die kleinste $\sigma$-Algebra, die $\mathcal{E}$ enth\
 \subsubsection{Beweis}
 \abc{
 \item $\mathcal{E}$ ist in allen $\sigma$-Algebren enthalten, \"uber die der Schnitt gebildet wird.
-\item $\widetilde{\mathcal{A}}$ ist ein Kandidat f\"ur $\mathcal{A}$ in der Definition. Es wird also auch \"uber $\widetilde{\mathcal{A}}$ der Schnitt gebildet $\RA\widetilde{A}\supset\sigma(\mathcal{E})$.
+\item $\widetilde{\mathcal{A}}$ ist ein Kandidat f\"ur $\mathcal{A}$ in der Definition. Es wird also auch \"uber $\widetilde{\mathcal{A}}$ der Schnitt gebildet $\Rightarrow\widetilde{A}\supset\sigma(\mathcal{E})$.
 }
 \subsubsection{Beispiel}
 $\Omega=\{1,2,3\},\mathcal{E}=\{\{1,2\}\}$. $\mathcal{P}(\Omega)$ ist $\sigma$-Algebra, enth\"alt $\mathcal{E}$ $\mathcal{A}_1$ vom Beispiel oben ebenso. Weitere Kandidaten:

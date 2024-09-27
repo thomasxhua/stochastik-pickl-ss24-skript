@@ -9,7 +9,7 @@ Die durch Zufallsvariablen bestimmten Ereignisse schreibt man oft in kurzer Form
 }
 \subsection{Unabh\"angigkeit}
 \subsubsection{Definition (Unabh\"angigkeit von Zufallsvariablen)}
-Zwei reelle Zufallsvariablen $X,Y$ hei\ss{}en \trt{unabh\"angig} $:\LRA$
+Zwei reelle Zufallsvariablen $X,Y$ hei\ss{}en \trt{unabh\"angig} $:\Leftrightarrow$
 \[\forall B_1,B_2\in\mathcal{B}_\mathbb{R}\colon X\in B_1\ \text{ist unabh\"angig von}\ Y\in B_2.\]
 \subsubsection{Bemerkung}
 Es reicht, wenn $B_1,B_2\in\mathcal{E}$ f\"ur einen Erzeuger $\mathcal{E}$ von $\mathcal{B}_\mathbb{R}$ unabh\"angige Ereignisse $X\in B_1$ und $Y\in B_2$ ergeben.
@@ -26,18 +26,18 @@ $1$&$\checkmark$&$\checkmark$&$q_x$\\
 ~&$p_y$&$q_y$&~
 \end{tabular}
 \end{center}
-$A$ unabh\"angig von $B\RA A$ unabh\"angig von $B^C$.
+$A$ unabh\"angig von $B\Rightarrow A$ unabh\"angig von $B^C$.
 \subsubsection{Definition (paarweise Unabh\"angigkeit)}
 Sei $(A_i)_{i\in\mathcal{I}}$ Ereignisse.
 \abc{
-\item Die $(A_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{paarweise unabh\"angig} $:\LRA A_j$ unabh\"angig von $A_k$, $\forall j\neq k\in\mathcal{I}$,
-\item die $(A_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{unabh\"angig} $:\LRA\forall\mathcal{J}\subset\mathcal{I}$ ist $\mathbb{P}(\bigcap_{j\in\mathcal{J}}A_j)=\prod_{j\in\mathcal{J}}\mathbb{P}(A_j)$ ($J$ ist abz\"ahlbar).
+\item Die $(A_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{paarweise unabh\"angig} $:\Leftrightarrow A_j$ unabh\"angig von $A_k$, $\forall j\neq k\in\mathcal{I}$,
+\item die $(A_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{unabh\"angig} $:\Leftrightarrow\forall\mathcal{J}\subset\mathcal{I}$ ist $\mathbb{P}(\bigcap_{j\in\mathcal{J}}A_j)=\prod_{j\in\mathcal{J}}\mathbb{P}(A_j)$ ($J$ ist abz\"ahlbar).
 }
 \subsubsection{Definition (paarweise Unabh\"angigkeit von Zufallsvariablen)}
 Seien $(X_i)_{i\in\mathcal{I}}$ Zufallsvariablen.
 \abc{
-\item Die $(X_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{paarweise unabh\"angig} $:\LRA X_j,X_k$ unabh\"angig $\forall j\neq k\in\mathcal{I}$,
-\item die $(X_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{unabh\"angig} $:\LRA\forall\mathcal{J}\subset\mathcal{I}$ abz\"ahlbar und $\forall(B_j)_{j\in\mathcal{J}}\subset\mathcal{B}_\mathbb{R}$ gilt $\mathbb{P}(\bigcap_{j\in\mathcal{J}}X_j\in B_j)=\prod_{i\in\mathcal{J}}\mathbb{P}(X_j\in B_j)$.
+\item Die $(X_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{paarweise unabh\"angig} $:\Leftrightarrow X_j,X_k$ unabh\"angig $\forall j\neq k\in\mathcal{I}$,
+\item die $(X_i)_{i\in\mathcal{I}}$ hei\ss{}en \trt{unabh\"angig} $:\Leftrightarrow\forall\mathcal{J}\subset\mathcal{I}$ abz\"ahlbar und $\forall(B_j)_{j\in\mathcal{J}}\subset\mathcal{B}_\mathbb{R}$ gilt $\mathbb{P}(\bigcap_{j\in\mathcal{J}}X_j\in B_j)=\prod_{i\in\mathcal{J}}\mathbb{P}(X_j\in B_j)$.
 }
 \subsubsection{Bemerkung}
 Bei den Anwendungen werden wir meist Situationen betrachten, bei denen a priori klar ist, dass die Zufallsvariablen unabh\"angig sind (\trt{kausale Unabh\"angigkeit}).
