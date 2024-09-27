@@ -1,0 +1,76 @@
+\pickl{20.06.2024}
+\subsection{Markov- und Tschebychev-Ungleichung}
+\subsubsection{Satz (Markov-Ungleichung)}
+Sei $X$ eine Zufallsgr\"o\ss{}e, $f\colon\mathbb{R}^+_0\to\mathbb{R}^+_0$ monoton steigend. Sei $a\in\mathbb{R}^+$ mit $f(a)>0$. Dann gilt:
+\[
+\mathbb{P}(|X|\geq a)\leq\frac{\mathbb{E}(f(|X|)}{f(a)}.
+\]
+\subsubsection{Beweis}
+\begin{itemize}
+\item Sei zun\"achst $f(x)=x$.
+\begin{align*}
+\mathbb{E}(|X|)&=\mathbb{E}(\mathds{1}_{|X|\geq a}|X|)+\mathbb{E}(\mathds{1}_{|X|<a}|X|)\\
+&=\mathbb{E}(\ubr{\mathds{1}_{|X|\geq a}(|X|-a)}{$\geq0$})+\mathbb{E}(\ubr{\mathds{1}_{|X|\geq a}\cdot a}{$\geq0$})+\mathbb{E}(\mathds{1}_{|X|<a}|X|)\\
+&\geq\mathbb{E}(\mathds{1}_{|X|\geq a})=\mathbb{P}(|X|\geq a)\cdot a.
+\end{align*}
+($\mathbb{E}(\mathds{1}_A)=\mathbb{P}(A)$, da $\mathbb{E}(\mathds{1}_A)=0\cdot\mathbb{P}(\mathds{1}_A=0)+\mathbb{P}(\mathds{1}_A=1)=\mathbb{P}(A)$.) $\Rightarrow\mathbb{P}(|A|\geq a)\leq\frac{\mathbb{E}(|X|)}{a}$ $(*)$.
+\item Allgemeiner Fall: Sei $Y:=f(|X|),\ b:=f(a)$. $(*)$ liefert:
+\begin{align*}
+\mathbb{P}(|Y|\geq b)&\leq\frac{\mathbb{E}(|Y|)}{b}=\frac{\mathbb{E}(Y)}{b}\\
+&=\frac{\mathbb{E}(f(|X|))}{f(a)}.
+\end{align*}
+Z.z. $\mathbb{P}(|X|\geq a)\leq\mathbb{P}(|Y|\geq b)=\mathbb{P}(f(|X|)\geq f(a))$. D.h., z.z.: $|X|\geq a\subset f(|X|)\geq f(a)$. Da $f$ monoton steigent ist, gilt:
+\[
+X\leq Y\Rightarrow f(x)\leq f(y),\ \forall x,y\in\mathbb{R}.
+\]
+Insbesondere: $|X(\omega)|\geq a\Rightarrow f(|X(\omega)|)\geq f(a)$.
+\end{itemize}
+\subsubsection{Beispiel}
+$\Omega=\{-3,-2,-1,0,1,-2,3\}$, Laplace $X(\omega)=\omega$.
+\[
+\mathbb{P}(|X|\geq a)\leq\frac{\mathbb{E}(|X|}{a}=\frac{2}{a}.
+\]
+F\"ur $a\leq 2$ nicht hilfreich, $a=3$ ergibt $\mathbb{P}(|X|\geq a)\leq\frac{2}{3}$.
+\subsubsection{Korollar (Tschebychev-Ungleichung)}
+\[
+\mathbb{P}(|X-\mu|\geq a)\leq\frac{\Var X}{a^2},
+\]
+$\mu=\mathbb{E}(X)$.
+\subsubsection{Beweis}
+W\"ahle $f(x)=x^2$ und $X\leadsto X-\mu$.
+\[
+\mathbb{P}(|X-\mu|\geq a)\leq\frac{\mathbb{E}(|X-\mu|^2)}{a^2}.
+\]
+\newpage
+\section{Gesetze der gro\ss{}en Zahlen}
+Wir betrachten ein Zufallsexperiment mit zugeh\"origer Zufallsvariable $X$, welches wir sehr h\"aufig in unabh\"angiger Weise wiederholen. Wir machen Aussagen f\"ur diese Zufallsvariablen gemeinsam, insbesondere \"uber das gebildete Mittel
+\[
+\overline{X}_n:=\frac{1}{n}\sum_{j=1}^nx_j.
+\]
+\subsection{Schwaches Gesetz der gro\ss{}en Zahlen}
+\subsubsection{Satz (Schwaches Gesetz der gro\ss{}en Zahlen)}
+Sei Seien $X_1,\ldots,X_n$ identisch verteilte, paarweise unabh\"angige Zufallsvariablen, je mit Erwartungswert $\mu$ und Varianz $\sigma^2$. Dann gilt:
+\[
+\forall a>0\text{ ist }\mathbb{P}(|\overline{X}_n-\mu|\geq a)\leq\frac{\sigma^2}{na^2}.
+\]
+\subsubsection{Beweis}
+Wegen Tschebychev gilt:
+\[
+\mathbb{P}(|\overline{X}_n-\mu|\geq a)\leq\frac{\Var(\overline{X}_n)}{a^2}\ (*),
+\]
+\begin{align*}
+\Var\overline{X}_n&=\Var(\frac{1}{n}\sum_{j=1}^n X_j)=\frac{1}{n^2}\Var(\sum_{j=1}^n X_j)\\
+&=\frac{1}{n^2}\mathbb{E}((\sum_{j=1}^n(X_j-\mu))^2)\\
+&\ubr{=}{$(**)$}\frac{1}{n^2}\mathbb{E}(\sum_{j=1}^n(X_j-\mu)^2)+\frac{1}{n^2}\mathbb{E}(\sum_{j\neq k}(X_j-\mu)(X_k-\mu))\\
+&=\left[\sum_{j=1}^n\Var X_j+\sum_{j\neq k}2\ubr{\Cov(X_j,X_k)}{$=0$}\right]\frac{1}{n^2},
+\end{align*}
+mit NR $(**)$:
+\[
+\left(\sum_{j=1}^na_j\right)^2
+=\sum_{j=1}^na_j\cdot\sum_{k=1}^na_k
+=\sum_{j=1}^n\sum_{k=1}^ka_ja_k
+=\sum_{j=1}^na_j^2\cdot\sum_{j\neq k}a_ja_k,
+\]
+\[
+(*)=\frac{1}{n^2}\frac{n\sigma^2}{a^2}.
+\]
