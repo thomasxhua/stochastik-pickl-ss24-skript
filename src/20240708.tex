@@ -1,0 +1,78 @@
+\pickl{08.07.2024}
+\subsubsection{Beispiel}
+Wir m\"ochten die Zahl der Fische in einem See absch\"atzen. Dazu fangen wir $n$ Fische, markieren diese und werfen sie zur\"uck in den See. Danach fangen wir erneut Fische und sch\"atzen anhand der Zahl markierter Fische vs. unmarkierten Fischen die Gesamtzahl an Fischen ab.
+\\~\\
+$N$ sei die Zahl der unmarkierten Fsiche im See. $a$ bzw. $b$ die Zahl der gefangenen, markierten/unmarkierten Fische. Die Anzahl der M\"oglichkeiten $a$ bzw. $b$ Fische aus $n$ bzw. $N$ zu ziehen ist:
+\[
+\frac{\neo{n\\a}\neo{N\\b}}{\neo{n+N\\a+b}}
+\]
+soll maximal werden. Zur Bestimmung des Maximums setzen wir die diskrete Ableitung $0$, $f(N+1)-f(N)\approx0\Leftrightarrow f(N+1)\approx f(N)$.
+\begin{align*}
+\frac{\neo{n\\a}\frac{(N+1)!}{b!(N+1-b)!}}{\frac{(n+N+1)!}{(n+N+1-a-b)!(a+b)!}}
+&\approx
+\frac{\neo{n\\a}\frac{N!}{b!(N-b)!}}{\frac{(n+N)!}{(n+N-a-b)!(a+b)!}}
+\\\Leftrightarrow
+\frac{\frac{N+1}{N+1+b}}{\frac{n+N+1}{n+N+1-a-n}}
+&\approx
+1
+\\\Leftrightarrow
+\frac{N+1}{N+1-b}
+&\approx
+\frac{n+N+1}{n+N+1-a-b}
+\\\Leftrightarrow
+(N+1)(n+N+1-a-b)
+&\approx
+(N+1-b)(n+N+1)
+\\\Leftrightarrow
+-a(N+1)
+&=
+bn
+\Rightarrow N=\frac{bn}{a}-1.
+\end{align*}
+\subsubsection{Beispiel (Problem: Qualit\"at der Sch\"atzmethode)}
+In der Stadt gibt es $a$ durchnummerierte Taxis. Wir beobachten $n$ der Taxis und m\"ochten $a$ absch\"atzen.
+\subsubsection{Methode 1}
+Wir bilden den Mittelwert $M=\frac{1}{n}\sum_{j=1}^na_j$. Wir sch\"atzen $a=2M$. (Annahme: $a_j\in[0,a]$ gleichverteilt und unabh\"angig.) Dann ist $\mathbb{E}(2M)=a$, denn
+\begin{align*}
+\mathbb{E}(a_j)&=\int_0^ax\frac{1}{a}dx=\left[\frac{x^2}{2a}\right]_0^a=\frac{1}{2}a,\\
+\mathbb{E}(M)&=\frac{1}{2}a.
+\end{align*}
+Wie stark weicht unser Sch\"atzer von $a$ ab?
+\begin{align*}
+\sigma(M)&=\sqrt{\Var 2M}=2\frac{1}{n}\sqrt{n\Var a_n}\\
+&=\frac{2}{\sqrt{n}}\sqrt{\mathbb{E}(a_1^2)-\mathbb{E}(a_1)^2}\\
+&=\frac{2}{\sqrt{n}}\left(\int_0^ax^2\frac{1}{a}dx-\frac{a^2}{4}\right)^{\frac{1}{2}}\\
+&=\ldots=\frac{a}{\sqrt{3n}}.
+\end{align*}
+\subsubsection{Methode 2}
+$S=\max\{a_j\colon j\in1,\ldots,n\}$. Mit $S$ werden wir den Wert f\"ur $a$ meist untersch\"atzen.
+\[
+\mathbb{E}(S)=\ ?
+\]
+bestimme Verteilungsfunktion von $S$.
+\[
+V_S(x)=\mathbb{P}(\max\{a_j\}\leq x)=\mathbb{P}(\bigcap_{j=1}^n a_j\leq x)=\prod_{j=1}^n\mathbb{P}(a_j\leq x)=\frac{x}{a}^n.
+\]
+\[
+\rho_S(x)=V_S^\prime(X)=n\cdot\frac{x^{n-1}}{a^n}.
+\]
+\[
+\mathbb{E}(S)=\int_0^ax\rho_S(x)dx=[\ldots]_0^a=\frac{n}{n+1}a.
+\]
+\[
+\Var S=\mathbb{E}(S^2)=\mathbb{E}(S)^2=\int_0^ax^2\rho(x)dx-\frac{n^2}{(n+1)^2}a^2=\ldots=\frac{a^2\cdot n}{(n+1)^2\cdot(n+2)}
+\]
+$\Rightarrow\sigma(S)=\frac{a}{n+1}\cdot\ubr{\sqrt{\frac{n}{n+2}}}{$\leq 1$}$.
+\subsubsection{Methode 3}
+W\"ahle $\frac{n+1}{n}\cdot S=Z$.
+\[
+\mathbb{E}(Z)=a,
+\]
+\[
+\sigma(Z)=\frac{a}{n}\sqrt{\frac{n}{n+2}}.
+\]
+\subsubsection{Erinnerung: Verteilungsfunktion und Wahrscheinlichkeitsdichte}
+\[
+V_X(a)=\mathbb{P}(X\leq a)=\int_{-\infty}^a\rho(x)dx.
+\]
+

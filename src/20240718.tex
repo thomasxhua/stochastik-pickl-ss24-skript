@@ -1,0 +1,37 @@
+\pickl{18.07.2024}
+\subsubsection{$\chi^2$-Verteilung}
+\tul{Annahme:} $X_1,\ldots,X_n$ unabh\"angig und standardnormalverteilt.\\
+\tul{Frage:} Wie sieht die Verteilungsfunktion von $Z:=\sum_{j=1}^nX_j^2$ aus?
+\subsubsection{Definition ($\chi^2$-Verteilung)}
+Die Verteilungsfunktion von $Z$ nennt man \trt{chi-Quadrat-Verteilung} mit $n$ Freiheitsgraden (man schreibt $\chi^2(n)$).
+\subsubsection{Berechnung der Wahrscheinlichkeitsdichte von $Z$}
+\[
+f_{X_1,\ldots,X_n}(x_1\ldots x_n)=\prod_{j=1}^n\frac{e^{-\frac{1}{2}x_j^2}}{\sqrt{2\pi}}=\ldots
+\]
+\ldots
+\[
+\rho_n(z)=\frac{1}{2^{\frac{n}{2}}\Gamma(\frac{n}{2})}z^{\frac{n}{2}-1}e^{-\frac{z}{2}},\ z>0,\ \text{sonst ist }\rho=0.
+\]
+\subsubsection{$\chi^2$-Verteilungtest}
+\tul{Motivation:} W\"urfel
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c}
+Wert&1&2&3&4&5&6\\
+\hline
+H\"aufigkeit&$n_1$&$n_2$&$n_3$&$n_4$&$n_5$&$n_6$
+\end{tabular}
+\end{center}
+Wir betrachten dazu die Gr\"o\ss{}e
+\[
+\sum_{j=1}^k\frac{(nP_j-n_j)^2}{nP_j}
+\]
+mit $n=\sum_{j=1}^kn_j$.
+\subsubsection{Bemerkung}
+Der obige Ausdruck $A$ ist $\Xi^2$-verteilt mit $k-1$ Freiheitsgraden (vorausgesetzt $P_j$ korrekt). Erinnerung: $Z=\sum_{j=1}^{k-1}X_j^2$.
+\\~\\
+Fall $k=2$. Betrachte $Z=\frac{(nP_1-n_1)^2}{np_1q_1}$. Falls meine M\"unze in der Tat Wahrscheinlichkeit ``p'' f\"ur Kopf hat, ist das standard-normalverteilt. ALso $Z^2$ ist $X^2(1)$-verteilt.
+\[
+Z^2=
+\]
+% mid https://timms-ms09.uni-tuebingen.de/UT_2024/07/18/UT_20240718_002_sose24stochastik_0001.854x480_cb950.mp4
+% teil2 to go

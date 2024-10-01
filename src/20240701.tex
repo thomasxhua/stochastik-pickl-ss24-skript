@@ -1,0 +1,62 @@
+\pickl{01.07.2024}
+\subsection{Starkes Gesetz der gro\ss{}en Zahlen}
+\subsubsection{Satz (Schwaches Gesetz der gro\ss{}en Zahlen, II)}
+Sei $(X_n)_{n\to\mathbb{N}}$ eine Folge unabh\"angiger, gleichverteiler, beschr\"ankter Zufallsvariablen. Dann gilt
+\[
+\mathbb{P}(|\overline{X}_n-\mu|\geq a)\sim e^{-\sqrt{n}}.
+\]
+\subsubsection{Bemerkung}
+Der ``Fehler'' ist also summierbar und damit liefert Borel-Cantelli direkt:
+\subsubsection{Satz (Starkes Gesetz der gro\ss{}en Zahlen)}
+Unter den obigen Bedigungen ist
+\[
+\mathbb{P}(\lim_{n\to\infty}\overline{X}_n=\mu)=1.
+\]
+\subsubsection{Beweis (Schwaches Gesetz der gro\ss{}en Zahlen, II)}
+Sei $|X)j|<C,\ \forall j\in\mathbb{N}$. Markov mit $f(x)=e^x$ wird benutzt f\"ur $\overline{X}_n=\frac{1}{n}\sum_{j=1}^nX_j$, o.B.d.A. sei $\mu=0$.
+\begin{align*}
+\mathbb{P}(|\overline{X}_n|\geq a)\leq\frac{\mathbb{E}(e^{|\overline{X}_n|\sqrt{n}})}{e^{a\sqrt{n}}}
+\end{align*}
+da $\mathbb{P}(\overline{X_n}\geq a)=\mathbb{P}(\sqrt{n}\overline{X}_n\geq\sqrt{n}a)$. NR (mit $e^{|x|}<e^x+e^{-x}$):
+\[
+\mathbb{E}(e^{|\overline{X}_n|\sqrt{n}})
+<\mathbb{E}(e^{\overline{X}_n\sqrt{n}})
++\mathbb{E}(e^{-\overline{X}_n\sqrt{n}})
+\]
+und mit
+\[
+\mathbb{E}(e^{\overline{X}_n\sqrt{n}})
+=
+\mathbb{E}(\prod_{j=1}^ne^{x_j/\sqrt{n}})
+=
+\prod_{j=1}^n\mathbb{E}(e^{x_j/\sqrt{n}})
+\]
+\ldots\weg
+\subsubsection{Bemerkung}
+Die Anzahl an $(0,1)$-Folgen ist \"uberabz\"ahlbar. Um bereits f\"ur den Fall $X_j\to\{0,1\}$ \"uber eine ganze Folge von $(X_j)_{j\in\mathbb{N}}$ sprechen zu k\"onnen, ben\"otigt man ein \"uberabz\"ahlbares $\Omega$.
+\\~\\
+Wenn man \"uber das starke Gesetz spricht, muss man also \"uberabz\"ahlbare $\Omega$ behandeln!
+\subsection{Zentraler Grenzwertsatz}
+Wir betrachten zun\"achst unabh\"angige, identisch verteilt $X_i$, $i\in\{1,\ldots,n\}$ mit $X_i\to\{0,1\}$. Dazu definieren wir:
+\begin{itemize}
+\item $\overline{X}_n:=\frac{1}{n}\sum_{j=1}^nX_j$,
+\item $S_n:=\sum_{j=1}^nX_j$,
+\item $N_n:=\frac{1}{\sqrt{n}}\sum_{j=1}^nX_j$.
+\end{itemize}
+Dann sind
+\begin{itemize}
+\item $\Var\overline{X}_n=\frac{\sigma^2}{n}$, $\sigma^2=\Var X$,
+\item $\Var S_n=\sigma^2\cdot n$,
+\item $\Var N_n=\sigma^2$, Standardabweichung$=\sigma$.
+\end{itemize}
+\subsubsection{Satz (Zentraler Grenzwertsatz, de Moivre-Laplace)}
+Seien $X_j,\ j\in\{1,\ldots,n\}$ unabh\"angig, identisch verteilte Zufallsgr\"o\ss{}en, $X_j\to\{0,1\}$ mit $\mathbb{P}(X_j=1)=p$. Dann gilt: $N_n$ konvergiert in Verteilung gegen eine normalverteile Zufallsvariable mit $\mu=p$ und $\sigma^2=pq$ ($q=1-p$).
+\subsubsection{Beweisskizze}
+Wir zeigen binomial $\to$ normal.
+\begin{itemize}
+\item Fall $p=q=\frac{1}{2}$:
+\[
+B(n,\frac{1}{2},k)=\neo{n\\k}\cdot\left(\frac{1}{2}\right)^n\ (S_N).
+\]
+Betrachte $f(x):=\neo{n\\\frac{n}{2}+x}$ f\"ur $x\in[-\sqrt{n},\sqrt{n}]$ bzw. $g(x)=\ln f(x)=\ldots$ \weg
+\end{itemize}

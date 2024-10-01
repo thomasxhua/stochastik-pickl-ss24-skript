@@ -1,0 +1,66 @@
+\pickl{27.06.2024}
+\[
+V_X(t)-V_{X_n}(t)=V_X(t)-V_X(t-\varepsilon)-V_X(t-\varepsilon)+V_{X_n}(t)\ (*).
+\] Sei also $\delta>0$ beliebig.
+Da $V_X()$ als stetig bei $t$ angenommen wird, $\exists\varepsilon>0$, sodass $V_X(t)-V_X(t-\varepsilon)<\delta$.
+Genau dieses $\varepsilon$ w\"ahlen wir in $(*)$.
+\begin{align*}
+V_X(t-\varepsilon)-V_{X_n}(t)&=\mathbb{P}(X\leq t-\varepsilon)-\mathbb{P}(X_n\leq t)\\
+&\leq\mathbb{P}(X\leq t-\varepsilon\ \setminus\ X_n\leq t)\\
+&\leq\mathbb{P}(X\leq t-\varepsilon\text{ und }X_n>t)\\
+&\leq\ubr{\mathbb{P}(|X-X_n|>\varepsilon)}{$\to0,\ n\to\infty$}<\delta,\text{ falls $n$ hinreichend gro\ss{}}\\
+&\Rightarrow\ (*)<2\delta.
+\end{align*}
+($\mathbb{P}(A\setminus B)+\mathbb{P}(B)\geq\mathbb{P}(A\setminus B)+\mathbb{P}(B\cap A)=\mathbb{P}(A)\Rightarrow\mathbb{P}(A)-\mathbb{P}(B)\leq\mathbb{P}(A\setminus B)$.)
+\\~\\
+Teil vom Montag:
+\[
+V_X(t)-V_{X_n}(t)=V_X(t)-V_{X_n}(t+\varepsilon)-V_X(t+\varepsilon)+V_X(t)<\ldots<2\delta.
+\]
+$\Rightarrow\lim_{n\to\infty}V_{X_n}(t)=V_X(t)$, $\forall t$, wo $V_X$ stetig.
+\subsubsection{Proposition}
+\abc{
+\item $\{\lim X_n=X\}=\bigcap_{t\in\mathbb{N}}\bigcup_{n\in\mathbb{N}}\bigcap_{k\geq n}|X_k-X|<\frac{1}{t}$.
+\item $\mathbb{P}(\lim X_n=X)=1\Rightarrow\forall t\in\mathbb{N}$ ist $\mathbb{P}(\bigcap_{n\in\mathbb{N}}\bigcap_{k\geq n}|X_k-K|\geq\frac{1}{t})=0$.
+}
+\subsubsection{Beweis}
+\abc{
+\item $\lim_{n\to\infty}X_n(\omega)=X(\omega)\Leftrightarrow\forall t\in\mathbb{N}\ \ubr{\exists n\in\mathbb{N}\ \ubr{\forall k\geq n\colon\ubr{|X_k(\omega)-X(\omega)}{$A_k^t$}}{$\bigcap_{k\geq n}A_k^t=:B_n^t$}}{$\bigcup_{n\in\mathbb{N}}B_n^t=C^t$}<\frac{1}{t}$.
+\item
+\begin{align*}
+\mathbb{P}(\lim_{n\to\infty}X_n=X)=\mathbb{P}(\bigcap_{t\in\mathbb{N}}\bigcup_{n\in\mathbb{N}}\bigcap_{k\geq n}|X_k-X|\leq\frac{1}{k})&=1\\
+\Leftrightarrow\mathbb{P}(\bigcup_{t\in\mathbb{N}}\bigcap_{n\in\mathbb{N}}\bigcup_{k\geq n}|X_k-X|\geq\frac{1}{t})&=0\\
+\Leftrightarrow\mathbb{P}(\bigcap_{n\in\mathbb{N}}\bigcup_{k\geq n}|X_k-X|\geq\frac{1}{t})&=0,\ \forall t\in\mathbb{N}.
+\end{align*}
+}
+\subsubsection{Satz}
+Fast sichere Konvergenz impliziert stochastische Konvergenz.
+\subsubsection{Beweis}
+\weg
+\subsubsection{Satz (Borel-Cantelli)}
+Sei $(A_n)_{n\in\mathbb{N}}$ eine Folge von Ereignissen.
+\[
+\text{Falls }\sum_{n=0}^\infty\mathbb{P}(A_n)<\infty\Rightarrow\mathbb{P}(\limsup_{n\to\infty}A_n)=0.
+\]
+\subsubsection{Beispiel}
+W\"ahle $A_n=|X_n-X|\geq\frac{1}{t}$. Falls $\forall t\in\mathbb{N}$ gilt $\sum_{n=0}^\infty\mathbb{P}(|X_n-X|\geq t)<\infty\textabove{B.C.}{\Rightarrow}\forall t\in\mathbb{N}\colon\mathbb{P}(\limsup_{n\to\infty}|X_n-X|\geq\frac{1}{t})=0\Leftrightarrow:\ X_n\to X$ fast sicher.
+\subsubsection{Beweis}
+Sei $\sum_{n=0}^\infty\mathbb{P}(A_n)<\infty$.
+\begin{align*}
+\mathbb{P}(\limsup_{n\to\infty}A_n)
+&=\mathbb{P}(\bigcap_{n\in\mathbb{N}}\bigcup_{k\geq n}A_k)\\
+&=\mathbb{P}(\bigcup_{k\geq n}A_k),\ \forall n\in\mathbb{N}\\
+&\leq\mathbb{P}(\bigcup_{k\geq n}A_k)\\
+&\leq\sum_{k=n}^\infty\mathbb{P}(A_k)
+\end{align*}
+Da $\sum_{k=n}^\infty\mathbb{P}(A_k)<\infty$, gilt: $\forall\varepsilon>0\ \exists n\in\mathbb{N}$, sodass $\sum_{k=n}^\infty\mathbb{P}(A_k)<\varepsilon\Rightarrow\forall\varepsilon>0$ findet sich ein $n\in\mathbb{N}$, durch welches wir argumentieren k\"onnen, dass $\mathbb{P}(\limsup_{n\to\infty}A_n)<\varepsilon$.
+\subsubsection{Satz (Borel-Cantelli II)}
+Falls $\sum_{n\to\infty}\mathbb{P}(A_n)=\infty$ und die $A_n$ unabh\"angig $\Rightarrow\mathbb{P}(\limsup_{n\to\infty}A_n)=1$.
+\subsubsection{Beweis}
+Sei $\sum_{n=0}^\infty\mathbb{P}(A_n)=\infty$. Z.z. $\mathbb{P}(\liminf_{n\to\infty}A_n^C)=0$.
+\begin{align*}
+    \mathbb{P}(\bigcup_{n\in\mathbb{N}}\bigcap_{k\geq n}A_k^C)&\leq\sum_{n=0}^\infty\mathbb{P}(\bigcap_{k\geq n}A_k^C)\\
+    &=\sum_{k=0}^\infty\prod_{k\geq n}(1-\mathbb{P}(A_k))\\
+    &\textabove{$(*)$}{\leq}\sum_{n=0}^\infty\prod_{k\geq n}e^{-\mathbb{P}(A_k)}=\sum_{n=0}^\infty e^{-\obr{\sum_{k\geq n}\mathbb{P}(A_k)}{$=+\infty$}}
+\end{align*}
+mit $(*)$ $1-x\leq e^{-x},\ \forall x\geq0$.

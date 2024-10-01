@@ -1,0 +1,54 @@
+\pickl{15.07.2024}
+\subsubsection{Beispiel}
+Zweiseitiger Hypothesentest:
+\begin{itemize}
+\item H: ``Wahrscheinlichkeit f\"ur Kopf ist $\frac{1}{2}$'',
+\item A: ``Wahrscheinlichkeit f\"ur Kopf ist $\frac{1}{4}$''.
+\end{itemize}
+$n=100$.
+\begin{center}
+\begin{tabular}{c|c|c}
+~&H stimmt&A stimmt\\
+\hline
+H ablehnen&$\alpha=5\%$&$97.5\%$\\
+\hline
+A ablehnen&$95\%$&$\beta=2.5\%$\\
+\end{tabular}
+\end{center}
+Angenommen $H$: $\mu_H=50$, $\sigma_n^2=100\frac{1}{2}\frac{1}{2}$, $\sigma_n=5$.\\
+Tabelle: $V_{N(0,1)}(1.64)=95\%$. $1.64\sigma_H$ ist in unserem Fall etwa $8$.\\
+$\mathbb{P}(A)=(\#\geq42)$, $\mu_n=25$, $\sigma_n^2=100\frac{1}{4}\frac{3}{4}=\frac{300}{16}\Rightarrow\sigma_n\approx4.3$. $42$ ist vom Erwartungswert $25$ ca. $2$ Standardabweichungen entfernt. Tabelle liefert $\beta\approx2.5\%$.
+\subsubsection{Bemerkung}
+Wir haben $\alpha$- bzw. $\beta$-Fehler diskutiert.
+\\~\\
+item $\alpha$-Fehler: Unter der Voraussetzung, dass H gilt, die Wahrscheinlichkeit weniger als $42$ Treffer zu haben. Besser: Wie hoch ist die ``Wahrscheinlichkeit'', bzw. wie plausibel ist es, dass H gilt, unter der Voraussetzung, dass die Zahl von Kopf $<42$? Letzteres ist im Allgemeinen schwer zu ergr\"unden.
+\\~\\
+\tul{Zusatzannahme:} Schublade $100$ M\"unzen. $99$ Laplace und eine ``gezinkt''.
+\begin{center}
+\begin{tabular}{c|c|c}
+~&H&A\\
+\hline
+$\#<42$&$\mathbb{P}(H\cap\#<42)\ 5\%$&$\mathbb{P}(A\cap\#<42)\ 97.5\%$\\
+\hline
+$\#<42$&$\mathbb{P}(H\cap\#\geq42)\ 95\%$&$\mathbb{P}(A\cap\#\geq42)\ 2.5\%$\\
+\end{tabular}
+\end{center}
+\begin{align*}
+\mathbb{P}_{\#<42}(H)&=\frac{\mathbb{P}(H\cap\$<42)}{\mathbb{P}(\#<42)}=\frac{5\%}{6\%}\approx\frac{5}{6},\\
+\mathbb{P}_{\#\geq42}(H)&=\frac{1}{6}.
+\end{align*}
+\subsubsection{$\sqrt{n}$-Gesetz}
+Bernoulli-Experiment, $n$-faches, unabh\"angiges Wiederholen einer $\{0,1\}$-Frage. Anzahl an Treffern $\approx p\cdot n$. Wann werden wir skeptisch? Fausregel: Abweichung von $pn$ gr\"o\ss{}er als $\sqrt{n}$. Es ist $\sigma_n^2=npq$, $\sigma_n=\sqrt{n}\sqrt{pq}$. Eine Abweichung vom Erwartungswert von $\sqrt{n}=$ mindestens $2\sigma n\Rightarrow\mathbb{P}(|\sum_{j=1}^nx_j-np|\geq\sqrt{n})\leq5\%$.
+\subsubsection{Neyman-Pearson-Lemma}
+\tul{Motivation:}
+\begin{itemize}
+\item H: ``$X$ ist gem\"a\ss{} Dichte $\rho_0$ verteilt.''
+\item G: ``$X$ ist gem\"a\ss{} Dichte $\eta$ verteilt.''
+\end{itemize}
+\tul{Frage:} Nehmen wir an, $\alpha$-Fehler ist gegeben. F\"ur welche Menge $A\subset\Omega$ ist der $\beta$-Fehler am kleinsten?
+\\~\\
+\tul{Vorgehensweise:} Betrachte $\frac{\rho}{\eta}$. F\"ur jedes $C\in\mathbb{R}^+$ definiere $A_C$ \"uber $\omega\in A_C\Leftrightarrow\frac{\rho}{\eta}(\omega)\leq C$. W\"ahle $C$ so, dass $\mathbb{P}_H(A_C)=\alpha$.
+\\~\\
+\tul{Lemma:} Unter allen $B\in\Omega$ mit $\mathbb{P}_H(B)=\alpha$ ist $\mathbb{P}_G(B)\geq\mathbb{P}_G(A_C)$.
+\subsubsection{Beweis}
+\weg

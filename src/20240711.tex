@@ -1,0 +1,33 @@
+\pickl{11.07.2024}
+\subsection{Hypothesentests}
+Gegeben ein Modell f\"ur ein bestimmtes Experiment m\"ochten wir dieses auf Plausibilit\"at untersuchen, indem wir das Experiment sehr h\"aufig in unabh\"angigerweise durchf\"uhren.
+\subsubsection{Beispiel ($\alpha$- und $\beta$-Fehler)}
+Es wird die Hypotheese aufgestellt, die Wahrscheinlichkeit mit einem bestimmten W\"urfel eine $6$ zu erzielen sei $\frac{1}{6}$. Diese Hypothese m\"ochten wir \"uberpr\"ufen.
+\\~\\
+Wir werfen den W\"urfel $n$-mal. Falls die relative H\"aufigkeit von $\frac{1}{6}$ ``zu sehr'' abweicht, verwerfen wir die Hypothese.
+\begin{center}
+\begin{tabular}{c|c|c}
+~&Hyp. stimmt&Hyp. stimmt nicht\\
+\hline
+Abweichung recht gro\ss{}&$\times$ ($\alpha$-Fehler)&$\checkmark$\\
+\hline
+Abweichung recht klein&$\checkmark$&$\times$ ($\beta$-Fehler)\\
+\end{tabular}
+\end{center}
+Bei Hypothesentests ist der $\alpha$-Fehler in der Regel vorgegeben. Er h\"angt von den Qualit\"atsstandards ab. Gegeben $\alpha$ l\"asst sich das ``zu gro\ss{}'' quantifizieren, d.h. der Bereich angeben f\"ur den die Hypothese verworfen wird.
+\\~\\
+$n=1000$, $\sigma_n^2=1000\frac{1}{6}\frac{5}{5}$. Eine R\"uckf\"uhrung auf den standardisierten Fall bietet sich an:
+\[
+S:=\frac{1}{\sigma_n}\cdot\sum_{j=1}^n\left(X_j-\frac{1}{6}\right).
+\]
+$S$ hat Erwartungswert $0$ und Standardabweichung $1$. Nach dem zentralen Grenzwertsatz ist $S$ f\"ur gro\ss{}e $n$ in guter Nutzung normalverteilt.
+\\~\\
+Wir bestimmen $\varepsilon$ so, dass $V_{N(0,1)}(\varepsilon)=97.5\%$ (bzw. $1-\frac{\alpha}{2}$). Tabelle ergibt $\varepsilon\approx1.6$ $\Rightarrow$ wir verwerfen nicht f\"ur $S\in[-1.6,1.6]\Rightarrow\sum X_j\in[\frac{1000}{6}-1.6\cdot\sqrt{\frac{1000\cdot 5}{6\cdot 6}},\frac{1000}{6}+\ldots]$.
+\subsubsection{Einseitiger vs. zweiseitiger Test}
+Im obigen Beispiel haben wir einen zweiseitigen Test kennengelernt: Die Hypothese wurde auf 2 Seiten verworfen. Es gibt auch einseitige Tests. Zum Beispiel:
+\begin{itemize}
+\item Hypothese: ``W\"urfel ist schlimmsten Falls Laplace''. Falls die 6er g\"unstig sind, bedeutet das H: ``$p\geq\frac{1}{6}$''. In diesem Fall bestimmt sich das zu $S$ geh\"orige Intervall durch $V_{N(0,1)}(-\varepsilon)=5\%$ (bzw. $\alpha$. Ablehung: $S\in]-\infty,-varepsilon]$.
+\item Zur gestellten Hypothese ``$p=\frac{1}{6}$'' gibt es eine Gegenhypothese ``$p=\frac{1}{4}$'' (oder mehrere). In diesem Fall ist der Test einseitig (bzw. einseitig f\"ur die beiden Hypothesen am Rand). Der $\beta$-Fehler ist zug\"anglich. Ob $\alpha$ oder $\beta$ vorgegeben, h\"angt die Fragestellung ab.
+\end{itemize}
+\subsubsection{Bemerkung}
+Hypothesen werden in der Regel nur verworfen. Falls \tul{alle} Alternativen klar bestimmt sind (letztes Beispiel), bedeutet ein Verwerfen aller Alternativen indirekt Annahme der Hypothese.
