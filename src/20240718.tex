@@ -6,12 +6,18 @@
 Die Verteilungsfunktion von $Z$ nennt man \trt{chi-Quadrat-Verteilung} mit $n$ Freiheitsgraden (man schreibt $\chi^2(n)$).
 \subsubsection{Berechnung der Wahrscheinlichkeitsdichte von $Z$}
 \[
-f_{X_1,\ldots,X_n}(x_1\ldots x_n)=\prod_{j=1}^n\frac{e^{-\frac{1}{2}x_j^2}}{\sqrt{2\pi}}=\ldots
+f_{X_1,\ldots,X_n}(x_1\ldots x_n)=\prod_{j=1}^n\frac{e^{-\frac{1}{2}x_j^2}}{\sqrt{2\pi}}=(2\pi)^{-\frac{n}{2}}e^{-\frac{1}{2}\sum_{j=1}^nx_j^2},
 \]
 \ldots
-\[
-\rho_n(z)=\frac{1}{2^{\frac{n}{2}}\Gamma(\frac{n}{2})}z^{\frac{n}{2}-1}e^{-\frac{z}{2}},\ z>0,\ \text{sonst ist }\rho=0.
-\]
+\begin{align*}
+\rho_n(z)
+&=\lim_{h\to0}\frac{1}{h}\mathbb{P}(\obr{z<Z\leq z+h}{$\mathbb{P}(Z\leq z+h)-\mathbb{P}(Z\leq z)=V(z+h)-V(z)$})\\
+&=\lim_{h\to0}\frac{1}{h}\int_M(2\pi)^{-\frac{n}{2}}e^{-\frac{1}{2}\sum_{j=1}^nx_j^2}\mathrm{d}x_1\ldots x_n\\
+&=(2\pi)^{-\frac{n}{2}}e^{-\frac{1}{2}z}\ubr{\lim_{h\to0}\frac{1}{n}\int_M\mathrm{d}x_1\ldots x_n}{$\frac{\mathrm{d}}{\mathrm{dz}} V_n(\sqrt{n})=\ldots\frac{z^{\frac{n}{2}-1}\cdot\pi^{\frac{n}{2}}}{\Gamma(\frac{n}{2})}$}\\
+&=
+\frac{1}{2^{\frac{n}{2}}\Gamma(\frac{n}{2})}z^{\frac{n}{2}-1}e^{-\frac{z}{2}},\ z>0,\ \text{sonst ist }\rho=0.
+\end{align*}
+mit $M=\{z\leq\ubr{\sum_{j=1}^nx_j^2}{$\sim z$}\leq z+h\}$.
 \subsubsection{$\chi^2$-Verteilungtest}
 \tul{Motivation:} W\"urfel
 \begin{center}
@@ -27,11 +33,9 @@ Wir betrachten dazu die Gr\"o\ss{}e
 \]
 mit $n=\sum_{j=1}^kn_j$.
 \subsubsection{Bemerkung}
-Der obige Ausdruck $A$ ist $\Xi^2$-verteilt mit $k-1$ Freiheitsgraden (vorausgesetzt $P_j$ korrekt). Erinnerung: $Z=\sum_{j=1}^{k-1}X_j^2$.
+Der obige Ausdruck $A$ ist $\chi^2$-verteilt mit $k-1$ Freiheitsgraden (vorausgesetzt $P_j$ korrekt). Erinnerung: $Z=\sum_{j=1}^{k-1}X_j^2$, $X_j$ standardnormalverteilt und unabh\"angig.
 \\~\\
-Fall $k=2$. Betrachte $Z=\frac{(nP_1-n_1)^2}{np_1q_1}$. Falls meine M\"unze in der Tat Wahrscheinlichkeit ``p'' f\"ur Kopf hat, ist das standard-normalverteilt. ALso $Z^2$ ist $X^2(1)$-verteilt.
+Fall $k=2$. Betrachte $Z=\frac{(nP_1-n_1)}{\sqrt{np_1q_1}}$. Falls meine M\"unze in der Tat Wahrscheinlichkeit ``p'' f\"ur Kopf hat, ist das standardnormalverteilt. Also $Z^2$ ist $X^2(1)$-verteilt.
 \[
-Z^2=
+Z^2=\frac{(np_1-n_1)^2}{np_1q_1}=\frac{(np-n_1)^2(p+q)}{npq}=\frac{(np-n_1)^2}{nq}+\frac{(np-n_1)^2}{np}=\ldots=\sum_{j=1}^2\frac{(np_j-n_j)^2}{np_j}.
 \]
-% mid https://timms-ms09.uni-tuebingen.de/UT_2024/07/18/UT_20240718_002_sose24stochastik_0001.854x480_cb950.mp4
-% teil2 to go
